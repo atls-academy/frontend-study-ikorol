@@ -4,7 +4,7 @@ const personalMovieDB = {
   movies: {},
   actors: {},
   genres: [],
-  privat: false,
+  private: false,
   start: function() {
     this.count = +prompt( "Сколько фильмов вы уже посмотрели?", "");
 
@@ -48,10 +48,10 @@ const personalMovieDB = {
     }
   },
   toggleVisibleMyDB: function() {
-    this.privat = !this.privat;
+    this.private = !this.private;
   },
   showMyDB: function(status) {
-    if ( !this.privat ) {
+    if ( !this.private ) {
       console.log( personalMovieDB );
     }
   }
