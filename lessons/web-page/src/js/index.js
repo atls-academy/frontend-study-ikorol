@@ -2,9 +2,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
   //Tabs
 
-  const tabs = document.querySelectorAll('.tabheader__item'),
-        tabsContent = document.querySelectorAll('.tabcontent'),
-        tabsParent = document.querySelector('.tabheader__items');
+  const tabs = document.querySelectorAll('.tabheader__item');
+  const tabsContent = document.querySelectorAll('.tabcontent');
+  const tabsParent = document.querySelector('.tabheader__items');
 
   function hideTabContent() {
     tabsContent.forEach(item => {
@@ -44,11 +44,11 @@ window.addEventListener('DOMContentLoaded', () => {
   const deadline = '2020-12-31';
 
   function getTimeRemaining(endTime) {
-    const t = Date.parse(endTime) - Date.parse(new Date()),
-          days = Math.floor(t / (1000 * 60 * 60 * 24)),
-          hours = Math.floor((t / (1000 * 60 * 60) %  24)),
-          minutes = Math.floor((t / 1000 / 60)  %  60),
-          seconds = Math.floor((t / 1000)  %  60);
+    const t = Date.parse(endTime) - Date.parse(new Date());
+    const days = Math.floor(t / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((t / (1000 * 60 * 60) %  24));
+    const minutes = Math.floor((t / 1000 / 60)  %  60);
+    const seconds = Math.floor((t / 1000)  %  60);
 
     return {
       'total': t,
@@ -68,12 +68,12 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   function setClock(selector, endTime) {
-    const timer = document.querySelector(selector),
-          days = timer.querySelector('#days'),
-          hours = timer.querySelector('#hours'),
-          minutes = timer.querySelector('#minutes'),
-          seconds = timer.querySelector('#seconds'),
-          timeInterval = setInterval(updateClock, 1000);
+    const timer = document.querySelector(selector);
+    const days = timer.querySelector('#days');
+    const hours = timer.querySelector('#hours');
+    const minutes = timer.querySelector('#minutes');
+    const seconds = timer.querySelector('#seconds');
+    const timeInterval = setInterval(updateClock, 1000);
 
     updateClock();
 
@@ -92,4 +92,50 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   setClock('.timer', deadline);
+
+  // Modal window
+
+  const modalTrigger = document.querySelectorAll('[data-modal]');
+  const modalWindow = document.querySelector('.modal');
+  const modalClose = document.querySelector('[data-close]');
+
+  function openModalWindow() {
+    modalWindow.classList.toggle('show');
+    document.body.style.overflow = 'hidden';
+    clearInterval(modalTimer);
+  }
+
+  modalTrigger.forEach(btn => {
+    btn.addEventListener('click', openModalWindow);
+  });
+
+  function closeModalWindow() {
+    modalWindow.classList.toggle('show');
+    document.body.style.overflow = '';
+  }
+
+  modalClose.addEventListener('click', closeModalWindow);
+
+  modalWindow.addEventListener('click', (e) => {
+    if (e.target === modalWindow) {
+      closeModalWindow();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.code === "Escape" && modalWindow.classList.contains('show')) {
+      closeModalWindow();
+    }
+  });
+
+  const modalTimer = setTimeout(openModalWindow, 15000);
+
+  function showModalByScroll() {
+    if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight) {
+      openModalWindow();
+      window.removeEventListener('scroll', showModalByScroll);
+    }
+  }
+
+  window.addEventListener('scroll', showModalByScroll);
 })
