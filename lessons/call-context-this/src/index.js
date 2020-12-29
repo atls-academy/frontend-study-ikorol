@@ -1,4 +1,4 @@
-// 1) Обычная функция: this = window, если есть use strict - undefined
+/** If normal function: this = window, if 'use strict': this = undefined. */
 function showThis(a, b) {
   console.log(this);
   function sum() {
@@ -10,7 +10,7 @@ function showThis(a, b) {
 }
 showThis(4, 5);
 
-// 2) Контекст у методов объекта - сам объект
+/** The context of object methods is the object itself. */
 const obj = {
   a: 20,
   b: 15,
@@ -19,7 +19,7 @@ const obj = {
   }
 }
 
-// 3) this в конструкторах и классах - это новый экземпляр объекта
+/** 'this' in constructors and classes is a new instance of an object. */
 function User(name, id) {
   this.name = name;
   this.id = id;
@@ -30,7 +30,7 @@ function User(name, id) {
 }
 let ivan = new User('Ivan', 23);
 
-// 4) Ручная привязка this: call, apply, bind
+/** Manual binding 'this': call, apply, bind. */
 function sayName(surname) {
   console.log(this);
   console.log(this.name + surname);
@@ -50,10 +50,11 @@ function count(num) {
 const double = count.bind(2);
 console.log(double(3));
 
-// У стрелочной функции нет своего контекста вызова, он берется от родителя.
-// В обработчиках событий используем event.target вместо this
+/**
+ * The arrow function does not have its own call context, it is taken from the parent.
+ * In event handlers, use 'event.target' instead of 'this'.
+ */
 const btn = document.querySelector('button');
-
 btn.addEventListener('click', (e) => {
   e.target.style.backgroundColor = 'red';
 });
