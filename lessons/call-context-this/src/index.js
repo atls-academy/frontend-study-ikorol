@@ -1,4 +1,4 @@
-/** If normal function: this = window, if 'use strict': this = undefined. */
+/** Normal function: this = window, if 'use strict': this = undefined. */
 function showThis(a, b) {
   console.log(this);
   function sum() {
