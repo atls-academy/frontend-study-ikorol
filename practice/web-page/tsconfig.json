@@ -1,0 +1,9 @@
+{
+  "extends": "@atlantis-lab/tsconfig/tsconfig.lib.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "allowJs": true
+  },
+  "exclude": ["node_modules"],
+  "include": ["src"]
+}
