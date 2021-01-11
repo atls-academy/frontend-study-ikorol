@@ -2,13 +2,11 @@
   "license": "BSD 3-Clause",
   "private": true,
   "devDependencies": {
-    "lerna": "3.22.1"
+    "lerna": "3.22.1",
+    "@atlantis-lab/tsconfig": "^0.1.2"
   },
   "workspaces": [
     "lessons/**/*",
     "practice/**/*"
-  ],
-  "dependencies": {
-    "@atlantis-lab/tsconfig": "^0.1.2"
-  }
+  ]
 }
