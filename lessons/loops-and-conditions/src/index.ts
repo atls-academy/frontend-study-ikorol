@@ -1,12 +1,11 @@
+let numberOfFilms: number = +prompt( "Сколько фильмов вы уже посмотрели?", "");
 
-let numberOfFilms = +prompt( "Сколько фильмов вы уже посмотрели?", "");
-
-const personalMovieDB = {
-  'count': numberOfFilms,
-  'movies': {},
-  'actors': {},
-  'genres': [],
-  'privat': false
+const personalMovieDB: { count: number, movies: object, actors: object, genres: string[], privat: boolean } = {
+  count: numberOfFilms,
+  movies: {},
+  actors: {},
+  genres: [],
+  privat: false
 };
 
 if (personalMovieDB.count < 10) {
@@ -20,10 +19,10 @@ if (personalMovieDB.count < 10) {
 }
 
 // method 1
-for (let i = 0; i < 2; i++) {
+for (let i: number = 0; i < 2; i++) {
 
-  let lastFilm = prompt("Один из последних просмотренных фильмов?", ""),
-    rate = +prompt("На сколько оцените его?", "");
+  let lastFilm: string = prompt("Один из последних просмотренных фильмов?", "");
+  let rate: number = +prompt("На сколько оцените его?", "");
 
   if (lastFilm !== "" && rate !== 0 && lastFilm != null && rate != null && lastFilm.length < 50 ) {
     personalMovieDB.movies[lastFilm] = rate;
@@ -33,10 +32,10 @@ for (let i = 0; i < 2; i++) {
 }
 
 //method 2
-let a = 0;
+let a: number = 0;
 while( a < 2) {
-  let lastFilm = prompt("Один из последних просмотренных фильмов?", ""),
-    rate = +prompt("На сколько оцените его?", "");
+  let lastFilm: string = prompt("Один из последних просмотренных фильмов?", "");
+  let rate: number = +prompt("На сколько оцените его?", "");
   a++;
 
   if (lastFilm !== "" && rate !==0 && lastFilm != null && rate != null && lastFilm.length < 50 ) {
@@ -47,10 +46,10 @@ while( a < 2) {
 }
 
 //method 3
-let b = 0;
+let b: number = 0;
 do {
-  let lastFilm = prompt("Один из последних просмотренных фильмов?", ""),
-    rate = +prompt("На сколько оцените его?", "");
+  let lastFilm: string = prompt("Один из последних просмотренных фильмов?", "");
+  let rate: number = +prompt("На сколько оцените его?", "");
   b++;
   if (lastFilm !== "" && rate !== 0 && lastFilm != null && rate != null && lastFilm.length < 50 ) {
     personalMovieDB.movies[lastFilm] = rate;

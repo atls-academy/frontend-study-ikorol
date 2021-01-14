@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const movieDB = {
+  const movieDB: {movies: string[]} = {
     movies: [
       "Логан",
       "Лига справедливости",
@@ -8,19 +8,19 @@ document.addEventListener("DOMContentLoaded", () => {
       "Скотт Пилигрим против..."
     ]
   };
-  const adv = document.querySelectorAll(".promo__adv img"),
-    genre = document.querySelectorAll(".promo__genre"),
-    image = document.querySelector(".promo__bg"),
-    moviesList = document.querySelector(".promo__interactive-list"),
-    addForm = document.querySelector("form.add"),
-    addInput = addForm.querySelector(".adding__input"),
-    checkbox = addForm.querySelector('[type="checkbox"]');
+  const adv: any = document.querySelectorAll(".promo__adv img");
+  const genre: any = document.querySelectorAll(".promo__genre");
+  const image: any = document.querySelector(".promo__bg");
+  const moviesList: any = document.querySelector(".promo__interactive-list");
+  const addForm: any = document.querySelector("form.add");
+  const addInput: any = addForm.querySelector(".adding__input");
+  const checkbox: any = addForm.querySelector('[type="checkbox"]');
 
   addForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    let newFilm = addInput.value;
-    const favorite = checkbox.checked;
+    let newFilm: string = addInput.value;
+    const favorite: boolean = checkbox.checked;
     if (newFilm) {
       if (newFilm.length > 21) {
         newFilm = `${newFilm.substring(0, 22)}...`;
@@ -39,11 +39,11 @@ document.addEventListener("DOMContentLoaded", () => {
   movieDB.movies.sort();
 
 
-  function createMoviesList(films, parent) {
+  function createMoviesList(films: string[], parent: any) {
     parent.innerHTML = "";
     sortArr(films);
 
-    films.forEach((movie, i) => {
+    films.forEach((movie: string, i: number) => {
       parent.innerHTML += `
                 <li class="promo__interactive-item">${i + 1} ${movie}
                     <div class="delete"></div>
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
             `;
     });
 
-    document.querySelectorAll(".delete").forEach((btn, i) => {
+    document.querySelectorAll(".delete").forEach((btn, i: number) => {
       btn.addEventListener("click", () => {
         btn.parentElement.remove();
         movieDB.movies.splice(i, 1);
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
 
-  const makeChanges = () => {
+  const makeChanges: () => void = (): void => {
     genre.forEach(item => {
       item.textContent = "Драма";
     });
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
 
-  const sortArr = (arr) => {
+  const sortArr = (arr): void => {
     arr.sort();
   };
 
