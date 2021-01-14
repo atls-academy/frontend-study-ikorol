@@ -1,5 +1,7 @@
 {
   "name": "@practice/changing-html-via-js",
   "version": "0.0.0",
-  "license": "BSD 3-Clause"
+  "license": "BSD 3-Clause",
+  "main": "dist/index.js",
+  "source": "src/index.ts"
 }
