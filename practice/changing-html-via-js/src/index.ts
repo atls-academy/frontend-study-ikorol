@@ -1,4 +1,4 @@
-const movieDB = {
+const movieDB: { movies: string[] } = {
   movies: [
     "Логан",
     "Лига справедливости",
@@ -8,10 +8,10 @@ const movieDB = {
   ]
 };
 
-const adv = document.querySelectorAll(".promo__adv img"),
-  genre = document.querySelectorAll(".promo__genre"),
-  image = document.querySelector(".promo__bg"),
-  moviesList = document.querySelector(".promo__interactive-list");
+const adv = document.querySelectorAll(".promo__adv img");
+const genre = document.querySelectorAll(".promo__genre");
+const image: any = document.querySelector(".promo__bg");
+const moviesList = document.querySelector(".promo__interactive-list");
 
 adv.forEach( item => {
   item.remove();
@@ -25,7 +25,7 @@ image.style.backgroundImage = "url('../img/bg.jpg')";
 
 moviesList.innerHTML = "";
 movieDB.movies.sort();
-movieDB.movies.forEach( (movie, i) => {
+movieDB.movies.forEach( (movie: string, i: number) => {
   moviesList.innerHTML += `
         <li class="promo__interactive-item">${i + 1} ${movie}
             <div class="delete"></div>

@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const tabsContent = document.querySelectorAll('.tabcontent');
   const tabsParent = document.querySelector('.tabheader__items');
 
-  function hideTabContent() {
+  function hideTabContent(): void {
     tabsContent.forEach(item => {
       item.classList.add('hide');
       item.classList.remove('show', 'fade');
@@ -17,7 +17,7 @@ window.addEventListener('DOMContentLoaded', () => {
     })
   }
 
-  function showTabContent(i = 0) {
+  function showTabContent(i: number = 0): void {
     tabsContent[i].classList.add('show', 'fade');
     tabsContent[i].classList.remove('hide');
     tabs[i].classList.add('tabheader__item_active');
@@ -26,10 +26,14 @@ window.addEventListener('DOMContentLoaded', () => {
   hideTabContent();
   showTabContent();
 
+  function hasClass(element: any, className: string): boolean {
+    return (element.className).indexOf(className) > -1;
+  }
+
   tabsParent.addEventListener('click', (e) => {
     const target = e.target;
 
-    if (target && target.classList.contains('tabheader__item')) {
+    if (target && hasClass(target, 'tabheader__item')) {
       tabs.forEach((item, i) => {
         if (target === item) {
           hideTabContent();
@@ -41,25 +45,25 @@ window.addEventListener('DOMContentLoaded', () => {
 
   //Countdown timer
 
-  const deadline = '2020-12-31';
+  const deadline: string = '2020-12-31';
 
-  function getTimeRemaining(endTime) {
-    const t = Date.parse(endTime) - Date.parse(new Date());
-    const days = Math.floor(t / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((t / (1000 * 60 * 60) %  24));
-    const minutes = Math.floor((t / 1000 / 60)  %  60);
-    const seconds = Math.floor((t / 1000)  %  60);
+  function getTimeRemaining(endTime: string): { total: number, days: number, hours: number, minutes: number, seconds: number } {
+    const t: number = Date.parse(endTime) - Date.parse(new Date().toISOString());
+    const days: number = Math.floor(t / (1000 * 60 * 60 * 24));
+    const hours: number = Math.floor((t / (1000 * 60 * 60) %  24));
+    const minutes: number = Math.floor((t / 1000 / 60)  %  60);
+    const seconds: number = Math.floor((t / 1000)  %  60);
 
     return {
-      'total': t,
-      'days': days,
-      'hours': hours,
-      'minutes': minutes,
-      'seconds': seconds
+      total: t,
+      days: days,
+      hours: hours,
+      minutes: minutes,
+      seconds: seconds
     };
   }
 
-  function getZero(num) {
+  function getZero(num: number): string | number {
     if (num >= 0 && num < 10) {
       return `0${num}`;
     } else {
@@ -67,7 +71,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  function setClock(selector, endTime) {
+  function setClock(selector: any, endTime: string): void {
     const timer = document.querySelector(selector);
     const days = timer.querySelector('#days');
     const hours = timer.querySelector('#hours');
@@ -77,7 +81,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     updateClock();
 
-    function updateClock() {
+    function updateClock(): void {
       const t = getTimeRemaining(endTime);
 
       days.innerHTML = getZero(t.days);
@@ -99,7 +103,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const modalWindow = document.querySelector('.modal');
   const modalClose = document.querySelector('[data-close]');
 
-  function openModalWindow() {
+  function openModalWindow(): void {
     modalWindow.classList.toggle('show');
     document.body.style.overflow = 'hidden';
     clearInterval(modalTimer);
@@ -109,7 +113,7 @@ window.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', openModalWindow);
   });
 
-  function closeModalWindow() {
+  function closeModalWindow(): void {
     modalWindow.classList.toggle('show');
     document.body.style.overflow = '';
   }
@@ -130,7 +134,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const modalTimer = setTimeout(openModalWindow, 15000);
 
-  function showModalByScroll() {
+  function showModalByScroll(): void {
     if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight) {
       openModalWindow();
       window.removeEventListener('scroll', showModalByScroll);
