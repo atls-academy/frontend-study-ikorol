@@ -1,59 +1,59 @@
-let numberOfFilms: number;
+let numberOfFilms: number
 
 function start(): void {
-  numberOfFilms = +prompt( "Сколько фильмов вы уже посмотрели?", "");
+  numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '')
 
-  while (  numberOfFilms === 0 || numberOfFilms == null || isNaN(numberOfFilms)) {
-    numberOfFilms = +prompt( "Сколько фильмов вы уже посмотрели?", "");
+  while (numberOfFilms === 0 || numberOfFilms == null || Number.isNaN(numberOfFilms)) {
+    numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '')
   }
 }
-start();
+start()
 
 const personalMovieDB = {
-  'count': numberOfFilms,
-  'movies': {},
-  'actors': {},
-  'genres': [],
-  'privat': false
-};
+  count: numberOfFilms,
+  movies: {},
+  actors: {},
+  genres: [],
+  privat: false,
+}
 
 function detectPersonalLevel() {
   if (personalMovieDB.count < 10) {
-    alert("Просмотрено довольно мало фильмов");
+    alert('Просмотрено довольно мало фильмов')
   } else if (personalMovieDB.count >= 10 && personalMovieDB.count <= 30) {
-    alert("Вы классический зритель");
+    alert('Вы классический зритель')
   } else if (personalMovieDB.count > 30) {
-    alert("Вы киноман");
+    alert('Вы киноман')
   } else {
-    alert("Произошла ошибка");
+    alert('Произошла ошибка')
   }
 }
-detectPersonalLevel();
+detectPersonalLevel()
 
 function writeYourGenres() {
-  for (let i: number = 0; i < 3; i++ ) {
-    personalMovieDB.genres[ i ] = prompt( `Ваш любимый жанр под номером ${i + 1}`, "");
+  for (let i: number = 0; i < 3; i++) {
+    personalMovieDB.genres[i] = prompt(`Ваш любимый жанр под номером ${i + 1}`, '')
   }
 }
-writeYourGenres();
+writeYourGenres()
 
 function rememberMyFilms() {
   for (let i: number = 0; i < 2; i++) {
-    let lastFilm: string = prompt("Один из последних просмотренных фильмов?", ""),
-        rate: number = +prompt("На сколько оцените его?", "");
+    const lastFilm: string = prompt('Один из последних просмотренных фильмов?', '')
+    const rate: number = +prompt('На сколько оцените его?', '')
 
-    if (lastFilm !== "" && rate !== 0 && lastFilm != null && rate != null && lastFilm.length < 50 ) {
-      personalMovieDB.movies[lastFilm] = rate;
+    if (lastFilm !== '' && rate !== 0 && lastFilm != null && rate != null && lastFilm.length < 50) {
+      personalMovieDB.movies[lastFilm] = rate
     } else {
-      i--;
+      i--
     }
   }
 }
-rememberMyFilms();
+rememberMyFilms()
 
 function showMyDB(status: boolean) {
-  if ( !status ) {
-    console.log( personalMovieDB );
+  if (!status) {
+    console.log(personalMovieDB)
   }
 }
-showMyDB(personalMovieDB.privat);
+showMyDB(personalMovieDB.privat)
