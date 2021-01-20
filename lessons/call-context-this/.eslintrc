@@ -3,6 +3,7 @@
   "rules": {
     "no-alert": 0,
     "no-console": 0,
-    "no-unused-vars": 0
+    "no-unused-vars": 0,
+    "@typescript-eslint/no-unused-vars": 0
   }
 }
