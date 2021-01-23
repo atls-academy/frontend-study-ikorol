@@ -1,5 +1,5 @@
 /** Normal function: this = window, if 'use strict': this = undefined. */
-function showThis(a: number, b: number): void {
+function showThis(a: number, b: number) {
   console.log(this)
   function sum(): number {
     console.log(this)
@@ -14,24 +14,24 @@ showThis(4, 5)
 const obj: { a: number; b: number; sum: () => void } = {
   a: 20,
   b: 15,
-  sum(): void {
+  sum() {
     console.log(this)
   },
 }
 
 /** 'this' in constructors and classes is a new instance of an object. */
-function User(name: string, id: number): void {
+function User(name: string, id: number) {
   this.name = name
   this.id = id
   this.human = true
-  this.hello = function (): void {
+  this.hello = () => {
     console.log(`Hello! ${this.name}`)
   }
 }
 const ivan = new User('Ivan', 23)
 
 /** Manual binding 'this': call, apply, bind. */
-function sayName(surname: string): void {
+function sayName(surname: string) {
   console.log(this)
   console.log(this.name + surname)
 }
@@ -47,7 +47,7 @@ function count(num: number): number {
   return this * num
 }
 
-const double: any = count.bind(2)
+const double = count.bind(2)
 console.log(double(3))
 
 /**
