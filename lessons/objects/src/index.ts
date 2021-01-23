@@ -2,27 +2,29 @@ const personalMovieDB: {
   count: number
   movies: object
   actors: object
-  genres: string[]
+  movieGenres: string[]
   private: boolean
-  start: () => void
-  detectPersonalLevel: () => void
-  writeYourGenres: () => void
-  rememberMyFilms: () => void
-  toggleVisibleMyDB: () => void
-  showMyDB: () => void
+  start
+  detectPersonalLevel
+  writeUserGenres
+  rememberUserFilms
+  toggleVisibleUserDB
+  showMyDB
 } = {
   count: 0,
   movies: {},
   actors: {},
-  genres: [],
+  movieGenres: [],
   private: false,
-  start(): void {
+
+  start() {
     this.count = prompt('Сколько фильмов вы уже посмотрели?', '')
     while (this.count === '' || this.count == null || Number.isNaN(this.count)) {
       this.count = prompt('Сколько фильмов вы уже посмотрели?', '')
     }
   },
-  detectPersonalLevel(): void {
+
+  detectPersonalLevel() {
     if (personalMovieDB.count < 10) {
       alert('Просмотрено довольно мало фильмов')
     } else if (personalMovieDB.count >= 10 && personalMovieDB.count <= 30) {
@@ -33,40 +35,44 @@ const personalMovieDB: {
       alert('Произошла ошибка')
     }
   },
-  writeYourGenres(): void {
+
+  writeUserGenres() {
     for (let i: number = 0; i < 3; i++) {
-      let personalGenre: string = prompt(`Ваш любимый жанр под номером ${i + 1}`, '')
-      while (personalGenre === '' || personalGenre == null) {
-        personalGenre = prompt(`Ваш любимый жанр под номером ${i + 1}`, '')
+      let personalMovieGenre: string = prompt(`Ваш любимый жанр под номером ${i + 1}`, '')
+      while (personalMovieGenre === '' || personalMovieGenre == null) {
+        personalMovieGenre = prompt(`Ваш любимый жанр под номером ${i + 1}`, '')
       }
-      this.genres[i] = personalGenre
+      this.movieGenres[i] = personalMovieGenre
     }
-    this.genres.forEach((item: string, i: number) => {
+    this.movieGenres.forEach((item: string, i: number) => {
       console.log(`Любимый жанр ${i + 1} - это ${item}`)
     })
   },
-  rememberMyFilms(): void {
+
+  rememberUserFilms() {
     for (let i: number = 0; i < 2; i++) {
       const lastFilm: string = prompt('Один из последних просмотренных фильмов?', '')
-      const rate: number = +prompt('На сколько оцените его?', '')
+      const lastFilmRate: number = +prompt('На сколько оцените его?', '')
 
       if (
         lastFilm !== '' &&
-        rate !== 0 &&
+        lastFilmRate !== 0 &&
         lastFilm != null &&
-        rate != null &&
+        lastFilmRate != null &&
         lastFilm.length < 50
       ) {
-        personalMovieDB.movies[lastFilm] = rate
+        personalMovieDB.movies[lastFilm] = lastFilmRate
       } else {
         i--
       }
     }
   },
-  toggleVisibleMyDB(): void {
+
+  toggleVisibleUserDB() {
     this.private = !this.private
   },
-  showMyDB(): void {
+
+  showMyDB() {
     if (!this.private) {
       console.log(personalMovieDB)
     }
@@ -75,7 +81,7 @@ const personalMovieDB: {
 
 personalMovieDB.start()
 personalMovieDB.detectPersonalLevel()
-personalMovieDB.writeYourGenres()
-personalMovieDB.rememberMyFilms()
-personalMovieDB.toggleVisibleMyDB()
+personalMovieDB.writeUserGenres()
+personalMovieDB.rememberUserFilms()
+personalMovieDB.toggleVisibleUserDB()
 personalMovieDB.showMyDB()
