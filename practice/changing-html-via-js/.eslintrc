@@ -1,3 +1,6 @@
 {
-  "extends": "../../.eslintrc.js"
+  "extends": "../../.eslintrc.json",
+  "rules": {
+    "no-param-reassign":0
+  }
 }
