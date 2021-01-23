@@ -8,18 +8,19 @@ document.addEventListener('DOMContentLoaded', () => {
       'Скотт Пилигрим против...',
     ],
   }
-  const adv: any = document.querySelectorAll('.promo__adv img')
-  const genre: any = document.querySelectorAll('.promo__genre')
-  const image: any = document.querySelector('.promo__bg')
-  const moviesList: any = document.querySelector('.promo__interactive-list')
-  const addForm: any = document.querySelector('form.add')
-  const addInput: any = addForm.querySelector('.adding__input')
-  const checkbox: any = addForm.querySelector('[type="checkbox"]')
-  const sortArr = (arr): void => {
+  const advertising = document.querySelectorAll('.promo__adv img')
+  const movieGenre = document.querySelectorAll('.promo__genre')
+  const moviePoster: HTMLElement = document.querySelector('.promo__bg')
+  const newMoviePoster: string = "url('../img/bg.jpg')"
+  const moviesList: HTMLElement = document.querySelector('.promo__interactive-list')
+  const addForm: HTMLFormElement = document.querySelector('form.add')
+  const addFilmInput: HTMLInputElement = addForm.querySelector('.adding__input')
+  const checkbox: HTMLInputElement = addForm.querySelector('[type="checkbox"]')
+  const sortArr = (arr) => {
     arr.sort()
   }
 
-  function createMoviesList(films: string[], parent: any) {
+  function createMoviesList(films: string[], parent: HTMLElement) {
     parent.innerHTML = ''
     sortArr(films)
 
@@ -43,13 +44,13 @@ document.addEventListener('DOMContentLoaded', () => {
   addForm.addEventListener('submit', (e) => {
     e.preventDefault()
 
-    let newFilm: string = addInput.value
-    const favorite: boolean = checkbox.checked
+    let newFilm: string = addFilmInput.value
+    const favoriteFilm: boolean = checkbox.checked
     if (newFilm) {
       if (newFilm.length > 21) {
         newFilm = `${newFilm.substring(0, 22)}...`
       }
-      if (favorite) {
+      if (favoriteFilm) {
         console.log('Добавляем любимый фильм')
       }
       movieDB.movies.push(newFilm)
@@ -62,21 +63,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   movieDB.movies.sort()
 
-  const deleteAdv = (arr) => {
+  const deleteAdvertising = (arr) => {
     arr.forEach((item) => {
       item.remove()
     })
   }
 
-  const makeChanges: () => void = (): void => {
-    genre.forEach((item) => {
+  const makeChanges = () => {
+    movieGenre.forEach((item) => {
       item.textContent = 'Драма'
     })
-
-    image.style.backgroundImage = "url('../img/bg.jpg')"
+    moviePoster.style.backgroundImage = newMoviePoster
   }
 
-  deleteAdv(adv)
+  deleteAdvertising(advertising)
   makeChanges()
   createMoviesList(movieDB.movies, moviesList)
 })
