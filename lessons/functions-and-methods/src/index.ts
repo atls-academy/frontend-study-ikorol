@@ -33,14 +33,14 @@ function detectPersonalLevel() {
 detectPersonalLevel()
 
 function writeUserGenres() {
-  for (let i: number = 0; i < 3; i++) {
+  for (let i: number = 0; i < 3; i += 1) {
     personalMovieDB.movieGenres[i] = prompt(`Ваш любимый жанр под номером ${i + 1}`, '')
   }
 }
 writeUserGenres()
 
 function rememberUserFilms() {
-  for (let i: number = 0; i < 2; i++) {
+  for (let i: number = 0; i < 2; i += 1) {
     const lastFilm: string = prompt('Один из последних просмотренных фильмов?', '')
     const lastFilmRate: number = +prompt('На сколько оцените его?', '')
 

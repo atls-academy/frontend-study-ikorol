@@ -88,14 +88,14 @@ window.addEventListener('DOMContentLoaded', () => {
     updateClock()
 
     function updateClock() {
-      const t = getTimeRemaining(endTime)
+      const clock = getTimeRemaining(endTime)
 
-      days.innerHTML = getZero(t.days)
-      hours.innerHTML = getZero(t.hours)
-      minutes.innerHTML = getZero(t.minutes)
-      seconds.innerHTML = getZero(t.seconds)
+      days.innerHTML = getZero(clock.days)
+      hours.innerHTML = getZero(clock.hours)
+      minutes.innerHTML = getZero(clock.minutes)
+      seconds.innerHTML = getZero(clock.seconds)
 
-      if (t.total <= 0) {
+      if (clock.total <= 0) {
         clearInterval(timeInterval)
       }
     }

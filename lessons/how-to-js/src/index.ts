@@ -4,14 +4,14 @@ const personalMovieDB: {
   count: number
   movies: object
   actors: object
-  movieGenres: string[]
-  privat: boolean
+  genres: string[]
+  private: boolean
 } = {
   count: numberOfFilms,
   movies: {},
   actors: {},
-  movieGenres: [],
-  privat: false,
+  genres: [],
+  private: false,
 }
 
 const firstFilm: string = prompt('Один из последних просмотренных фильмов?', '')

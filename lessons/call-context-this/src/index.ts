@@ -1,9 +1,9 @@
 /** Normal function: this = window, if 'use strict': this = undefined. */
-function showThis(a: number, b: number) {
+function showThis(argumentOne: number, argumentTwo: number) {
   console.log(this)
   function sum(): number {
     console.log(this)
-    return a + b
+    return argumentOne + argumentTwo
   }
 
   console.log(sum())
@@ -11,9 +11,9 @@ function showThis(a: number, b: number) {
 showThis(4, 5)
 
 /** The context of object methods is the object itself. */
-const obj: { a: number; b: number; sum: () => void } = {
-  a: 20,
-  b: 15,
+const obj: { argumentOne: number; argumentTwo: number; sum: () => void } = {
+  argumentOne: 20,
+  argumentTwo: 15,
   sum() {
     console.log(this)
   },
