@@ -70,19 +70,19 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  function getZero(num: number): string | number {
+  function getZero(num: number): string {
     if (num >= 0 && num < 10) {
       return `0${num}`
     }
-    return num
+    return `${num}`
   }
 
-  function setClock(selector: any, endTime: string) {
-    const timer = document.querySelector(selector)
-    const days = timer.querySelector('#days')
-    const hours = timer.querySelector('#hours')
-    const minutes = timer.querySelector('#minutes')
-    const seconds = timer.querySelector('#seconds')
+  function setClock(selector: string, endTime: string) {
+    const timer: HTMLElement = document.querySelector(selector)
+    const days: HTMLElement = timer.querySelector('#days')
+    const hours: HTMLElement = timer.querySelector('#hours')
+    const minutes: HTMLElement = timer.querySelector('#minutes')
+    const seconds: HTMLElement = timer.querySelector('#seconds')
     const timeInterval = setInterval(updateClock, 1000)
 
     updateClock()

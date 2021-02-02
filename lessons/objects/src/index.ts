@@ -4,7 +4,7 @@ const personalMovieDB: {
   actors: object
   genres: string[]
   private: boolean
-  start
+  watchedFilmsNum
   detectPersonalLevel
   writeUserGenres
   rememberUserFilms
@@ -17,7 +17,7 @@ const personalMovieDB: {
   genres: [],
   private: false,
 
-  start() {
+  watchedFilmsNum() {
     this.count = prompt('Сколько фильмов вы уже посмотрели?', '')
     while (this.count === '' || this.count == null || Number.isNaN(this.count)) {
       this.count = prompt('Сколько фильмов вы уже посмотрели?', '')
@@ -79,7 +79,7 @@ const personalMovieDB: {
   },
 }
 
-personalMovieDB.start()
+personalMovieDB.watchedFilmsNum()
 personalMovieDB.detectPersonalLevel()
 personalMovieDB.writeUserGenres()
 personalMovieDB.rememberUserFilms()

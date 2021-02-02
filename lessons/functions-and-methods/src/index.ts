@@ -13,8 +13,8 @@ const personalMovieDB = {
   count: numberOfFilms,
   movies: {},
   actors: {},
-  movieGenres: [],
-  privat: false,
+  genres: [],
+  private: false,
 }
 const minFilmsNumber: number = 10
 const maxFilmsNumber: number = 30
@@ -34,7 +34,7 @@ detectPersonalLevel()
 
 function writeUserGenres() {
   for (let i: number = 0; i < 3; i += 1) {
-    personalMovieDB.movieGenres[i] = prompt(`Ваш любимый жанр под номером ${i + 1}`, '')
+    personalMovieDB.genres[i] = prompt(`Ваш любимый жанр под номером ${i + 1}`, '')
   }
 }
 writeUserGenres()
@@ -64,4 +64,4 @@ function showUserDB(status: boolean) {
     console.log(personalMovieDB)
   }
 }
-showUserDB(personalMovieDB.privat)
+showUserDB(personalMovieDB.private)

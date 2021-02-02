@@ -3,7 +3,7 @@ const movieDB: { movies: string[] } = {
 }
 
 const advertising = document.querySelectorAll('.promo__adv img')
-const movieGenre = document.querySelectorAll('.promo__genre')
+const genre = document.querySelectorAll('.promo__genre')
 const moviePoster: HTMLElement = document.querySelector('.promo__bg')
 const moviesList: HTMLElement = document.querySelector('.promo__interactive-list')
 const newMoviePoster: string = "url('../img/bg.jpg')"
@@ -12,7 +12,7 @@ advertising.forEach((item) => {
   item.remove()
 })
 
-movieGenre.forEach((item) => {
+genre.forEach((item) => {
   item.textContent = 'Драма'
 })
 

@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const advertising = document.querySelectorAll('.promo__adv img')
   const movieGenre = document.querySelectorAll('.promo__genre')
   const moviePoster: HTMLElement = document.querySelector('.promo__bg')
-  const newMoviePoster: string = "url('../img/bg.jpg')"
   const moviesList: HTMLElement = document.querySelector('.promo__interactive-list')
   const addForm: HTMLFormElement = document.querySelector('form.add')
   const addFilmInput: HTMLInputElement = addForm.querySelector('.adding__input')
@@ -73,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     movieGenre.forEach((item) => {
       item.textContent = 'Драма'
     })
-    moviePoster.style.backgroundImage = newMoviePoster
+    moviePoster.style.backgroundImage = "url('../img/bg.jpg')"
   }
 
   deleteAdvertising(advertising)
