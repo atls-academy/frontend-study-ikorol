@@ -1,6 +1,6 @@
 let numberOfFilms: number
 
-function start(): void {
+function start() {
   numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '')
 
   while (numberOfFilms === 0 || numberOfFilms == null || Number.isNaN(numberOfFilms)) {
@@ -14,15 +14,17 @@ const personalMovieDB = {
   movies: {},
   actors: {},
   genres: [],
-  privat: false,
+  private: false,
 }
+const minFilmsNumber: number = 10
+const maxFilmsNumber: number = 30
 
 function detectPersonalLevel() {
-  if (personalMovieDB.count < 10) {
+  if (personalMovieDB.count < minFilmsNumber) {
     alert('Просмотрено довольно мало фильмов')
-  } else if (personalMovieDB.count >= 10 && personalMovieDB.count <= 30) {
+  } else if (personalMovieDB.count >= minFilmsNumber && personalMovieDB.count <= maxFilmsNumber) {
     alert('Вы классический зритель')
-  } else if (personalMovieDB.count > 30) {
+  } else if (personalMovieDB.count > maxFilmsNumber) {
     alert('Вы киноман')
   } else {
     alert('Произошла ошибка')
@@ -30,30 +32,36 @@ function detectPersonalLevel() {
 }
 detectPersonalLevel()
 
-function writeYourGenres() {
-  for (let i: number = 0; i < 3; i++) {
+function writeUserGenres() {
+  for (let i: number = 0; i < 3; i += 1) {
     personalMovieDB.genres[i] = prompt(`Ваш любимый жанр под номером ${i + 1}`, '')
   }
 }
-writeYourGenres()
+writeUserGenres()
 
-function rememberMyFilms() {
-  for (let i: number = 0; i < 2; i++) {
+function rememberUserFilms() {
+  for (let i: number = 0; i < 2; i += 1) {
     const lastFilm: string = prompt('Один из последних просмотренных фильмов?', '')
-    const rate: number = +prompt('На сколько оцените его?', '')
+    const lastFilmRate: number = +prompt('На сколько оцените его?', '')
 
-    if (lastFilm !== '' && rate !== 0 && lastFilm != null && rate != null && lastFilm.length < 50) {
-      personalMovieDB.movies[lastFilm] = rate
+    if (
+      lastFilm !== '' &&
+      lastFilmRate !== 0 &&
+      lastFilm != null &&
+      lastFilmRate != null &&
+      lastFilm.length < 50
+    ) {
+      personalMovieDB.movies[lastFilm] = lastFilmRate
     } else {
-      i--
+      i -= 1
     }
   }
 }
-rememberMyFilms()
+rememberUserFilms()
 
-function showMyDB(status: boolean) {
+function showUserDB(status: boolean) {
   if (!status) {
     console.log(personalMovieDB)
   }
 }
-showMyDB(personalMovieDB.privat)
+showUserDB(personalMovieDB.private)

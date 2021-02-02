@@ -2,12 +2,13 @@ const movieDB: { movies: string[] } = {
   movies: ['Логан', 'Лига справедливости', 'Ла-ла лэнд', 'Одержимость', 'Скотт Пилигрим против...'],
 }
 
-const adv = document.querySelectorAll('.promo__adv img')
+const advertising = document.querySelectorAll('.promo__adv img')
 const genre = document.querySelectorAll('.promo__genre')
-const image: any = document.querySelector('.promo__bg')
-const moviesList = document.querySelector('.promo__interactive-list')
+const moviePoster: HTMLElement = document.querySelector('.promo__bg')
+const moviesList: HTMLElement = document.querySelector('.promo__interactive-list')
+const newMoviePoster: string = "url('../img/bg.jpg')"
 
-adv.forEach((item) => {
+advertising.forEach((item) => {
   item.remove()
 })
 
@@ -15,7 +16,7 @@ genre.forEach((item) => {
   item.textContent = 'Драма'
 })
 
-image.style.backgroundImage = "url('../img/bg.jpg')"
+moviePoster.style.backgroundImage = newMoviePoster
 
 moviesList.innerHTML = ''
 movieDB.movies.sort()

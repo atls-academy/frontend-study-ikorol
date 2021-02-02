@@ -1,66 +1,43 @@
 const numberOfFilms: number = +prompt('Сколько фильмов вы уже посмотрели?', '')
-
+const minFilmsNumber: number = 10
+const maxFilmsNumber: number = 30
 const personalMovieDB: {
   count: number
   movies: object
   actors: object
   genres: string[]
-  privat: boolean
+  private: boolean
 } = {
   count: numberOfFilms,
   movies: {},
   actors: {},
   genres: [],
-  privat: false,
+  private: false,
 }
 
-if (personalMovieDB.count < 10) {
+if (personalMovieDB.count < minFilmsNumber) {
   alert('Просмотрено довольно мало фильмов')
-} else if (personalMovieDB.count >= 10 && personalMovieDB.count <= 30) {
+} else if (personalMovieDB.count >= minFilmsNumber && personalMovieDB.count <= maxFilmsNumber) {
   alert('Вы классический зритель')
-} else if (personalMovieDB.count > 30) {
+} else if (personalMovieDB.count > maxFilmsNumber) {
   alert('Вы киноман')
 } else {
   alert('Произошла ошибка')
 }
 
-// method 1
-for (let i: number = 0; i < 2; i++) {
+for (let i: number = 0; i < 2; i += 1) {
   const lastFilm: string = prompt('Один из последних просмотренных фильмов?', '')
-  const rate: number = +prompt('На сколько оцените его?', '')
+  const lastFilmRate: number = +prompt('На сколько оцените его?', '')
 
-  if (lastFilm !== '' && rate !== 0 && lastFilm != null && rate != null && lastFilm.length < 50) {
-    personalMovieDB.movies[lastFilm] = rate
+  if (
+    lastFilm !== '' &&
+    lastFilm != null &&
+    lastFilm.length < 50 &&
+    lastFilmRate !== 0 &&
+    lastFilmRate != null
+  ) {
+    personalMovieDB.movies[lastFilm] = lastFilmRate
   } else {
-    i--
+    i -= 1
   }
 }
-
-// method 2
-let a: number = 0
-while (a < 2) {
-  const lastFilm: string = prompt('Один из последних просмотренных фильмов?', '')
-  const rate: number = +prompt('На сколько оцените его?', '')
-  a++
-
-  if (lastFilm !== '' && rate !== 0 && lastFilm != null && rate != null && lastFilm.length < 50) {
-    personalMovieDB.movies[lastFilm] = rate
-  } else {
-    a--
-  }
-}
-
-// method 3
-let b: number = 0
-do {
-  const lastFilm: string = prompt('Один из последних просмотренных фильмов?', '')
-  const rate: number = +prompt('На сколько оцените его?', '')
-  b++
-  if (lastFilm !== '' && rate !== 0 && lastFilm != null && rate != null && lastFilm.length < 50) {
-    personalMovieDB.movies[lastFilm] = rate
-  } else {
-    b--
-  }
-} while (b < 2)
-
-console.log(personalMovieDB)

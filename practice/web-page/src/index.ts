@@ -3,9 +3,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const tabs = document.querySelectorAll('.tabheader__item')
   const tabsContent = document.querySelectorAll('.tabcontent')
-  const tabsParent = document.querySelector('.tabheader__items')
+  const tabsParent: HTMLElement = document.querySelector('.tabheader__items')
 
-  function hideTabContent(): void {
+  function hideTabContent() {
     tabsContent.forEach((item) => {
       item.classList.add('hide')
       item.classList.remove('show', 'fade')
@@ -16,7 +16,7 @@ window.addEventListener('DOMContentLoaded', () => {
     })
   }
 
-  function showTabContent(i: number = 0): void {
+  function showTabContent(i: number = 0) {
     tabsContent[i].classList.add('show', 'fade')
     tabsContent[i].classList.remove('hide')
     tabs[i].classList.add('tabheader__item_active')
@@ -48,15 +48,21 @@ window.addEventListener('DOMContentLoaded', () => {
 
   function getTimeRemaining(
     endTime: string
-  ): { total: number; days: number; hours: number; minutes: number; seconds: number } {
-    const t: number = Date.parse(endTime) - Date.parse(new Date().toISOString())
-    const days: number = Math.floor(t / (1000 * 60 * 60 * 24))
-    const hours: number = Math.floor((t / (1000 * 60 * 60)) % 24)
-    const minutes: number = Math.floor((t / 1000 / 60) % 60)
-    const seconds: number = Math.floor((t / 1000) % 60)
+  ): {
+    total: number
+    days: number
+    hours: number
+    minutes: number
+    seconds: number
+  } {
+    const timeLeft: number = Date.parse(endTime) - Date.parse(new Date().toISOString())
+    const days: number = Math.floor(timeLeft / (1000 * 60 * 60 * 24))
+    const hours: number = Math.floor((timeLeft / (1000 * 60 * 60)) % 24)
+    const minutes: number = Math.floor((timeLeft / 1000 / 60) % 60)
+    const seconds: number = Math.floor((timeLeft / 1000) % 60)
 
     return {
-      total: t,
+      total: timeLeft,
       days,
       hours,
       minutes,
@@ -64,32 +70,32 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  function getZero(num: number): string | number {
+  function getZero(num: number): string {
     if (num >= 0 && num < 10) {
       return `0${num}`
     }
-    return num
+    return `${num}`
   }
 
-  function setClock(selector: any, endTime: string): void {
-    const timer = document.querySelector(selector)
-    const days = timer.querySelector('#days')
-    const hours = timer.querySelector('#hours')
-    const minutes = timer.querySelector('#minutes')
-    const seconds = timer.querySelector('#seconds')
+  function setClock(selector: string, endTime: string) {
+    const timer: HTMLElement = document.querySelector(selector)
+    const days: HTMLElement = timer.querySelector('#days')
+    const hours: HTMLElement = timer.querySelector('#hours')
+    const minutes: HTMLElement = timer.querySelector('#minutes')
+    const seconds: HTMLElement = timer.querySelector('#seconds')
     const timeInterval = setInterval(updateClock, 1000)
 
     updateClock()
 
-    function updateClock(): void {
-      const t = getTimeRemaining(endTime)
+    function updateClock() {
+      const clock = getTimeRemaining(endTime)
 
-      days.innerHTML = getZero(t.days)
-      hours.innerHTML = getZero(t.hours)
-      minutes.innerHTML = getZero(t.minutes)
-      seconds.innerHTML = getZero(t.seconds)
+      days.innerHTML = getZero(clock.days)
+      hours.innerHTML = getZero(clock.hours)
+      minutes.innerHTML = getZero(clock.minutes)
+      seconds.innerHTML = getZero(clock.seconds)
 
-      if (t.total <= 0) {
+      if (clock.total <= 0) {
         clearInterval(timeInterval)
       }
     }
@@ -103,7 +109,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const modalWindow = document.querySelector('.modal')
   const modalClose = document.querySelector('[data-close]')
 
-  function openModalWindow(): void {
+  function openModalWindow() {
     modalWindow.classList.toggle('show')
     document.body.style.overflow = 'hidden'
     clearInterval(modalTimer)
@@ -113,7 +119,7 @@ window.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', openModalWindow)
   })
 
-  function closeModalWindow(): void {
+  function closeModalWindow() {
     modalWindow.classList.toggle('show')
     document.body.style.overflow = ''
   }
@@ -134,7 +140,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const modalTimer = setTimeout(openModalWindow, 15000)
 
-  function showModalByScroll(): void {
+  function showModalByScroll() {
     if (
       window.pageYOffset + document.documentElement.clientHeight >=
       document.documentElement.scrollHeight
