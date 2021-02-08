@@ -107,7 +107,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const modalTrigger = document.querySelectorAll('[data-modal]')
   const modalWindow = document.querySelector('.modal')
-  const modalClose = document.querySelector('[data-close]')
 
   function openModalWindow() {
     modalWindow.classList.toggle('show')
@@ -124,10 +123,9 @@ window.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = ''
   }
 
-  modalClose.addEventListener('click', closeModalWindow)
-
   modalWindow.addEventListener('click', (e) => {
-    if (e.target === modalWindow) {
+    const el = e.target as HTMLInputElement
+    if (e.target === modalWindow || el.getAttribute('data-close') === '') {
       closeModalWindow()
     }
   })
@@ -255,4 +253,77 @@ window.addEventListener('DOMContentLoaded', () => {
     '.menu .container',
     'menu__item'
   ).render()
+
+  /** Forms */
+
+  const forms = document.querySelectorAll('form')
+  const answerMessage: { loading: string; success: string; error: string } = {
+    loading: '../src/assets/img/form/spinner.svg',
+    success: 'Спасибо, скоро мы с Вами свяжемся',
+    error: 'Что-то пошло не так...',
+  }
+
+  forms.forEach((item: HTMLFormElement) => {
+    postFormData(item)
+  })
+
+  function postFormData(form: HTMLFormElement) {
+    form.addEventListener('submit', (event) => {
+      event.preventDefault()
+
+      const statusMessage = document.createElement('img')
+
+      statusMessage.src = answerMessage.loading
+      statusMessage.style.cssText = `
+        display: block;
+        margin: auto;
+      `
+      form.append(statusMessage)
+
+      const request = new XMLHttpRequest()
+      request.open('POST', 'https://jsonplaceholder.typicode.com/users')
+      request.setRequestHeader('Content-type', 'application/json')
+
+      const formData: FormData = new FormData(form)
+
+      const inputsData: Object = {}
+      formData.forEach((value, key) => {
+        inputsData[key] = value
+      })
+      const changeToJson: string | FormData = JSON.stringify(inputsData)
+      request.send(changeToJson)
+
+      request.addEventListener('load', () => {
+        if (request.status === 201) {
+          showThanksModal(answerMessage.success)
+          form.reset()
+          statusMessage.remove()
+        } else {
+          showThanksModal(answerMessage.error)
+        }
+      })
+    })
+  }
+  function showThanksModal(messageValue: string) {
+    const previousModalDialog: HTMLElement = document.querySelector('.modal__dialog')
+
+    previousModalDialog.classList.add('hide')
+    openModalWindow()
+
+    const thanksModal: HTMLElement = document.createElement('div')
+    thanksModal.classList.add('modal__dialog')
+    thanksModal.innerHTML = `
+      <div class="modal__content">
+        <div class="modal__close" data-close>x<div/>
+        <div class="modal__title">${messageValue}<div/>
+      </div> 
+    `
+    document.querySelector('.modal').append(thanksModal)
+    setTimeout(() => {
+      thanksModal.remove()
+      previousModalDialog.classList.add('show')
+      previousModalDialog.classList.remove('hide')
+      closeModalWindow()
+    }, 4000)
+  }
 })
