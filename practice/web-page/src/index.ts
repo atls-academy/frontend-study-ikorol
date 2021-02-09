@@ -125,7 +125,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   modalWindow.addEventListener('click', (e) => {
     const el = e.target as HTMLInputElement
-    if (e.target === modalWindow || el.getAttribute('data-close') === '') {
+    if (el === modalWindow || el.getAttribute('data-close') === '') {
       closeModalWindow()
     }
   })
