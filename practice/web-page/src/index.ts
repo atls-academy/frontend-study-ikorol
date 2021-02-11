@@ -263,9 +263,7 @@ window.addEventListener('DOMContentLoaded', () => {
     error: 'Что-то пошло не так...',
   }
 
-  forms.forEach((item: HTMLFormElement) => {
-    postFormData(item)
-  })
+  forms.forEach((item: HTMLFormElement) => postFormData(item))
 
   function postFormData(form: HTMLFormElement) {
     form.addEventListener('submit', (event) => {
@@ -279,29 +277,31 @@ window.addEventListener('DOMContentLoaded', () => {
         margin: auto;
       `
       form.append(statusMessage)
-
-      const request = new XMLHttpRequest()
-      request.open('POST', 'https://jsonplaceholder.typicode.com/users')
-      request.setRequestHeader('Content-type', 'application/json')
-
       const formData: FormData = new FormData(form)
 
       const inputsData: Object = {}
       formData.forEach((value, key) => {
         inputsData[key] = value
       })
-      const changeToJson: string | FormData = JSON.stringify(inputsData)
-      request.send(changeToJson)
 
-      request.addEventListener('load', () => {
-        if (request.status === 201) {
-          showThanksModal(answerMessage.success)
-          form.reset()
-          statusMessage.remove()
-        } else {
-          showThanksModal(answerMessage.error)
-        }
+      fetch('https://jsonplaceholder.typicode.com/users', {
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json',
+        },
+        body: JSON.stringify(inputsData),
       })
+        .then((data) => data.text())
+        .then(() => {
+          showThanksModal(answerMessage.success)
+          statusMessage.remove()
+        })
+        .catch(() => {
+          showThanksModal(answerMessage.error)
+        })
+        .finally(() => {
+          form.reset()
+        })
     })
   }
   function showThanksModal(messageValue: string) {
