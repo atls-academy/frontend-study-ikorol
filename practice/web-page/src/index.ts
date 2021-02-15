@@ -153,7 +153,7 @@ window.addEventListener('DOMContentLoaded', () => {
   /** Use classes for menu cards */
 
   class MenuCard {
-    img: string
+    imgSrc: string
 
     alt: string
 
@@ -172,7 +172,7 @@ window.addEventListener('DOMContentLoaded', () => {
     element: string
 
     constructor(
-      img: string,
+      imgSrc: string,
       alt: string,
       title: string,
       description: string,
@@ -180,7 +180,7 @@ window.addEventListener('DOMContentLoaded', () => {
       parentSelector: string,
       ...classes: string[]
     ) {
-      this.img = img
+      this.imgSrc = imgSrc
       this.alt = alt
       this.title = title
       this.description = description
@@ -206,7 +206,7 @@ window.addEventListener('DOMContentLoaded', () => {
       }
 
       element.innerHTML = `
-          <img src=${this.img} alt=${this.alt}>
+          <img src=${this.imgSrc} alt=${this.alt}>
           <h3 class="menu__item-subtitle">${this.title}</h3>
           <div class="menu__item-descr">${this.description}</div>
           <div class="menu__item-divider"></div>
@@ -227,9 +227,9 @@ window.addEventListener('DOMContentLoaded', () => {
     return result.json()
   }
 
-  getResources('http://localhost:3000/menu').then((data) => {
-    data.forEach(({ img, alt, title, description, price }) => {
-      new MenuCard(img, alt, title, description, price, '.menu .container').render()
+  getResources('https://6027afc0dd4afd001754a9b0.mockapi.io/api/menu/').then((data) => {
+    data.forEach(({ imgSrc, alt, title, description, price }) => {
+      new MenuCard(imgSrc, alt, title, description, price, '.menu .container').render()
     })
   })
 
@@ -271,7 +271,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
       const changeToJson = JSON.stringify(Object.fromEntries(formData.entries()))
 
-      postData('http://localhost:3000/requests/', changeToJson)
+      postData('https://6027afc0dd4afd001754a9b0.mockapi.io/api/users', changeToJson)
         .then(() => {
           showThanksModal(answerMessage.success)
           statusMessage.remove()
