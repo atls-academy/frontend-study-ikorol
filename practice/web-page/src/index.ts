@@ -326,13 +326,16 @@ window.addEventListener('DOMContentLoaded', () => {
       totalSlides.textContent = slides.length.toString()
     }
   }
+
   function showSlides(index: number) {
     if (index > slides.length) {
       slideIndex = 1
     }
+
     if (index < 1) {
       slideIndex = slides.length
     }
+
     slides.forEach((item) => (item.style.display = 'none'))
     slides[slideIndex - 1].style.display = 'block'
 
