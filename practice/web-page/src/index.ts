@@ -208,7 +208,7 @@ window.addEventListener('DOMContentLoaded', () => {
       element.innerHTML = `
           <img src=${this.imgSrc} alt=${this.alt}>
           <h3 class="menu__item-subtitle">${this.title}</h3>
-          <div class="menu__item-descr">${this.description}</div>
+          <div class="menu__item-description">${this.description}</div>
           <div class="menu__item-divider"></div>
           <div class="menu__item-price">
             <div class="menu__item-cost">Цена:</div>
@@ -306,4 +306,55 @@ window.addEventListener('DOMContentLoaded', () => {
       closeModalWindow()
     }, 4000)
   }
+
+  /** Slider */
+
+  const slides: NodeListOf<HTMLElement> = document.querySelectorAll('.offer__slide')
+  const previousSlide: HTMLElement = document.querySelector('.offer__slider-prev')
+  const nextSlide: HTMLElement = document.querySelector('.offer__slider-next')
+  const totalSlides: HTMLElement = document.querySelector('#total')
+  const currentSlide: HTMLElement = document.querySelector('#current')
+  let slideIndex: number = 1
+
+  showSlides(slideIndex)
+  slideCounter()
+
+  function slideCounter() {
+    if (slides.length < 10) {
+      totalSlides.textContent = `0${slides.length}`
+    } else {
+      totalSlides.textContent = slides.length.toString()
+    }
+  }
+
+  function showSlides(index: number) {
+    if (index > slides.length) {
+      slideIndex = 1
+    }
+
+    if (index < 1) {
+      slideIndex = slides.length
+    }
+
+    slides.forEach((item) => (item.style.display = 'none'))
+    slides[slideIndex - 1].style.display = 'block'
+
+    if (slides.length < 10) {
+      currentSlide.textContent = `0${slideIndex}`
+    } else {
+      currentSlide.textContent = slideIndex.toString()
+    }
+  }
+
+  function switchSlide(num: number) {
+    showSlides((slideIndex += num))
+  }
+
+  previousSlide.addEventListener('click', () => {
+    switchSlide(-1)
+  })
+
+  nextSlide.addEventListener('click', () => {
+    switchSlide(1)
+  })
 })
