@@ -208,7 +208,7 @@ window.addEventListener('DOMContentLoaded', () => {
       element.innerHTML = `
           <img src=${this.imgSrc} alt=${this.alt}>
           <h3 class="menu__item-subtitle">${this.title}</h3>
-          <div class="menu__item-descry">${this.description}</div>
+          <div class="menu__item-description">${this.description}</div>
           <div class="menu__item-divider"></div>
           <div class="menu__item-price">
             <div class="menu__item-cost">Цена:</div>

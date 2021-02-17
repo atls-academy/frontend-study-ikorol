@@ -191,7 +191,7 @@ a {
   object-fit: cover
 }
 
-.tabcontent__descry {
+.tabcontent__description {
   position: absolute;
   top: 300px;
   right: -177px;
@@ -260,7 +260,7 @@ a {
   width: 580px
 }
 
-.offer__descry {
+.offer__description {
   font-size: 18px;
   margin-top: 30px;
   font-weight: 300;
@@ -493,7 +493,7 @@ a {
   margin-top: 20px
 }
 
-.menu__item-descry {
+.menu__item-description {
   margin-top: 20px;
   padding: 0 20px
 }
@@ -572,14 +572,14 @@ a {
   width: 50%
 }
 
-.promotion__descry {
+.promotion__description {
   margin-top: 40px;
   font-size: 20px;
   line-height: 24px;
   font-weight: 300
 }
 
-.promotion__descry span {
+.promotion__description span {
   font-weight: 700;
   font-size: 26px
 }
