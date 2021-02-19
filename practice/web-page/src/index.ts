@@ -362,7 +362,7 @@ window.addEventListener('DOMContentLoaded', () => {
     for (let i = 0; i < slides.length; i += 1) {
       const sliderDot: HTMLElement = document.createElement('li')
 
-      sliderDot.classList.add('dot')
+      sliderDot.classList.add('sliderDot')
       sliderDot.setAttribute('data-slide-to', (i + 1).toString())
 
       if (i === 0) {

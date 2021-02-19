@@ -744,7 +744,7 @@ a {
   list-style: none;
 }
 
-.dot {
+.sliderDot {
   box-sizing: content-box;
   flex: 0 1 auto;
   width: 30px;
