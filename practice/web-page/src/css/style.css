@@ -731,7 +731,7 @@ a {
   from{opacity: 0.1;} to {opacity: 1;}
 }
 
-.carousel-indicators {
+.sliderIndicators {
   position: absolute;
   right: 0;
   bottom: 0;

@@ -325,7 +325,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   slider.style.position = 'relative'
 
-  sliderIndicators.classList.add('carousel-indicators')
+  sliderIndicators.classList.add('sliderIndicators')
   slider.append(sliderIndicators)
 
   function slideCounter() {
