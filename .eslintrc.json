@@ -1,11 +1,14 @@
 {
+    "root": true,
     "parser": "@typescript-eslint/parser",
     "plugins": [
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "eslint-plugin-react"
     ],
     "extends": [
         "airbnb-base",
-        "plugin:prettier/recommended"
+        "plugin:prettier/recommended",
+        "prettier/react"
     ],
     "env": {
         "node": false,
@@ -30,6 +33,11 @@
         "@typescript-eslint/no-useless-constructor": "error",
         "no-empty-function": "off",
         "@typescript-eslint/no-empty-function": "error",
-        "@typescript-eslint/indent": 0
+        "@typescript-eslint/indent": 0,
+        "jsx-a11y/html-has-lang": 0,
+        "react/jsx-props-no-spreading": 0,
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".tsx"] }],
+        "react/prop-types": 0,
+        "react/no-danger": 0
     }
 }
