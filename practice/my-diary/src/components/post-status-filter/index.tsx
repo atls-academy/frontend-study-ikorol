@@ -1,3 +1,3 @@
-import PostStatusFilter from './Post-status-filter'
+import PostStatusFilter from './PostStatusFilter'
 
 export default PostStatusFilter

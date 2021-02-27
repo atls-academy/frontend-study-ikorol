@@ -1,3 +1,3 @@
-import PostListItem from './Post-list-item'
+import PostListItem from './PostListItem'
 
 export default PostListItem

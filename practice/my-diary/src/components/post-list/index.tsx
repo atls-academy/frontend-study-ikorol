@@ -1,3 +1,3 @@
-import PostList from './Post-list'
+import PostList from './PostList'
 
 export default PostList

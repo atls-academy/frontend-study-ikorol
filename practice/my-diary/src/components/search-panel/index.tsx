@@ -1,3 +1,3 @@
-import SearchPanel from './Search-panel'
+import SearchPanel from './SearchPanel'
 
 export default SearchPanel

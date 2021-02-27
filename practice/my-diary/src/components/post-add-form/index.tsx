@@ -1,3 +1,3 @@
-import PostAddForm from './Post-add-form'
+import PostAddForm from './PostAddForm'
 
 export default PostAddForm
