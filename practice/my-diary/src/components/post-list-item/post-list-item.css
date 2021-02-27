@@ -10,16 +10,20 @@
   border: none;
   cursor: pointer;
 }
+
 .app-list-item button:focus {
     box-shadow: none;
     outline: none;
 }
+
 .app-list-item .btn-star {
     color: #FFD700;
 }
+
 .app-list-item .btn-trash {
     color: red;
 }
+
 .app-list-item .fa-heart {
     width: 35px;
     height: 35px;

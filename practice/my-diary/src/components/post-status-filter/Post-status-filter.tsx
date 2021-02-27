@@ -1,5 +1,3 @@
-import './post-status-filter.css'
-
 import React from 'react'
 
 const PostStatusFilter = () => {
