@@ -6,7 +6,7 @@
   },
   "settings": {
     "import/resolver": {
-      "typescript": "./src/**/*"
+      "typescript": "./**/*"
     }
   }
 }

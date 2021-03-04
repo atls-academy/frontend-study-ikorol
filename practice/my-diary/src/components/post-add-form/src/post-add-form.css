@@ -1,5 +1,5 @@
 .bottom-panel {
-  margin-top: 20px;
+  justify-content: space-between;
 }
 
 .bottom-panel .new-post-label {

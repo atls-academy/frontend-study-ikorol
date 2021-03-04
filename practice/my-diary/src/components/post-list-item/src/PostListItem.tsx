@@ -2,17 +2,16 @@ import './post-list-item.css'
 
 import React from 'react'
 
+import StarButton from '../../star-button'
+import TrashButton from '../../trash-button'
+
 const PostListItem = (props: any) => {
   return (
     <li className="app-list-item d-flex justify-content-between">
       <span className="app-list-item-label">{props.label}</span>
       <div className="d-flex justify-content-center align-items-center">
-        <button className="btn-star btn-sm" type="button">
-          <i className="fa fa-star"></i>
-        </button>
-        <button className="btn-trash btn-sm" type="button">
-          <i className="fa fa-trash-o"></i>
-        </button>
+        <StarButton />
+        <TrashButton />
         <i className="fa fa-heart"></i>
       </div>
     </li>
