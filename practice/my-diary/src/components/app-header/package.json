@@ -1,6 +1,0 @@
-{
-  "name": "@components/app-header",
-  "version": "0.0.0",
-  "license": "MIT",
-  "main": "src/index.tsx"
-}
