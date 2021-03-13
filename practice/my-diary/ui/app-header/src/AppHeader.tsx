@@ -1,12 +1,13 @@
-import './app-header.css'
-
 import React from 'react'
 
-export const AppHeader = () => {
+import { Box } from '@ui/layout'
+
+export const AppHeader = ({ name, text }) => {
+  const siteName: string = name
   return (
-    <div className="app-header d-flex">
-      <h1>Irina Korol</h1>
-      <h2>5 posts, liked 4</h2>
-    </div>
+    <Box justifyContent="space-between" alignItems="flex-end" display="flex!important">
+      <h1>{siteName}</h1>
+      <h2>{text}</h2>
+    </Box>
   )
 }

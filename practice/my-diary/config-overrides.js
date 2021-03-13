@@ -7,8 +7,9 @@ const { babelInclude } = _a
 module.exports = function (config, env) {
   return Object.assign(
     config,
-    override(
-      babelInclude([path.resolve('src'), path.resolve('./main-page'), path.resolve('./ui')])
-    )(config, env)
+    override(babelInclude([path.resolve('src'), path.resolve('./site'), path.resolve('./ui')]))(
+      config,
+      env
+    )
   )
 }

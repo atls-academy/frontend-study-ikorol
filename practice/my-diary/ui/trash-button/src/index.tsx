@@ -1,1 +1,0 @@
-export { TrashButton } from './TrashButton'

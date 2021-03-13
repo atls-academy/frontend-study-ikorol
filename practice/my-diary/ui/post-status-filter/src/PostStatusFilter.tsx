@@ -6,7 +6,7 @@ export const PostStatusFilter = () => {
       <button className="btn btn-info" type="button">
         Все
       </button>
-      <button className="btn btn-outline-secondary" type="button">
+      <button className="btn btn-info" type="button">
         Понравилось
       </button>
     </div>

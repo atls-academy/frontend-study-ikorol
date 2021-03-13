@@ -2,7 +2,7 @@ import './post-list.css'
 
 import React from 'react'
 
-import { PostListItem } from '@ui/post-list-item'
+import { PostListItem } from '@ui/item'
 
 export const PostList = () => {
   return (
