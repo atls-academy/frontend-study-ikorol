@@ -37,14 +37,14 @@ const StyledIconsBox = styled.div`
   box-sizing: border-box;
 `
 
-export const PostListItem = (props: any) => {
+export const PostListItem = (props) => {
   return (
     <StyledItem>
       <StyledSpan>{props.label}</StyledSpan>
       <StyledIconsBox>
         <StarButton />
         <TrashButton />
-        <HeartIcon />
+        <HeartIcon opacity="0" />
       </StyledIconsBox>
     </StyledItem>
   )

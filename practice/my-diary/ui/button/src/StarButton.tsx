@@ -13,7 +13,7 @@ const StyledStarButton = styled.button({
 
 export const StarButton = () => {
   return (
-    <StyledStarButton className="btn-star btn-sm" type="button">
+    <StyledStarButton type="button">
       <StarIcon />
     </StyledStarButton>
   )

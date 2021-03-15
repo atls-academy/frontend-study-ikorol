@@ -1,16 +1,14 @@
 /* eslint-disable */
 import React from 'react'
-export const StarIcon = (props: React.SVGProps<SVGSVGElement>) => (
+export const StarIcon = (props) => (
   <svg
     width='1em'
     height='1em'
-    viewBox='0 0 15 15'
+    viewBox="0 0 53.867 53.867"
     fill={props.color || '#FFD700'}
     {...props}
   >
-    <polygon
-      points='56 99 51.297718 101.472136 52.1957739 96.236068 48.3915479 92.527864 53.648859 91.763932 56 87 58.351141 91.763932 63.6084521 92.527864 59.8042261 96.236068 60.702282 101.472136'
-      transform='translate(-48.000000, -87.000000)'
-    />
-  </svg>
+<polygon points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798
+	10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 "/>
+</svg>
 )

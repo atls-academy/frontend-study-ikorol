@@ -1,3 +1,5 @@
 export { Button } from './Button'
 export { TrashButton } from './TrashButton'
 export { StarButton } from './StarButton'
+export { FilterAllPostsButton } from './FilterAllPostsButton'
+export { FilterLikedPostButton } from './FilterLikedPostButton'
