@@ -11,9 +11,10 @@ const newMoviePoster: string = "url('../img/bg.jpg')"
 advertising.forEach(item => {
   item.remove()
 })
-/* eslint-disable no-param-reassign */
+
 genre.forEach(item => {
-  item.textContent = 'Драма'
+  const genreItem: Element = item
+  genreItem.textContent = 'Драма'
 })
 
 moviePoster.style.backgroundImage = newMoviePoster

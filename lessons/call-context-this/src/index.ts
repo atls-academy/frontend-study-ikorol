@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-vars, no-console */
+/* eslint-disable no-console */
 
 /** Normal function: this = window, if 'use strict': this = undefined. */
 function showThis(argumentOne: number, argumentTwo: number) {
@@ -18,6 +18,7 @@ const obj: { argumentOne: number; argumentTwo: number; sum: () => void } = {
   argumentTwo: 15,
   sum() {
     console.log(this)
+    console.log(obj)
   },
 }
 
@@ -31,6 +32,7 @@ function User(name: string, id: number) {
   }
 }
 const ivan = new User('Ivan', 23)
+console.log(ivan)
 
 /** Manual binding 'this': call, apply, bind. */
 function sayName(surname: string) {

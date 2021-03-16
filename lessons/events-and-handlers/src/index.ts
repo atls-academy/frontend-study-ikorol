@@ -1,4 +1,4 @@
-/* eslint-disable no-param-reassign, no-console */
+/* eslint-disable no-console */
 
 document.addEventListener('DOMContentLoaded', () => {
   const movieDB: { movies: string[] } = {
@@ -22,11 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function createMoviesList(films: string[], parent: HTMLElement) {
-    parent.innerHTML = ''
+    let parentHTMLElement: any = parent
+    parentHTMLElement = ''
     sortArr(films)
 
     films.forEach((movie: string, i: number) => {
-      parent.innerHTML += `
+      parentHTMLElement.innerHTML += `
                 <li class="promo__interactive-item">${i + 1} ${movie}
                     <div class="delete"></div>
                 </li>
@@ -72,7 +73,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const makeChanges = () => {
     movieGenre.forEach(item => {
-      item.textContent = 'Драма'
+      const genreItem: Element = item
+      genreItem.textContent = 'Драма'
     })
     moviePoster.style.backgroundImage = "url('../img/bg.jpg')"
   }
