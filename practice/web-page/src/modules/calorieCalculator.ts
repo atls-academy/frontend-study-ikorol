@@ -23,7 +23,7 @@ function calorieCalculator() {
   function initLocalSettings(selector, activeClass) {
     const activeElements: NodeListOf<HTMLElement> = document.querySelectorAll(selector)
 
-    activeElements.forEach((activeElement) => {
+    activeElements.forEach(activeElement => {
       activeElement.classList.remove(activeClass)
 
       if (activeElement.getAttribute('id') === localStorage.getItem('sex')) {
@@ -47,11 +47,11 @@ function calorieCalculator() {
 
     if (sex === 'female') {
       calcResult.textContent = Math.round(
-        (447.6 + 9.2 * weight + 3.1 * height - 4.3 * age) * ratio
+        (447.6 + 9.2 * weight + 3.1 * height - 4.3 * age) * ratio,
       ).toString()
     } else {
       calcResult.textContent = Math.round(
-        (88.36 + 13.4 * weight + 4.8 * height - 5.7 * age) * ratio
+        (88.36 + 13.4 * weight + 4.8 * height - 5.7 * age) * ratio,
       ).toString()
     }
   }
@@ -71,7 +71,7 @@ function calorieCalculator() {
           localStorage.setItem('sex', (event.target as HTMLElement).getAttribute('id'))
         }
 
-        elements.forEach((el) => {
+        elements.forEach(el => {
           el.classList.remove(activeClass)
         })
         ;(event.target as HTMLElement).classList.add(activeClass)

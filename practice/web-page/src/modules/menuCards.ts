@@ -51,7 +51,7 @@ function menuCards() {
       if (this.classes.length === 0) {
         element.classList.add(this.element)
       } else {
-        this.classes.forEach((className) => element.classList.add(className))
+        this.classes.forEach(className => element.classList.add(className))
       }
 
       element.innerHTML = `
@@ -68,7 +68,7 @@ function menuCards() {
     }
   }
 
-  getResources('https://6027afc0dd4afd001754a9b0.mockapi.io/api/menu/').then((data) => {
+  getResources('https://6027afc0dd4afd001754a9b0.mockapi.io/api/menu/').then(data => {
     data.forEach(({ imgSrc, alt, title, description, price }) => {
       new MenuCard(imgSrc, alt, title, description, price, '.menu .container').render()
     })

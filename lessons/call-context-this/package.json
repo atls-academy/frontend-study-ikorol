@@ -5,7 +5,6 @@
   "main": "dist/index.js",
   "source": "src/index.ts",
   "scripts": {
-    "build": "tsc",
-    "lint": "eslint"
+    "build": "tsc"
   }
 }

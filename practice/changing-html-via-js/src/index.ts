@@ -8,11 +8,11 @@ const moviePoster: HTMLElement = document.querySelector('.promo__bg')
 const moviesList: HTMLElement = document.querySelector('.promo__interactive-list')
 const newMoviePoster: string = "url('../img/bg.jpg')"
 
-advertising.forEach((item) => {
+advertising.forEach(item => {
   item.remove()
 })
-
-genre.forEach((item) => {
+/* eslint-disable no-param-reassign */
+genre.forEach(item => {
   item.textContent = 'Драма'
 })
 

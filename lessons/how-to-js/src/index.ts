@@ -1,3 +1,5 @@
+/* eslint-disable no-alert, no-console */
+
 const numberOfFilms: number = +prompt('Сколько фильмов вы уже посмотрели?', '')
 
 const personalMovieDB: {
@@ -22,3 +24,5 @@ const rateSecondFilm: number = +prompt('На сколько оцените ег�
 personalMovieDB.movies[firstFilm] = rateFirstFilm
 personalMovieDB.movies[secondFilm] = rateSecondFilm
 console.log(personalMovieDB)
+
+export {}

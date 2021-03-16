@@ -1,3 +1,5 @@
+/* eslint-disable no-param-reassign, no-console */
+
 document.addEventListener('DOMContentLoaded', () => {
   const movieDB: { movies: string[] } = {
     movies: [
@@ -15,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const addForm: HTMLFormElement = document.querySelector('form.add')
   const addFilmInput: HTMLInputElement = addForm.querySelector('.adding__input')
   const checkbox: HTMLInputElement = addForm.querySelector('[type="checkbox"]')
-  const sortArr = (arr) => {
+  const sortArr = arr => {
     arr.sort()
   }
 
@@ -40,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   }
 
-  addForm.addEventListener('submit', (e) => {
+  addForm.addEventListener('submit', e => {
     e.preventDefault()
 
     let newFilm: string = addFilmInput.value
@@ -62,14 +64,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   movieDB.movies.sort()
 
-  const deleteAdvertising = (arr) => {
-    arr.forEach((item) => {
+  const deleteAdvertising = arr => {
+    arr.forEach(item => {
       item.remove()
     })
   }
 
   const makeChanges = () => {
-    movieGenre.forEach((item) => {
+    movieGenre.forEach(item => {
       item.textContent = 'Драма'
     })
     moviePoster.style.backgroundImage = "url('../img/bg.jpg')"
@@ -79,3 +81,5 @@ document.addEventListener('DOMContentLoaded', () => {
   makeChanges()
   createMoviesList(movieDB.movies, moviesList)
 })
+
+export {}

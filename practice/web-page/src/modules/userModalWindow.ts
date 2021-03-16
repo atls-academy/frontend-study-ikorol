@@ -20,18 +20,18 @@ function userModalWindow(triggerSelector, modalSelector, modalTimer) {
   const modalTrigger = document.querySelectorAll(triggerSelector)
   const modalWindow = document.querySelector(modalSelector)
 
-  modalTrigger.forEach((btn) => {
+  modalTrigger.forEach(btn => {
     btn.addEventListener('click', () => openModalWindow(modalSelector, modalTimer))
   })
 
-  modalWindow.addEventListener('click', (e) => {
+  modalWindow.addEventListener('click', e => {
     const el = e.target as HTMLInputElement
     if (el === modalWindow || el.getAttribute('data-close') === '') {
       closeModalWindow(modalSelector)
     }
   })
 
-  document.addEventListener('keydown', (e) => {
+  document.addEventListener('keydown', e => {
     if (e.code === 'Escape' && modalWindow.classList.contains('show')) {
       closeModalWindow(modalSelector)
     }

@@ -1,3 +1,5 @@
+/* eslint-disable no-alert, no-console */
+
 let numberOfFilms: number
 
 function start() {
@@ -65,3 +67,5 @@ function showUserDB(status: boolean) {
   }
 }
 showUserDB(personalMovieDB.private)
+
+export {}
