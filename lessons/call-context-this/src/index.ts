@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+
 /** Normal function: this = window, if 'use strict': this = undefined. */
 function showThis(argumentOne: number, argumentTwo: number) {
   console.log(this)
@@ -16,6 +18,7 @@ const obj: { argumentOne: number; argumentTwo: number; sum: () => void } = {
   argumentTwo: 15,
   sum() {
     console.log(this)
+    console.log(obj)
   },
 }
 
@@ -29,6 +32,7 @@ function User(name: string, id: number) {
   }
 }
 const ivan = new User('Ivan', 23)
+console.log(ivan)
 
 /** Manual binding 'this': call, apply, bind. */
 function sayName(surname: string) {
@@ -55,6 +59,6 @@ console.log(double(3))
  * In event handlers, use 'event.target' instead of 'this'.
  */
 const btn: any = document.querySelector('button')
-btn.addEventListener('click', (e) => {
+btn.addEventListener('click', e => {
   e.target.style.backgroundColor = 'red'
 })

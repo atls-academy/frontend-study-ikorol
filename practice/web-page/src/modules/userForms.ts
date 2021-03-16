@@ -1,4 +1,4 @@
-import { postData } from '../services/services'
+import { postData }                          from '../services/services'
 import { closeModalWindow, openModalWindow } from './userModalWindow'
 
 function userForms(formSelector, modalTimer) {
@@ -9,10 +9,31 @@ function userForms(formSelector, modalTimer) {
     error: 'Что-то пошло не так...',
   }
 
-  forms.forEach((item: HTMLFormElement) => postFormData(item))
+  function showThanksModal(messageValue: string) {
+    const previousModalDialog: HTMLElement = document.querySelector('.modal__dialog')
+
+    previousModalDialog.classList.add('hide')
+    openModalWindow('.modal', modalTimer)
+
+    const thanksModal: HTMLElement = document.createElement('div')
+    thanksModal.classList.add('modal__dialog')
+    thanksModal.innerHTML = `
+      <div class="modal__content">
+        <div class="modal__close" data-close>x<div/>
+        <div class="modal__title">${messageValue}<div/>
+      </div> 
+    `
+    document.querySelector('.modal').append(thanksModal)
+    setTimeout(() => {
+      thanksModal.remove()
+      previousModalDialog.classList.add('show')
+      previousModalDialog.classList.remove('hide')
+      closeModalWindow('.modal')
+    }, 4000)
+  }
 
   function postFormData(form: HTMLFormElement) {
-    form.addEventListener('submit', (event) => {
+    form.addEventListener('submit', event => {
       event.preventDefault()
 
       const statusMessage = document.createElement('img')
@@ -40,28 +61,8 @@ function userForms(formSelector, modalTimer) {
         })
     })
   }
-  function showThanksModal(messageValue: string) {
-    const previousModalDialog: HTMLElement = document.querySelector('.modal__dialog')
 
-    previousModalDialog.classList.add('hide')
-    openModalWindow('.modal', modalTimer)
-
-    const thanksModal: HTMLElement = document.createElement('div')
-    thanksModal.classList.add('modal__dialog')
-    thanksModal.innerHTML = `
-      <div class="modal__content">
-        <div class="modal__close" data-close>x<div/>
-        <div class="modal__title">${messageValue}<div/>
-      </div> 
-    `
-    document.querySelector('.modal').append(thanksModal)
-    setTimeout(() => {
-      thanksModal.remove()
-      previousModalDialog.classList.add('show')
-      previousModalDialog.classList.remove('hide')
-      closeModalWindow('.modal')
-    }, 4000)
-  }
+  forms.forEach((item: HTMLFormElement) => postFormData(item))
 }
 
 export default userForms

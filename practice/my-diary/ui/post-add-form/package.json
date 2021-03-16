@@ -2,5 +2,12 @@
   "name": "@ui/post-add-form",
   "version": "0.0.0",
   "license": "MIT",
-  "main": "src/index.tsx"
+  "main": "src/index.tsx",
+  "devDependencies": {
+    "@ui/post-add-button": "^0.0.0",
+    "@ui/post-add-input": "^0.0.0"
+  },
+  "dependencies": {
+    "react": "^17.0.1"
+  }
 }
