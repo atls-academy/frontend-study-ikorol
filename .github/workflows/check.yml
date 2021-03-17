@@ -1,11 +1,9 @@
-name: Checks
+name: codelinter
 
-on:
-  pull_request
+on: pull_request
 
 jobs:
-  run:
-    name: Run
+  codelinter:
     runs-on: ubuntu-latest
 
     steps:

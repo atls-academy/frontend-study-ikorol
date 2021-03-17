@@ -26,7 +26,7 @@ export const Box = styled.div(
   position,
   border,
   justifyContent,
-  alignItems
+  alignItems,
 )
 
 Box.defaultProps = {

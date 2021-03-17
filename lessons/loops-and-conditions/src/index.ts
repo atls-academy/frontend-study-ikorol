@@ -1,3 +1,5 @@
+/* eslint-disable no-alert, no-console */
+
 const numberOfFilms: number = +prompt('Сколько фильмов вы уже посмотрели?', '')
 const minFilmsNumber: number = 10
 const maxFilmsNumber: number = 30
@@ -41,3 +43,5 @@ for (let i: number = 0; i < 2; i += 1) {
     i -= 1
   }
 }
+
+export {}

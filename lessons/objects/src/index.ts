@@ -1,3 +1,5 @@
+/* eslint-disable no-alert, no-console */
+
 const personalMovieDB: {
   count: number
   movies: object
@@ -79,9 +81,4 @@ const personalMovieDB: {
   },
 }
 
-personalMovieDB.watchedFilmsNum()
-personalMovieDB.detectPersonalLevel()
-personalMovieDB.writeUserGenres()
-personalMovieDB.rememberUserFilms()
-personalMovieDB.toggleVisibleUserDB()
-personalMovieDB.showMyDB()
+export {}

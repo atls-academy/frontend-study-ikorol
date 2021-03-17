@@ -1,10 +1,8 @@
-import React from 'react'
-import styled from '@emotion/styled'
+import React          from 'react'
+import styled         from '@emotion/styled'
 
 import { StarButton } from '@ui/button'
-import { TrashButton } from '@ui/button'
-
-import { HeartIcon } from '../../icons'
+import { HeartIcon }  from '@ui/icons'
 
 const StyledItem = styled.li`
   font-size: 1.25rem;
@@ -37,14 +35,14 @@ const StyledIconsBox = styled.div`
   box-sizing: border-box;
 `
 
-export const PostListItem = (props) => {
+export const PostListItem = props => {
+  const itemText = props
   return (
     <StyledItem>
-      <StyledSpan>{props.label}</StyledSpan>
+      <StyledSpan>{itemText.label}</StyledSpan>
       <StyledIconsBox>
         <StarButton />
-        <TrashButton />
-        <HeartIcon opacity="0" />
+        <HeartIcon opacity='0' />
       </StyledIconsBox>
     </StyledItem>
   )

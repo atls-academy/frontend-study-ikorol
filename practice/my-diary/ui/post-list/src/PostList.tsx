@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from '@emotion/styled'
+import React            from 'react'
+import styled           from '@emotion/styled'
 
 import { PostListItem } from '@ui/item'
 
@@ -13,9 +13,9 @@ const StyledPostList = styled.ul`
 export const PostList = () => {
   return (
     <StyledPostList>
-      <PostListItem label="Ich möchte einen Reise machen" />
-      <PostListItem label="Heute haben wir einen Besucher" />
-      <PostListItem label="Bei Ikea einkaufen gehen" />
+      <PostListItem label='Ich möchte einen Reise machen' />
+      <PostListItem label='Heute haben wir einen Besucher' />
+      <PostListItem label='Bei Ikea einkaufen gehen' />
     </StyledPostList>
   )
 }

@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+
 document.addEventListener('DOMContentLoaded', () => {
   const movieDB: { movies: string[] } = {
     movies: [
@@ -15,16 +17,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const addForm: HTMLFormElement = document.querySelector('form.add')
   const addFilmInput: HTMLInputElement = addForm.querySelector('.adding__input')
   const checkbox: HTMLInputElement = addForm.querySelector('[type="checkbox"]')
-  const sortArr = (arr) => {
+  const sortArr = arr => {
     arr.sort()
   }
 
   function createMoviesList(films: string[], parent: HTMLElement) {
-    parent.innerHTML = ''
+    let parentHTMLElement: any = parent
+    parentHTMLElement = ''
     sortArr(films)
 
     films.forEach((movie: string, i: number) => {
-      parent.innerHTML += `
+      parentHTMLElement.innerHTML += `
                 <li class="promo__interactive-item">${i + 1} ${movie}
                     <div class="delete"></div>
                 </li>
@@ -40,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   }
 
-  addForm.addEventListener('submit', (e) => {
+  addForm.addEventListener('submit', e => {
     e.preventDefault()
 
     let newFilm: string = addFilmInput.value
@@ -62,15 +65,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   movieDB.movies.sort()
 
-  const deleteAdvertising = (arr) => {
-    arr.forEach((item) => {
+  const deleteAdvertising = arr => {
+    arr.forEach(item => {
       item.remove()
     })
   }
 
   const makeChanges = () => {
-    movieGenre.forEach((item) => {
-      item.textContent = 'Драма'
+    movieGenre.forEach(item => {
+      const genreItem: Element = item
+      genreItem.textContent = 'Драма'
     })
     moviePoster.style.backgroundImage = "url('../img/bg.jpg')"
   }
@@ -79,3 +83,5 @@ document.addEventListener('DOMContentLoaded', () => {
   makeChanges()
   createMoviesList(movieDB.movies, moviesList)
 })
+
+export {}

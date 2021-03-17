@@ -5,6 +5,8 @@
   "main": "src/index.tsx",
   "dependencies": {
     "@emotion/react": "^11.1.5",
-    "@emotion/styled": "^11.1.5"
+    "@emotion/styled": "^11.1.5",
+    "@ui/layout": "^0.0.0",
+    "react": "^17.0.1"
   }
 }

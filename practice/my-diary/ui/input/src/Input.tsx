@@ -1,10 +1,10 @@
-import React from 'react'
+import React  from 'react'
 import styled from '@emotion/styled'
 
 const StyledInput = styled.input`
   display: block;
   width: 100%;
-  height: calc(1.5em + 0.75rem + 2px);
+  height: 1.5em;
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
   font-weight: 400;
@@ -18,6 +18,7 @@ const StyledInput = styled.input`
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 `
 
-export const Input = () => {
-  return <StyledInput type="text" placeholder="Search by records" />
+export const Input = props => {
+  const inputProps = props
+  return <StyledInput type='text' placeholder={inputProps.placeholder} />
 }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React  from 'react'
 import styled from '@emotion/styled'
 
 const StyledButton = styled.button`
@@ -23,6 +23,8 @@ const StyledButton = styled.button`
   position: relative;
 `
 
-export const Button = (props) => {
-  return <StyledButton>{props.label}</StyledButton>
+export const Button = props => {
+  const buttonProps = props
+
+  return <StyledButton>{buttonProps.label}</StyledButton>
 }

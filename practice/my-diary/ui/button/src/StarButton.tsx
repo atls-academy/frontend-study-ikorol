@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from '@emotion/styled'
+import React        from 'react'
+import styled       from '@emotion/styled'
 
 import { StarIcon } from '@ui/icons'
 
@@ -13,7 +13,7 @@ const StyledStarButton = styled.button({
 
 export const StarButton = () => {
   return (
-    <StyledStarButton type="button">
+    <StyledStarButton type='button'>
       <StarIcon />
     </StyledStarButton>
   )

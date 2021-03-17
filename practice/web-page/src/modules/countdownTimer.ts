@@ -1,6 +1,6 @@
 function countdownTimer(id, deadline) {
   function getTimeRemaining(
-    endTime: string
+    endTime: string,
   ): {
     total: number
     days: number
@@ -36,9 +36,13 @@ function countdownTimer(id, deadline) {
     const hours: HTMLElement = timer.querySelector('#hours')
     const minutes: HTMLElement = timer.querySelector('#minutes')
     const seconds: HTMLElement = timer.querySelector('#seconds')
-    const timeInterval = setInterval(updateClock, 1000)
+    const timeInterval: number = 1000
 
-    updateClock()
+    function disableTimer(currentTime, interval) {
+      if (currentTime <= 0) {
+        clearInterval(interval)
+      }
+    }
 
     function updateClock() {
       const clock = getTimeRemaining(endTime)
@@ -48,10 +52,13 @@ function countdownTimer(id, deadline) {
       minutes.innerHTML = getZero(clock.minutes)
       seconds.innerHTML = getZero(clock.seconds)
 
-      if (clock.total <= 0) {
-        clearInterval(timeInterval)
-      }
+      disableTimer(clock.total, timeInterval)
     }
+
+    const startTimer = () => setInterval(updateClock, timeInterval)
+
+    updateClock()
+    startTimer()
   }
 
   setClock(id, deadline)

@@ -2,5 +2,9 @@
   "name": "@ui/input",
   "version": "0.0.0",
   "license": "MIT",
-  "main": "src/index.tsx"
+  "main": "src/index.tsx",
+  "dependencies": {
+    "react": "^17.0.1",
+    "@emotion/styled": "^11.1.5"
+  }
 }

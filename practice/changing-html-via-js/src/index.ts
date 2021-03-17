@@ -8,12 +8,13 @@ const moviePoster: HTMLElement = document.querySelector('.promo__bg')
 const moviesList: HTMLElement = document.querySelector('.promo__interactive-list')
 const newMoviePoster: string = "url('../img/bg.jpg')"
 
-advertising.forEach((item) => {
+advertising.forEach(item => {
   item.remove()
 })
 
-genre.forEach((item) => {
-  item.textContent = 'Драма'
+genre.forEach(item => {
+  const genreItem: Element = item
+  genreItem.textContent = 'Драма'
 })
 
 moviePoster.style.backgroundImage = newMoviePoster

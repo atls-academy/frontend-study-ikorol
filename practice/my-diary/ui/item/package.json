@@ -2,5 +2,12 @@
   "name": "@ui/item",
   "version": "0.0.0",
   "license": "MIT",
-  "main": "src/index.tsx"
+  "main": "src/index.tsx",
+  "dependencies": {
+    "react": "^17.0.1",
+    "@emotion/styled": "^11.1.5",
+    "@types/styled-system": "^5.1.10",
+    "@ui/button": "^0.0.0",
+    "@ui/icons": "^0.0.0"
+  }
 }

@@ -1,9 +1,9 @@
-import calorieCalculator from './modules/calorieCalculator'
-import countdownTimer from './modules/countdownTimer'
-import menuCards from './modules/menuCards'
-import menuTabs from './modules/menuTabs'
-import productSlider from './modules/productSlider'
-import userForms from './modules/userForms'
+import calorieCalculator                    from './modules/calorieCalculator'
+import countdownTimer                       from './modules/countdownTimer'
+import menuCards                            from './modules/menuCards'
+import menuTabs                             from './modules/menuTabs'
+import productSlider                        from './modules/productSlider'
+import userForms                            from './modules/userForms'
 import userModalWindow, { openModalWindow } from './modules/userModalWindow'
 
 window.addEventListener('DOMContentLoaded', () => {

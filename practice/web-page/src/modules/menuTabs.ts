@@ -4,12 +4,12 @@ function menuTabs(tabsSelector, tabsContentSelector, tabsParentSelector, activeC
   const tabsParent: HTMLElement = document.querySelector(tabsParentSelector)
 
   function hideTabContent() {
-    tabsContent.forEach((item) => {
+    tabsContent.forEach(item => {
       item.classList.add('hide')
       item.classList.remove('show', 'fade')
     })
 
-    tabs.forEach((item) => {
+    tabs.forEach(item => {
       item.classList.remove(activeClass)
     })
   }
@@ -27,7 +27,7 @@ function menuTabs(tabsSelector, tabsContentSelector, tabsParentSelector, activeC
     return element.className.indexOf(className) > -1
   }
 
-  tabsParent.addEventListener('click', (e) => {
+  tabsParent.addEventListener('click', e => {
     const { target } = e
 
     if (target && hasClass(target, tabsSelector.slice(1))) {
