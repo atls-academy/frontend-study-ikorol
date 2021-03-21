@@ -1,25 +1,6 @@
-import React         from 'react'
-import ReactDOM      from 'react-dom'
+import React      from 'react'
+import { render } from 'react-dom'
 
-import { AppHeader } from '@ui/app-header'
-import { Button }    from '@ui/button'
-import { Input }     from '@ui/input'
-import { Box }       from '@ui/layout'
-import { PostList }  from '@ui/post-list'
+import { App }    from './App'
 
-ReactDOM.render(
-  <Box className='root' display='block' margin='0 auto' maxWidth='800px'>
-    <AppHeader name='Irina Korol' text='5 posts 4 liked' />
-    <Box>
-      <Input placeholder='Search by records' />
-      <Button label='All' />
-      <Button label='Liked' />
-    </Box>
-    <PostList />
-    <Box>
-      <Input placeholder='What are you thinking today' />
-      <Button label='Add' />
-    </Box>
-  </Box>,
-  document.getElementById('root'),
-)
+render(<App />, document.getElementById('root'))

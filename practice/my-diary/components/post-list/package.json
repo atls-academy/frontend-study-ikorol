@@ -1,5 +1,5 @@
 {
-  "name": "@ui/post-list",
+  "name": "@components/post-list",
   "version": "0.0.0",
   "license": "MIT",
   "main": "src/index.tsx",
