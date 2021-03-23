@@ -1,1 +1,1 @@
-export { PostListItem } from './PostListItem'
+export { Item } from './Item'

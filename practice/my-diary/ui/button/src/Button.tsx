@@ -54,7 +54,7 @@ const colors = switchProp('color', () => ({
 
 const sizes = switchProp('size', () => ({
   normal: {
-    height: 36,
+    height: 38,
     fontSize: '1em',
     padding: '0.375rem 0.75rem',
   },

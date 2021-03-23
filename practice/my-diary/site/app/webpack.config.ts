@@ -1,24 +1,22 @@
-const path = require('path')
+export const mode = 'development'
+export const entry = ['./src/index']
+export const output = {
+  path: `${__dirname}/dist`,
+  filename: 'bundle.js',
+}
 
-module.exports = {
-  mode: 'development',
-  entry: './src/index.tsx',
-  output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, './dist'),
-  },
-  module: {
-    rules: [
-      {
-        exclude: /node_modules/,
-        loader: 'babel-loader',
-        options: {
-          presets: ['@babel/preset-env', '@babel/preset-typescript', '@babel/preset-react'],
-        },
+export const module = {
+  rules: [
+    {
+      exclude: /node_modules/,
+      loader: 'babel-loader',
+      options: {
+        presets: ['@babel/preset-env', '@babel/preset-typescript', '@babel/preset-react'],
       },
-    ],
-  },
-  resolve: {
-    extensions: ['.ts', '.json', '.tsx', '.js'],
-  },
+    },
+  ],
+}
+
+export const resolve = {
+  extensions: ['.ts', '.tsx', '.js', '.json'],
 }
