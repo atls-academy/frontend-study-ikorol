@@ -7,7 +7,6 @@ const StyledHeartIcon = styled.i`
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
   text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
   color: red;
   opacity: 1;
 `
@@ -16,8 +15,8 @@ export const HeartIcon = (props) => {
   return (
     <svg
       version='1.1'
-      width='1em'
-      height='1em'
+      width='17px'
+      height='17px'
       opasity={props.opacity}
       viewBox='0 0 391.837 391.837'
       fill={props.color || 'red'}

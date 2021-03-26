@@ -34,7 +34,7 @@ export const Box = styled.div(
 Box.defaultProps = {
   display: 'flex',
   boxSizing: 'border-box',
-  margin: '1rem 0',
+  margin: '16px 0',
   fontFamily: [
     'Segoe UI',
     'Roboto',

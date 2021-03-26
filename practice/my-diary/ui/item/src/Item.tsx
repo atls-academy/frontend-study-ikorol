@@ -13,8 +13,8 @@ export const Item = styled.li(
 )
 
 Item.defaultProps = {
-  fontSize: '1.25rem',
+  fontSize: '20px',
   boxSizing: 'border-box',
-  justifyContent: 'space-between !important',
-  display: 'flex !important',
+  justifyContent: 'space-between',
+  display: 'flex',
 }

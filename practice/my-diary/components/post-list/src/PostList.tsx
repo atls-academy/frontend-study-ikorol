@@ -5,27 +5,23 @@ import { IconButton }                     from '@ui/button'
 import { HeartIcon, StarIcon, TrashIcon } from '@ui/icons'
 import { Item }                           from '@ui/item'
 import { Box }                            from '@ui/layout'
+import { Text }                           from '@ui/text'
 
 const StyledPostList = styled.ul`
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 20px;
   list-style-type: none;
   padding-inline-start: 0;
 `
-const StyledSpan = styled.span`
-  display: block;
-  line-height: 35px;
-  cursor: pointer;
-  user-select: none;
-  transition: 0.5s all;
-`
 
-export const PostList = ({ posts }) => {
-  const elements = posts.map(item => {
+export const PostList = ({ notes }) => {
+  const elements = notes.map(item => {
     return (
-      <Item>
-        <StyledSpan>{item.note}</StyledSpan>
-        <Box alignItem='center !important' display='flex !important' margin='0'>
+      <Item key={item.id}>
+        <Text cursor='pointer' lineHeight='35px'>
+          {item.note}
+        </Text>
+        <Box alignItem='center' display='flex' margin='0'>
           <IconButton>
             <StarIcon />
           </IconButton>

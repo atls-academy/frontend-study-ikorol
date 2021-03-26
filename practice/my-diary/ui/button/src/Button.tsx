@@ -16,7 +16,6 @@ const base: any = () => ({
   fontWeight: '400',
   textAlign: 'center',
   verticalAlign: 'middle',
-  lineHeight: '1.5',
   transition:
     'color 0.15s ease-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out',
   justifyContent: 'center',
@@ -54,15 +53,15 @@ const colors = switchProp('color', () => ({
 
 const sizes = switchProp('size', () => ({
   normal: {
-    height: 38,
-    fontSize: '1em',
-    padding: '0.375rem 0.75rem',
+    height: '38px',
+    fontSize: '17px',
+    padding: '6px 12px',
   },
   mini: {
-    width: 35,
-    height: 35,
+    width: '35px',
+    height: '35px',
     fontSize: '17px',
-    margin: 3,
+    margin: '3px',
     borderRadius: 'none',
   },
 }))
@@ -82,5 +81,5 @@ export const Button = ({ ...props }) => <StyledButton {...props} />
 Button.defaultProps = {
   color: 'gray',
   size: 'normal',
-  borderRadius: '0.25em',
+  borderRadius: '4px',
 }
