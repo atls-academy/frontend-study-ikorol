@@ -18,7 +18,7 @@
     "@ui/button": "0.0.0",
     "@ui/input": "0.0.0",
     "@ui/layout": "0.0.0",
-    "@components/post-list": "0.0.0"
+    "@components/list": "0.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
