@@ -1,0 +1,18 @@
+{
+  "name": "@site/app",
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "./src/index.tsx",
+  "dependencies": {
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "@emotion/styled": "^11.1.5",
+    "@ui/button": "0.0.0",
+    "@ui/input": "0.0.0",
+    "@ui/layout": "0.0.0",
+    "@components/list": "0.0.0",
+    "@components/app-header": "0.0.0"
+  }
+}

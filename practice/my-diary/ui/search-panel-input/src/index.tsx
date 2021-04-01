@@ -1,1 +1,0 @@
-export { SearchPanelInput } from './SearchPanelInput'
