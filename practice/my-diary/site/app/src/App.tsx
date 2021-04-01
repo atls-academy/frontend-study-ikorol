@@ -18,15 +18,22 @@ export const App = () => {
       <AppHeader name='Irina Korol' text='5 posts 4 liked' />
       <Box>
         <Input width='100%' placeholder='Search by records' />
-        <Button color='blue' borderRadius='4px 0 0 4px'>
+        <Button
+          backgroundColor='#17a2b8'
+          color='#fff'
+          borderColor='#17a2b8'
+          borderRadius='4px 0 0 4px'
+        >
           All
         </Button>
-        <Button borderRadius='0 4px 4px 0'>Liked</Button>
+        <Button backgroundColor='transparent' borderRadius='0 4px 4px 0'>
+          Liked
+        </Button>
       </Box>
       <List notes={notes} />
       <Box>
         <Input width='100%' placeholder='What are you thinking today' />
-        <Button>Add</Button>
+        <Button backgroundColor='transparent'>Add</Button>
       </Box>
     </Box>
   )

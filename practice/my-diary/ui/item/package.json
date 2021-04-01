@@ -2,11 +2,13 @@
   "name": "@ui/item",
   "version": "0.0.0",
   "license": "MIT",
-  "main": "src/index.tsx",
+  "main": "src/index.ts",
+  "devDependencies": {
+    "@types/styled-system": "^5.1.10"
+  },
   "dependencies": {
     "react": "^17.0.1",
     "@emotion/styled": "^11.1.5",
-    "@types/styled-system": "^5.1.0",
     "styled-system": "^5.1.0",
     "@ui/button": "^0.0.0",
     "@ui/icons": "^0.0.0",

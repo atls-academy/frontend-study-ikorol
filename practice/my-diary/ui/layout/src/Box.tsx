@@ -35,15 +35,5 @@ Box.defaultProps = {
   display: 'flex',
   boxSizing: 'border-box',
   margin: '16px 0',
-  fontFamily: [
-    'Segoe UI',
-    'Roboto',
-    'Oxygen',
-    'Ubuntu',
-    'Cantarell',
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    'sans-serif',
-  ],
+  fontFamily: ['Roboto', 'Ubuntu', 'sans-serif'],
 }

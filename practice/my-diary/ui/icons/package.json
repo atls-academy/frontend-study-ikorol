@@ -2,7 +2,7 @@
   "name": "@ui/icons",
   "version": "0.0.0",
   "license": "MIT",
-  "main": "src/index.tsx",
+  "main": "src/index.ts",
   "dependencies": {
     "react": "^17.0.1"
   }

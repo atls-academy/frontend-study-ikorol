@@ -2,7 +2,7 @@
   "name": "@components/app-header",
   "version": "0.0.0",
   "license": "MIT",
-  "main": "src/index.tsx",
+  "main": "src/index.ts",
   "dependencies": {
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.1.5",
