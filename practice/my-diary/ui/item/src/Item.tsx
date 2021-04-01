@@ -1,5 +1,5 @@
-import styled                                        from '@emotion/styled'
-import { display, fontSize, justifyContent, system } from 'styled-system'
+import styled                                  from '@emotion/styled'
+import { flexbox, layout, system, typography } from 'styled-system'
 
 export const Item = styled.li(
   system({
@@ -7,9 +7,9 @@ export const Item = styled.li(
     overflowX: true,
     overflowY: true,
   }),
-  fontSize,
-  justifyContent,
-  display,
+  typography,
+  flexbox,
+  layout,
 )
 
 Item.defaultProps = {

@@ -1,11 +1,11 @@
 import styled from '@emotion/styled'
 import {
   border,
-  boxShadow,
   color,
   flexbox,
   layout,
   position,
+  shadow,
   space,
   system,
   typography,
@@ -22,7 +22,7 @@ export const Button = styled.button(
   space,
   color,
   flexbox,
-  boxShadow,
+  shadow,
   position,
   border,
 )

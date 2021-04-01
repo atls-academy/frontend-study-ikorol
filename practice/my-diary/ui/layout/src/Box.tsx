@@ -1,16 +1,14 @@
 import styled from '@emotion/styled'
 import {
-  alignItems,
   border,
-  boxShadow,
   color,
   flexbox,
-  fontFamily,
-  justifyContent,
   layout,
   position,
+  shadow,
   space,
   system,
+  typography,
 } from 'styled-system'
 
 export const Box = styled.div(
@@ -19,16 +17,14 @@ export const Box = styled.div(
     overflowX: true,
     overflowY: true,
   }),
-  layout,
-  space,
+  border,
+  shadow,
   color,
   flexbox,
-  fontFamily,
-  boxShadow,
+  typography,
+  layout,
   position,
-  border,
-  justifyContent,
-  alignItems,
+  space,
 )
 
 Box.defaultProps = {
