@@ -1,5 +1,5 @@
-import styled                                  from '@emotion/styled'
-import { flexbox, layout, system, typography } from 'styled-system'
+import styled                                                        from '@emotion/styled'
+import { border, color, flexbox, layout, space, system, typography } from 'styled-system'
 
 export const Item = styled.li(
   system({
@@ -10,6 +10,9 @@ export const Item = styled.li(
   typography,
   flexbox,
   layout,
+  color,
+  space,
+  border,
 )
 
 Item.defaultProps = {
@@ -17,4 +20,8 @@ Item.defaultProps = {
   boxSizing: 'border-box',
   justifyContent: 'space-between',
   display: 'flex',
+  backgroundColor: '#fff',
+  borderRadius: '4px',
+  marginBottom: '5px',
+  paddingLeft: '10px',
 }

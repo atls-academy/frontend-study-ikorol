@@ -1,7 +1,7 @@
 {
   "name": "@practice/my-diary",
   "version": "0.0.0",
-  "main": "index.js",
+  "main": "site/app/src/index.tsx",
   "license": "MIT",
   "scripts": {
     "build": "webpack",

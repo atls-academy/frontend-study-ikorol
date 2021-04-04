@@ -1,21 +1,21 @@
-import React         from 'react'
+import React      from 'react'
 
-import { AppHeader } from '@components/app-header'
-import { List }      from '@components/list'
-import { Button }    from '@ui/button'
-import { Input }     from '@ui/input'
-import { Box }       from '@ui/layout'
+import { Header } from '@components/header'
+import { List }   from '@components/list'
+import { Button } from '@ui/button'
+import { Input }  from '@ui/input'
+import { Box }    from '@ui/layout'
 
 export const App = () => {
-  const notes: { note: string; id: number }[] = [
-    { note: 'Flight to Moscow', id: 1 },
-    { note: 'Friends meeting', id: 2 },
-    { note: 'Buy a new frying pan in Ikea', id: 3 },
+  const notes: { note: string; important: boolean; id: number }[] = [
+    { note: 'Flight to Moscow', important: false, id: 1 },
+    { note: 'Friends meeting', important: true, id: 2 },
+    { note: 'Buy a new frying pan in Ikea', important: false, id: 3 },
   ]
 
   return (
     <Box className='root' display='block' margin='0 auto' maxWidth='800px'>
-      <AppHeader name='Irina Korol' text='5 posts 4 liked' />
+      <Header name='Irina Korol' text='5 posts 4 liked' />
       <Box>
         <Input width='100%' placeholder='Search by records' />
         <Button
