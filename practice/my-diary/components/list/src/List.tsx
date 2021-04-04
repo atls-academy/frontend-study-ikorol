@@ -9,7 +9,7 @@ import { Text }                           from '@ui/text'
 export const List: any = ({ notes }) => {
   const elements = notes.map(item => {
     const [isImportant, setIsImportant] = useState(item.important)
-    const [isLiked, setIsLiked] = useState(null)
+    const [isLiked, setIsLiked] = useState(false)
 
     return (
       <Item key={item.id}>
