@@ -13,6 +13,6 @@
     "@ui/input": "0.0.0",
     "@ui/layout": "0.0.0",
     "@components/list": "0.0.0",
-    "@components/header": "0.0.0"
+    "@ui/header": "0.0.0"
   }
 }

@@ -1,8 +1,8 @@
 import React      from 'react'
 
-import { Header } from '@components/header'
 import { List }   from '@components/list'
 import { Button } from '@ui/button'
+import { Header } from '@ui/header'
 import { Input }  from '@ui/input'
 import { Box }    from '@ui/layout'
 
