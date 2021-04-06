@@ -1,5 +1,5 @@
 {
-  "name": "@ui/header",
+  "name": "@components/header",
   "version": "0.0.0",
   "license": "MIT",
   "main": "src/index.ts",

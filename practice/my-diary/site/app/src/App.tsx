@@ -1,10 +1,12 @@
-import React      from 'react'
+import React                              from 'react'
 
-import { List }   from '@components/list'
-import { Button } from '@ui/button'
-import { Header } from '@ui/header'
-import { Input }  from '@ui/input'
-import { Box }    from '@ui/layout'
+import { MainPageHeader }                 from '@components/header'
+import { Button, IconButton }             from '@ui/button'
+import { HeartIcon, StarIcon, TrashIcon } from '@ui/icons'
+import { Input }                          from '@ui/input'
+import { Box }                            from '@ui/layout'
+import { List }                           from '@ui/list'
+import { Text }                           from '@ui/text'
 
 export const App = () => {
   const notes: { note: string; important: boolean; id: number }[] = [
@@ -15,7 +17,7 @@ export const App = () => {
 
   return (
     <Box className='root' display='block' margin='0 auto' maxWidth='800px'>
-      <Header name='Irina Korol' text='5 posts 4 liked' />
+      <MainPageHeader />
       <Box>
         <Input width='100%' placeholder='Search by records' />
         <Button
@@ -30,7 +32,20 @@ export const App = () => {
           Liked
         </Button>
       </Box>
-      <List notes={notes} />
+      <List notes={notes}>
+        <Text lineHeight='40px'>Запись</Text>
+        <Box alignItem='center' display='flex' margin='0'>
+          <IconButton>
+            <StarIcon />
+          </IconButton>
+          <IconButton>
+            <TrashIcon />
+          </IconButton>
+          <IconButton>
+            <HeartIcon opacity='0' />
+          </IconButton>
+        </Box>
+      </List>
       <Box>
         <Input width='100%' placeholder='What are you thinking today' />
         <Button backgroundColor='transparent'>Add</Button>
