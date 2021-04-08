@@ -1,6 +1,12 @@
-import React      from 'react'
-import { render } from 'react-dom'
+import React            from 'react'
+import { IntlProvider } from 'react-intl'
+import { render }       from 'react-dom'
 
-import { App }    from './App'
+import { App }          from './App'
 
-render(<App />, document.getElementById('root'))
+render(
+  <IntlProvider locale='en'>
+    <App />
+  </IntlProvider>,
+  document.getElementById('root'),
+)
