@@ -1,45 +1,26 @@
-import React                              from 'react'
-import { useIntl }                        from 'react-intl'
+import React          from 'react'
+import { useIntl }    from 'react-intl'
 
-import MainPageHeader                     from '@components/mainPageHeader'
-import { Button, IconButton }             from '@ui/button'
-import { HeartIcon, StarIcon, TrashIcon } from '@ui/icons'
-import { Input }                          from '@ui/input'
-import { Box }                            from '@ui/layout'
-import { List }                           from '@ui/list'
-import { Text }                           from '@ui/text'
+import MainPageHeader from '@components/main-page-header'
+import { Button }     from '@ui/button'
+import { Input }      from '@ui/input'
+import { Box }        from '@ui/layout'
+import { List }       from '@ui/list'
+
+import messages       from './messages'
+
+const notes: { note: string; important: boolean; id: number }[] = [
+  { note: 'Flight to Moscow', important: false, id: 1 },
+  { note: 'Friends meeting', important: true, id: 2 },
+  { note: 'Buy a new frying pan in Ikea', important: false, id: 3 },
+]
 
 export const App = () => {
   const intl = useIntl()
-  const notes: { note: string; important: boolean; id: number }[] = [
-    { note: 'Flight to Moscow', important: false, id: 1 },
-    { note: 'Friends meeting', important: true, id: 2 },
-    { note: 'Buy a new frying pan in Ikea', important: false, id: 3 },
-  ]
-  const messages = {
-    search: {
-      id: 'search',
-      defaultMessage: 'Search by records',
-    },
-    post: {
-      id: 'post',
-      defaultMessage: 'What are you thinking today',
-    },
-  }
-  const postsSum = () => {
-    // ... add logic late
-    const sum = 2
-    return sum
-  }
-  const likesSum = () => {
-    // ... add logic late
-    const sum = 4
-    return sum
-  }
 
   return (
     <Box className='root' display='block' margin='0 auto' maxWidth='800px'>
-      <MainPageHeader postsSum={postsSum()} likesSum={likesSum()} />
+      <MainPageHeader />
       <Box>
         <Input width='100%' placeholder={intl.formatMessage(messages.search)} />
         <Button
@@ -54,20 +35,7 @@ export const App = () => {
           Liked
         </Button>
       </Box>
-      <List notes={notes}>
-        <Text lineHeight='40px'>Запись</Text>
-        <Box alignItem='center' display='flex' margin='0'>
-          <IconButton>
-            <StarIcon />
-          </IconButton>
-          <IconButton>
-            <TrashIcon />
-          </IconButton>
-          <IconButton>
-            <HeartIcon opacity='0' />
-          </IconButton>
-        </Box>
-      </List>
+      <List notes={notes} />
       <Box>
         <Input width='100%' placeholder={intl.formatMessage(messages.post)} />
         <Button backgroundColor='transparent'>Add</Button>

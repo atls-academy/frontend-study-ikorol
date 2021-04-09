@@ -3,8 +3,8 @@ import { useIntl }        from 'react-intl'
 
 import { MainPageHeader } from './MainPageHeader'
 
-export default ({ postsSum, likesSum }) => {
+export default () => {
   const intl = useIntl()
 
-  return <MainPageHeader intl={intl} postsSum={postsSum} likesSum={likesSum} />
+  return <MainPageHeader intl={intl} />
 }

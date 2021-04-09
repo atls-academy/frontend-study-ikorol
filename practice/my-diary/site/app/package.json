@@ -16,6 +16,6 @@
     "@ui/input": "0.0.0",
     "@ui/layout": "0.0.0",
     "@ui/list": "0.0.0",
-    "@components/mainPageHeader": "0.0.0"
+    "@components/main-page-header": "0.0.0"
   }
 }

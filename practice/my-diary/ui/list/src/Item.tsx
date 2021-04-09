@@ -20,6 +20,7 @@ Item.defaultProps = {
   boxSizing: 'border-box',
   justifyContent: 'space-between',
   display: 'flex',
+  width: '100%',
   backgroundColor: '#fff',
   borderRadius: '4px',
   marginBottom: '5px',
