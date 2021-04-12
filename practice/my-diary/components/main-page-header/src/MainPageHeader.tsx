@@ -9,12 +9,12 @@ import messages    from './messages'
 export const MainPageHeader = () => {
   const intl = useIntl()
   const postsSum = () => {
-    // ... add logic late
+    // TODO add logic later
     const sum = 2
     return sum
   }
   const likesSum = () => {
-    // ... add logic late
+    // TODO add logic later
     const sum = 4
     return sum
   }
