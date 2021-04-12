@@ -1,13 +1,13 @@
-import React          from 'react'
-import { useIntl }    from 'react-intl'
+import React              from 'react'
+import { useIntl }        from 'react-intl'
 
-import MainPageHeader from '@components/main-page-header'
-import { Button }     from '@ui/button'
-import { Input }      from '@ui/input'
-import { Box }        from '@ui/layout'
-import { List }       from '@ui/list'
+import { MainPageHeader } from '@components/main-page-header'
+import { Button }         from '@ui/button'
+import { Input }          from '@ui/input'
+import { Box }            from '@ui/layout'
+import { List }           from '@ui/list'
 
-import messages       from './messages'
+import messages           from './messages'
 
 const notes: { note: string; important: boolean; id: number }[] = [
   { note: 'Flight to Moscow', important: false, id: 1 },

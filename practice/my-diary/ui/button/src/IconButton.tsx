@@ -5,9 +5,8 @@ import { Button } from './Button'
 export const IconButton = ({ children }) => (
   <Button
     width='35px'
-    height='35px'
-    fontSize='17px'
-    margin='3px'
+    margin='0 3px'
+    height='40px'
     padding='0'
     backgroundColor='#fff'
     border='none'

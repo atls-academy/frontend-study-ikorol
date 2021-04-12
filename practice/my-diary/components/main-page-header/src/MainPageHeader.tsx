@@ -1,11 +1,13 @@
-import React    from 'react'
+import React       from 'react'
+import { useIntl } from 'react-intl'
 
-import { Box }  from '@ui/layout'
-import { Text } from '@ui/text'
+import { Box }     from '@ui/layout'
+import { Text }    from '@ui/text'
 
-import messages from './messages'
+import messages    from './messages'
 
-export const MainPageHeader = ({ intl }) => {
+export const MainPageHeader = () => {
+  const intl = useIntl()
   const postsSum = () => {
     // ... add logic late
     const sum = 2

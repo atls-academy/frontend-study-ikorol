@@ -7,8 +7,8 @@ import { Text }                           from '@ui/text'
 
 import { Item }                           from './Item'
 
-export const List: any = ({ notes }) => {
-  const elements = notes.map(item => {
+export const List: any = ({ notes }) =>
+  notes.map(item => {
     const [isImportant, setIsImportant] = useState(item.important)
     const [isLiked, setIsLiked] = useState(false)
     return (
@@ -35,5 +35,3 @@ export const List: any = ({ notes }) => {
       </Box>
     )
   })
-  return elements
-}
