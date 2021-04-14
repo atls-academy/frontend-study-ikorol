@@ -8,6 +8,7 @@ Input.defaultProps = {
   color: '#495057',
   margin: '0 2px 0 0',
   padding: '6px 10px',
+  width: '100%',
   fontSize: 16,
   fontWeight: 400,
   background: '#fff',

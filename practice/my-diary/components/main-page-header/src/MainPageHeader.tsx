@@ -1,10 +1,10 @@
-import React       from 'react'
-import { useIntl } from 'react-intl'
+import React                   from 'react'
+import { useIntl }             from 'react-intl'
 
-import { Box }     from '@ui/layout'
-import { Text }    from '@ui/text'
+import { Column, Layout, Row } from '@ui/layout'
+import { Text }                from '@ui/text'
 
-import messages    from './messages'
+import messages                from './messages'
 
 export const MainPageHeader = () => {
   const intl = useIntl()
@@ -19,14 +19,17 @@ export const MainPageHeader = () => {
     return sum
   }
   return (
-    <Box justifyContent='space-between' alignItems='flex-end'>
-      <Text fontSize='32px' margin='25px 0' fontWeight='bold'>
+    <Row justifyContent='space-between'>
+      <Text fontSize='32px' fontWeight='bold'>
         {intl.formatMessage(messages.name)}
       </Text>
-      <Text fontSize='22px' margin='25px 0' fontWeight='bold'>
-        {likesSum()} {intl.formatMessage(messages.post)} {postsSum()}{' '}
-        {intl.formatMessage(messages.like)}
-      </Text>
-    </Box>
+      <Column width='none'>
+        <Layout flexBasis={10} />
+        <Text fontSize='22px'>
+          {likesSum()} {intl.formatMessage(messages.post)} {postsSum()}{' '}
+          {intl.formatMessage(messages.like)}
+        </Text>
+      </Column>
+    </Row>
   )
 }

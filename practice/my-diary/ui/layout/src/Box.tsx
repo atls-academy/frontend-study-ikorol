@@ -30,6 +30,6 @@ export const Box = styled.div(
 Box.defaultProps = {
   display: 'flex',
   boxSizing: 'border-box',
-  margin: '16px 0',
+  margin: '0 auto',
   fontFamily: ['Roboto', 'Ubuntu', 'sans-serif'],
 }
