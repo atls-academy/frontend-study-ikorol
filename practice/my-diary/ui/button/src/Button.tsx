@@ -35,7 +35,6 @@ Button.defaultProps = {
   fontSize: '17px',
   fontWeight: '400',
   textAlign: 'center',
-  padding: '6px 12px',
   borderRadius: '4px',
   cursor: 'pointer',
 }

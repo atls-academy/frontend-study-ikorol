@@ -19,12 +19,13 @@ export const App = () => {
   const intl = useIntl()
 
   return (
-    <Box className='root' display='block' maxWidth='800px'>
+    <Box className='root' width='800px'>
       <Column>
         <MainPageHeader />
         <Layout flexBasis={20} />
         <Row justifyContent='space-between'>
-          <Input placeholder={intl.formatMessage(messages.search)} />
+          <Input placeholder={intl.formatMessage(messages.search)} padding='0 6px' />
+          <Layout flexBasis={4} />
           <Button
             backgroundColor='#17a2b8'
             color='#fff'
@@ -41,7 +42,8 @@ export const App = () => {
         <List notes={notes} />
         <Layout flexBasis={17} />
         <Row justifyContent='space-between'>
-          <Input placeholder={intl.formatMessage(messages.post)} />
+          <Input placeholder={intl.formatMessage(messages.post)} padding='0 6px' />
+          <Layout flexBasis={4} />
           <Button backgroundColor='transparent'>Add</Button>
         </Row>
       </Column>

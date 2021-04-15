@@ -1,1 +1,1 @@
-export { MainPageHeader } from './MainPageHeader'
+export * from './MainPageHeader'

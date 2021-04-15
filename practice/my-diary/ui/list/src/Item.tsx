@@ -23,6 +23,4 @@ Item.defaultProps = {
   width: '100%',
   backgroundColor: '#fff',
   borderRadius: '4px',
-  marginBottom: '5px',
-  paddingLeft: '10px',
 }
