@@ -1,10 +1,10 @@
-import React                   from 'react'
-import { useIntl }             from 'react-intl'
+import React                        from 'react'
+import { useIntl }                  from 'react-intl'
 
-import { Column, Layout, Row } from '@ui/layout'
-import { Text }                from '@ui/text'
+import { Box, Column, Layout, Row } from '@ui/layout'
+import { Space, Text }              from '@ui/text'
 
-import messages                from './messages'
+import messages                     from './messages'
 
 export const MainPageHeader = () => {
   const intl = useIntl()
@@ -23,13 +23,20 @@ export const MainPageHeader = () => {
       <Text fontSize='32px' fontWeight='bold'>
         {intl.formatMessage(messages.name)}
       </Text>
-      <Column width='none'>
-        <Layout flexBasis={10} />
-        <Text fontSize='22px'>
-          {likesSum()} {intl.formatMessage(messages.post)} {postsSum()}{' '}
-          {intl.formatMessage(messages.like)}
-        </Text>
-      </Column>
+      <Box>
+        <Column>
+          <Layout flexBasis={10} />
+          <Text fontSize='22px'>
+            {likesSum()}
+            <Space />
+            {intl.formatMessage(messages.post)}
+            <Space count={3} />
+            {postsSum()}
+            <Space />
+            {intl.formatMessage(messages.like)}
+          </Text>
+        </Column>
+      </Box>
     </Row>
   )
 }

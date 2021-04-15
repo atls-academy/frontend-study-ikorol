@@ -32,10 +32,10 @@ export const App = () => {
             borderColor='#17a2b8'
             borderRadius='4px 0 0 4px'
           >
-            All
+            {intl.formatMessage(messages.all)}
           </Button>
           <Button backgroundColor='transparent' borderRadius='0 4px 4px 0'>
-            Liked
+            {intl.formatMessage(messages.like)}
           </Button>
         </Row>
         <Layout flexBasis={20} />
@@ -44,7 +44,7 @@ export const App = () => {
         <Row justifyContent='space-between'>
           <Input placeholder={intl.formatMessage(messages.post)} padding='0 6px' />
           <Layout flexBasis={4} />
-          <Button backgroundColor='transparent'>Add</Button>
+          <Button backgroundColor='transparent'>{intl.formatMessage(messages.add)}</Button>
         </Row>
       </Column>
     </Box>

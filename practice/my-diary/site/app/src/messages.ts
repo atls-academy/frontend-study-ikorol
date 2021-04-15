@@ -11,4 +11,16 @@ export default defineMessages({
     id: `${name}.post`,
     defaultMessage: 'What are you thinking today',
   },
+  all: {
+    id: `${name}.all`,
+    defaultMessage: 'All',
+  },
+  like: {
+    id: `${name}.like`,
+    defaultMessage: 'Liked',
+  },
+  add: {
+    id: `${name}.add`,
+    defaultMessage: 'Add',
+  },
 })
