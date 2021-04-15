@@ -35,7 +35,7 @@ export const App = () => {
             {intl.formatMessage(messages.all)}
           </Button>
           <Button backgroundColor='transparent' borderRadius='0 4px 4px 0'>
-            {intl.formatMessage(messages.like)}
+            {intl.formatMessage(messages.liked)}
           </Button>
         </Row>
         <Layout flexBasis={20} />

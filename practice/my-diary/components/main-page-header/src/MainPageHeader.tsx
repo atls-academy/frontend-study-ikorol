@@ -33,7 +33,7 @@ export const MainPageHeader = () => {
             <Space count={3} />
             {postsSum()}
             <Space />
-            {intl.formatMessage(messages.like)}
+            {intl.formatMessage(messages.liked)}
           </Text>
         </Column>
       </Box>

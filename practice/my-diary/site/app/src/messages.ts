@@ -15,8 +15,8 @@ export default defineMessages({
     id: `${name}.all`,
     defaultMessage: 'All',
   },
-  like: {
-    id: `${name}.like`,
+  liked: {
+    id: `${name}.liked`,
     defaultMessage: 'Liked',
   },
   add: {
