@@ -1,5 +1,5 @@
 {
-  "name": "@ui/item",
+  "name": "@ui/list",
   "version": "0.0.0",
   "license": "MIT",
   "main": "src/index.ts",
@@ -12,6 +12,7 @@
     "styled-system": "^5.1.0",
     "@ui/button": "^0.0.0",
     "@ui/icons": "^0.0.0",
-    "@ui/layout": "^0.0.0"
+    "@ui/layout": "^0.0.0",
+    "@ui/text": "^0.0.0"
   }
 }

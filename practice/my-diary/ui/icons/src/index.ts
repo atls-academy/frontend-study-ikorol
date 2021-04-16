@@ -1,3 +1,3 @@
-export { TrashIcon } from './TrashIcon'
-export { StarIcon } from './StarIcon'
-export { HeartIcon } from './HeartIcon'
+export * from './TrashIcon'
+export * from './StarIcon'
+export * from './HeartIcon'

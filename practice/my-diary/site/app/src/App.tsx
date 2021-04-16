@@ -1,40 +1,52 @@
-import React         from 'react'
+import React                        from 'react'
+import { useIntl }                  from 'react-intl'
 
-import { AppHeader } from '@components/app-header'
-import { List }      from '@components/list'
-import { Button }    from '@ui/button'
-import { Input }     from '@ui/input'
-import { Box }       from '@ui/layout'
+import { MainPageHeader }           from '@components/main-page-header'
+import { Button }                   from '@ui/button'
+import { Input }                    from '@ui/input'
+import { Box, Column, Layout, Row } from '@ui/layout'
+import { List }                     from '@ui/list'
+
+import messages                     from './messages'
+
+const notes: { note: string; important: boolean; id: number }[] = [
+  { note: 'Flight to Moscow', important: false, id: 1 },
+  { note: 'Friends meeting', important: true, id: 2 },
+  { note: 'Buy a new frying pan in Ikea', important: false, id: 3 },
+]
 
 export const App = () => {
-  const notes: { note: string; id: number }[] = [
-    { note: 'Flight to Moscow', id: 1 },
-    { note: 'Friends meeting', id: 2 },
-    { note: 'Buy a new frying pan in Ikea', id: 3 },
-  ]
+  const intl = useIntl()
 
   return (
-    <Box className='root' display='block' margin='0 auto' maxWidth='800px'>
-      <AppHeader name='Irina Korol' text='5 posts 4 liked' />
-      <Box>
-        <Input width='100%' placeholder='Search by records' />
-        <Button
-          backgroundColor='#17a2b8'
-          color='#fff'
-          borderColor='#17a2b8'
-          borderRadius='4px 0 0 4px'
-        >
-          All
-        </Button>
-        <Button backgroundColor='transparent' borderRadius='0 4px 4px 0'>
-          Liked
-        </Button>
-      </Box>
-      <List notes={notes} />
-      <Box>
-        <Input width='100%' placeholder='What are you thinking today' />
-        <Button backgroundColor='transparent'>Add</Button>
-      </Box>
+    <Box className='root' width='800px'>
+      <Column>
+        <MainPageHeader />
+        <Layout flexBasis={20} />
+        <Row justifyContent='space-between'>
+          <Input placeholder={intl.formatMessage(messages.search)} padding='0 6px' />
+          <Layout flexBasis={4} />
+          <Button
+            backgroundColor='#17a2b8'
+            color='#fff'
+            borderColor='#17a2b8'
+            borderRadius='4px 0 0 4px'
+          >
+            {intl.formatMessage(messages.all)}
+          </Button>
+          <Button backgroundColor='transparent' borderRadius='0 4px 4px 0'>
+            {intl.formatMessage(messages.liked)}
+          </Button>
+        </Row>
+        <Layout flexBasis={20} />
+        <List notes={notes} />
+        <Layout flexBasis={17} />
+        <Row justifyContent='space-between'>
+          <Input placeholder={intl.formatMessage(messages.post)} padding='0 6px' />
+          <Layout flexBasis={4} />
+          <Button backgroundColor='transparent'>{intl.formatMessage(messages.add)}</Button>
+        </Row>
+      </Column>
     </Box>
   )
 }

@@ -1,11 +1,12 @@
 {
-  "name": "@components/app-header",
+  "name": "@components/main-page-header",
   "version": "0.0.0",
   "license": "MIT",
-  "main": "src/index.ts",
+  "main": "src/index.tsx",
   "dependencies": {
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.1.5",
+    "react-intl": "^5.15.7",
     "@ui/layout": "^0.0.0",
     "@ui/text": "^0.0.0",
     "react": "^17.0.1"
