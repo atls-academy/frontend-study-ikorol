@@ -1,4 +1,4 @@
-import React, { useState }          from 'react'
+import React                        from 'react'
 import { useIntl }                  from 'react-intl'
 
 import { MainPageHeader }           from '@components/main-page-header'
@@ -7,38 +7,12 @@ import { Input }                    from '@ui/input'
 import { Box, Column, Layout, Row } from '@ui/layout'
 import { List }                     from '@ui/list'
 
+import actions                      from './actions'
 import messages                     from './messages'
 
 export const App = () => {
   const intl = useIntl()
-  const uniqKey = () =>
-    Math.floor((1 + Math.random()) * 0x10000)
-      .toString(16)
-      .substring(1)
-  const [notes, setNotes] = useState([
-    { note: 'Flight to Moscow', important: false, liked: false, id: uniqKey() },
-    { note: 'Friends meeting', important: true, liked: false, id: uniqKey() },
-    { note: 'Buy a new frying pan in Ikea', important: false, liked: false, id: uniqKey() },
-  ])
-
-  const deleteItem = id => {
-    const index = notes.findIndex(customElements => customElements.id === id)
-    const newArray = [...notes.slice(0, index), ...notes.slice(index + 1)]
-    setNotes(newArray)
-  }
-
-  const toggleStatus = (id, value) => {
-    const index = notes.findIndex(customElements => customElements.id === id)
-    const lastNote = notes[index]
-    let newNote
-    if (value === 'important') {
-      newNote = { ...lastNote, important: !lastNote.important }
-    } else {
-      newNote = { ...lastNote, liked: !lastNote.liked }
-    }
-    const newArray = [...notes.slice(0, index), newNote, ...notes.slice(index + 1)]
-    setNotes(newArray)
-  }
+  const { notes, toggleStatus, deleteItem } = actions([])
 
   return (
     <Box className='root' width='800px'>
