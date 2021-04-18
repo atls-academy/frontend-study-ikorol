@@ -7,12 +7,17 @@ import { Input }                    from '@ui/input'
 import { Box, Column, Layout, Row } from '@ui/layout'
 import { List }                     from '@ui/list'
 
-import actions                      from './actions'
 import messages                     from './messages'
+import { deleteItem, toggleStatus } from './actions'
 
 export const App = () => {
   const intl = useIntl()
-  const { notes, toggleStatus, deleteItem } = actions([])
+  const uniqueKey = () => Math.random() * Date.now()
+  const notes = [
+    { note: 'Flight to Moscow', important: false, liked: false, id: uniqueKey() },
+    { note: 'Friends meeting', important: true, liked: false, id: uniqueKey() },
+    { note: 'Buy a new frying pan in Ikea', important: false, liked: false, id: uniqueKey() },
+  ]
 
   return (
     <Box className='root' width='800px'>
