@@ -1,5 +1,5 @@
 export const mode = 'development'
-export const entry = ['./site/app/src/index']
+export const entry = ['./app/src/index']
 export const output = {
   path: `${__dirname}/dist`,
   filename: 'bundle.js',
