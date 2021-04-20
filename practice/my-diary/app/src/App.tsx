@@ -9,8 +9,7 @@ import { Box, Column, Layout, Row } from '@ui/layout'
 import { List }                     from '@ui/list'
 
 import messages                     from './messages'
-import { toggleStatus }             from './actions'
-import { deleteItem }               from './actions'
+import { deleteItem, toggleStatus } from './actions'
 
 export const App = () => {
   const intl = useIntl()
