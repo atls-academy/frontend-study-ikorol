@@ -1,19 +1,21 @@
-import React, { useState }                from 'react'
+import React                              from 'react'
 
 import { Button }                         from '@ui/button'
 import { HeartIcon, StarIcon, TrashIcon } from '@ui/icons'
 import { Box, Column, Layout, Row }       from '@ui/layout'
 import { Text }                           from '@ui/text'
+import { useNotes }                       from '@store/notes'
 
 import { Item }                           from './Item'
 
-export const List: any = ({ notes, deleteItem, toggleStatus }) => {
-  const [newNotes, setNewNotes] = useState(notes)
-  const elements = newNotes.map(item => {
+export const List: any = ({ deleteItem, toggleStatus }) => {
+  const [notes, setNotes] = useNotes()
+
+  const elements = notes.map(item => {
     return (
       <Column key={item.id}>
         <Row>
-          <Item onDoubleClick={() => setNewNotes(toggleStatus(newNotes, item.id, 'liked'))}>
+          <Item onDoubleClick={() => setNotes(toggleStatus(notes, item.id, 'liked'))}>
             <Text lineHeight='40px' padding='0 6px'>
               {item.note}
             </Text>
@@ -24,7 +26,7 @@ export const List: any = ({ notes, deleteItem, toggleStatus }) => {
               backgroundColor='#fff'
               border='none'
               width='40px'
-              onClick={() => setNewNotes(toggleStatus(newNotes, item.id, 'important'))}
+              onClick={() => setNotes(toggleStatus(notes, item.id, 'important'))}
             >
               <StarIcon color={item.important ? '#FFD700' : '#6c757d'} />
             </Button>
@@ -33,7 +35,7 @@ export const List: any = ({ notes, deleteItem, toggleStatus }) => {
               backgroundColor='#fff'
               border='none'
               width='40px'
-              onClick={() => setNewNotes(deleteItem(newNotes, item.id))}
+              onClick={() => setNotes(deleteItem(notes, item.id))}
             >
               <TrashIcon />
             </Button>

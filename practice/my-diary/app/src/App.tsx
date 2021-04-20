@@ -1,7 +1,8 @@
-import React                        from 'react'
+import React, { useState }          from 'react'
 import { useIntl }                  from 'react-intl'
 
 import { MainPageHeader }           from '@components/main-page-header'
+import { NotesProvider }            from '@store/notes'
 import { Button }                   from '@ui/button'
 import { Input }                    from '@ui/input'
 import { Box, Column, Layout, Row } from '@ui/layout'
@@ -13,16 +14,18 @@ import { deleteItem, toggleStatus } from './actions'
 export const App = () => {
   const intl = useIntl()
   const uniqueKey = () => Math.random() * Date.now()
-  const notes = [
+  const [notes, setNotes] = useState([
     { note: 'Flight to Moscow', important: false, liked: false, id: uniqueKey() },
     { note: 'Friends meeting', important: true, liked: false, id: uniqueKey() },
     { note: 'Buy a new frying pan in Ikea', important: false, liked: false, id: uniqueKey() },
-  ]
+  ])
 
   return (
     <Box className='root' width='800px'>
       <Column>
-        <MainPageHeader />
+        <NotesProvider value={[notes, setNotes]}>
+          <MainPageHeader />
+        </NotesProvider>
         <Layout flexBasis={20} />
         <Row justifyContent='space-between'>
           <Input placeholder={intl.formatMessage(messages.search)} padding='0 6px' />
@@ -40,7 +43,9 @@ export const App = () => {
           </Button>
         </Row>
         <Layout flexBasis={20} />
-        <List notes={notes} deleteItem={deleteItem} toggleStatus={toggleStatus} />
+        <NotesProvider value={[notes, setNotes]}>
+          <List deleteItem={deleteItem} toggleStatus={toggleStatus} />
+        </NotesProvider>
         <Layout flexBasis={17} />
         <Row justifyContent='space-between'>
           <Input placeholder={intl.formatMessage(messages.post)} padding='0 6px' />
