@@ -9,7 +9,8 @@ import { Box, Column, Layout, Row } from '@ui/layout'
 import { List }                     from '@ui/list'
 
 import messages                     from './messages'
-import { deleteItem, toggleStatus } from './actions'
+import { toggleStatus }             from './actions'
+import { deleteItem }               from './actions'
 
 export const App = () => {
   const intl = useIntl()
@@ -21,38 +22,36 @@ export const App = () => {
   ])
 
   return (
-    <Box className='root' width='800px'>
-      <Column>
-        <NotesProvider value={[notes, setNotes]}>
+    <NotesProvider value={[notes, setNotes]}>
+      <Box className='root' width='800px'>
+        <Column>
           <MainPageHeader />
-        </NotesProvider>
-        <Layout flexBasis={20} />
-        <Row justifyContent='space-between'>
-          <Input placeholder={intl.formatMessage(messages.search)} padding='0 6px' />
-          <Layout flexBasis={4} />
-          <Button
-            backgroundColor='#17a2b8'
-            color='#fff'
-            borderColor='#17a2b8'
-            borderRadius='4px 0 0 4px'
-          >
-            {intl.formatMessage(messages.all)}
-          </Button>
-          <Button backgroundColor='transparent' borderRadius='0 4px 4px 0'>
-            {intl.formatMessage(messages.liked)}
-          </Button>
-        </Row>
-        <Layout flexBasis={20} />
-        <NotesProvider value={[notes, setNotes]}>
+          <Layout flexBasis={20} />
+          <Row justifyContent='space-between'>
+            <Input placeholder={intl.formatMessage(messages.search)} padding='0 6px' />
+            <Layout flexBasis={4} />
+            <Button
+              backgroundColor='#17a2b8'
+              color='#fff'
+              borderColor='#17a2b8'
+              borderRadius='4px 0 0 4px'
+            >
+              {intl.formatMessage(messages.all)}
+            </Button>
+            <Button backgroundColor='transparent' borderRadius='0 4px 4px 0'>
+              {intl.formatMessage(messages.liked)}
+            </Button>
+          </Row>
+          <Layout flexBasis={20} />
           <List deleteItem={deleteItem} toggleStatus={toggleStatus} />
-        </NotesProvider>
-        <Layout flexBasis={17} />
-        <Row justifyContent='space-between'>
-          <Input placeholder={intl.formatMessage(messages.post)} padding='0 6px' />
-          <Layout flexBasis={4} />
-          <Button backgroundColor='transparent'>{intl.formatMessage(messages.add)}</Button>
-        </Row>
-      </Column>
-    </Box>
+          <Layout flexBasis={17} />
+          <Row justifyContent='space-between'>
+            <Input placeholder={intl.formatMessage(messages.post)} padding='0 6px' />
+            <Layout flexBasis={4} />
+            <Button backgroundColor='transparent'>{intl.formatMessage(messages.add)}</Button>
+          </Row>
+        </Column>
+      </Box>
+    </NotesProvider>
   )
 }
