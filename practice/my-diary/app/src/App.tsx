@@ -46,7 +46,7 @@ export const App = () => {
           <Layout flexBasis={17} />
           <Row justifyContent='space-between'>
             <Input placeholder={intl.formatMessage(messages.post)} padding='0 6px' />
-            <Layout flexBasis={4} />
+            <Layout flexBasis={3} />
             <Button backgroundColor='transparent'>{intl.formatMessage(messages.add)}</Button>
           </Row>
         </Column>
