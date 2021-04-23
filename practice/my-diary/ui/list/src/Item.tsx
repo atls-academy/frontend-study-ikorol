@@ -9,7 +9,7 @@ import { Text }                           from '@ui/text'
 import { useNotes }                       from '@store/notes'
 
 const StyledItem = styled.li(
-  ({ ...props }) => ({
+  () => ({
     display: 'flex',
     boxSizing: 'border-box',
     width: '100%',
