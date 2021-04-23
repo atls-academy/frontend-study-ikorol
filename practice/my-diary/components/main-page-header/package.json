@@ -2,13 +2,14 @@
   "name": "@components/main-page-header",
   "version": "0.0.0",
   "license": "MIT",
-  "main": "src/index.tsx",
+  "main": "src/index.ts",
   "dependencies": {
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.1.5",
     "react-intl": "^5.15.7",
     "@ui/layout": "^0.0.0",
     "@ui/text": "^0.0.0",
-    "react": "^17.0.1"
+    "react": "^17.0.1",
+    "@store/notes": "0.0.0"
   }
 }

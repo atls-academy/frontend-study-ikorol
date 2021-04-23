@@ -31,7 +31,7 @@ Button.defaultProps = {
   color: '#6c757d',
   border: '1px solid #6c757d',
   borderColor: '#6c757d',
-  height: '38px',
+  height: '40px',
   fontSize: '17px',
   fontWeight: '400',
   textAlign: 'center',
