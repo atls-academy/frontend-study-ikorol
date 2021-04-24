@@ -7,6 +7,5 @@ export const toggleStatus = (notes, id, value) => {
   } else {
     newNote = { ...lastNote, liked: !lastNote.liked }
   }
-  const newArray = [...notes.slice(0, index), newNote, ...notes.slice(index + 1)]
-  return newArray
+  return [...notes.slice(0, index), newNote, ...notes.slice(index + 1)]
 }
