@@ -28,7 +28,7 @@ export const App = () => {
           <MainPageHeader />
           <Layout flexBasis={20} />
           <Row justifyContent='space-between'>
-            <Input placeholder={intl.formatMessage(messages.search)} padding='0 6px' />
+            <Input placeholder={intl.formatMessage(messages.search)} />
             <Layout flexBasis={4} />
             <Button
               backgroundColor='#17a2b8'
@@ -48,7 +48,6 @@ export const App = () => {
           <Row justifyContent='space-between'>
             <Input
               placeholder={intl.formatMessage(messages.post)}
-              padding='0 6px'
               onChange={event => setNewNote(event.target.value)}
               value={newNote}
             />
