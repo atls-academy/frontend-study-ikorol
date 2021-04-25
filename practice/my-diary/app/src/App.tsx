@@ -1,15 +1,15 @@
-import React, { useState }          from 'react'
-import { useIntl }                  from 'react-intl'
+import React, { useState }                   from 'react'
+import { useIntl }                           from 'react-intl'
 
-import { MainPageHeader }           from '@components/main-page-header'
-import { NotesProvider }            from '@store/notes'
-import { Button }                   from '@ui/button'
-import { Input }                    from '@ui/input'
-import { Box, Column, Layout, Row } from '@ui/layout'
-import { List }                     from '@ui/list'
+import { MainPageHeader }                    from '@components/main-page-header'
+import { NotesProvider }                     from '@store/notes'
+import { Button }                            from '@ui/button'
+import { Input }                             from '@ui/input'
+import { Box, Column, Layout, Row }          from '@ui/layout'
+import { List }                              from '@ui/list'
 
-import messages                     from './messages'
-import { deleteItem, toggleStatus } from './actions'
+import messages                              from './messages'
+import { addItem, deleteItem, toggleStatus } from './actions'
 
 export const App = () => {
   const intl = useIntl()
@@ -19,6 +19,7 @@ export const App = () => {
     { note: 'Friends meeting', important: true, liked: false, id: uniqueKey() },
     { note: 'Buy a new frying pan in Ikea', important: false, liked: false, id: uniqueKey() },
   ])
+  const [newNote, setNewNote] = useState('')
 
   return (
     <NotesProvider value={[notes, setNotes]}>
@@ -27,7 +28,7 @@ export const App = () => {
           <MainPageHeader />
           <Layout flexBasis={20} />
           <Row justifyContent='space-between'>
-            <Input placeholder={intl.formatMessage(messages.search)} padding='0 6px' />
+            <Input placeholder={intl.formatMessage(messages.search)} />
             <Layout flexBasis={4} />
             <Button
               backgroundColor='#17a2b8'
@@ -45,9 +46,21 @@ export const App = () => {
           <List deleteItem={deleteItem} toggleStatus={toggleStatus} />
           <Layout flexBasis={17} />
           <Row justifyContent='space-between'>
-            <Input placeholder={intl.formatMessage(messages.post)} padding='0 6px' />
+            <Input
+              placeholder={intl.formatMessage(messages.post)}
+              onChange={event => setNewNote(event.target.value)}
+              value={newNote}
+            />
             <Layout flexBasis={3} />
-            <Button backgroundColor='transparent'>{intl.formatMessage(messages.add)}</Button>
+            <Button
+              onClick={() => {
+                setNotes(addItem(notes, newNote))
+                setNewNote('')
+              }}
+              backgroundColor='transparent'
+            >
+              {intl.formatMessage(messages.add)}
+            </Button>
           </Row>
         </Column>
       </Box>
