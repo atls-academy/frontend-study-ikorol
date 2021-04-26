@@ -1,15 +1,15 @@
-import React, { useState }                   from 'react'
-import { useIntl }                           from 'react-intl'
+import React, { useState }                                from 'react'
+import { useIntl }                                        from 'react-intl'
 
-import { MainPageHeader }                    from '@components/main-page-header'
-import { NotesProvider }                     from '@store/notes'
-import { Button }                            from '@ui/button'
-import { Input }                             from '@ui/input'
-import { Box, Column, Layout, Row }          from '@ui/layout'
-import { List }                              from '@ui/list'
+import { MainPageHeader }                                 from '@components/main-page-header'
+import { NotesProvider }                                  from '@store/notes'
+import { Button }                                         from '@ui/button'
+import { Input }                                          from '@ui/input'
+import { Box, Column, Layout, Row }                       from '@ui/layout'
+import { List }                                           from '@ui/list'
 
-import messages                              from './messages'
-import { addItem, deleteItem, toggleStatus } from './actions'
+import messages                                           from './messages'
+import { addItem, deleteItem, searchNotes, toggleStatus } from './actions'
 
 export const App = () => {
   const intl = useIntl()
@@ -20,6 +20,7 @@ export const App = () => {
     { note: 'Buy a new frying pan in Ikea', important: false, liked: false, id: uniqueKey() },
   ])
   const [newNote, setNewNote] = useState('')
+  const [searchValue, setSearchValue] = useState('')
 
   return (
     <NotesProvider value={[notes, setNotes]}>
@@ -28,7 +29,10 @@ export const App = () => {
           <MainPageHeader />
           <Layout flexBasis={20} />
           <Row justifyContent='space-between'>
-            <Input placeholder={intl.formatMessage(messages.search)} />
+            <Input
+              placeholder={intl.formatMessage(messages.search)}
+              onChange={event => setSearchValue(event.target.value)}
+            />
             <Layout flexBasis={4} />
             <Button
               backgroundColor='#17a2b8'
@@ -43,7 +47,11 @@ export const App = () => {
             </Button>
           </Row>
           <Layout flexBasis={20} />
-          <List deleteItem={deleteItem} toggleStatus={toggleStatus} />
+          <List
+            visibleNotes={searchNotes(notes, searchValue)}
+            deleteItem={deleteItem}
+            toggleStatus={toggleStatus}
+          />
           <Layout flexBasis={17} />
           <Row justifyContent='space-between'>
             <Input
