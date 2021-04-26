@@ -1,16 +1,13 @@
-import React        from 'react'
+import React      from 'react'
 
-import { Column }   from '@ui/layout'
-import { useNotes } from '@store/notes'
+import { Column } from '@ui/layout'
 
-import { Item }     from './Item'
+import { Item }   from './Item'
 
-export const List: any = ({ deleteItem, toggleStatus }) => {
-  const [notes] = useNotes()
-
+export const List: any = ({ visibleNotes, deleteItem, toggleStatus }) => {
   return (
     <Column>
-      {notes.map(item => (
+      {visibleNotes.map(item => (
         <Item note={item} key={item.id} deleteItem={deleteItem} toggleStatus={toggleStatus} />
       ))}
     </Column>
