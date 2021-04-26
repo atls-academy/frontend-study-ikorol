@@ -3,6 +3,6 @@ export const searchNotes = (notes, searchValue) => {
     return notes
   }
   return notes.filter(item => {
-    return item.note.toLowerCase().indexOf(searchValue) > -1
+    return item.note.toLowerCase().indexOf(searchValue.toLowerCase()) > -1
   })
 }
