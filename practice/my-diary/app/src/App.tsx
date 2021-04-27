@@ -1,15 +1,15 @@
-import React, { useState }                                from 'react'
-import { useIntl }                                        from 'react-intl'
+import React, { useState }                                             from 'react'
+import { useIntl }                                                     from 'react-intl'
 
-import { MainPageHeader }                                 from '@components/main-page-header'
-import { NotesProvider }                                  from '@store/notes'
-import { Button }                                         from '@ui/button'
-import { Input }                                          from '@ui/input'
-import { Box, Column, Layout, Row }                       from '@ui/layout'
-import { List }                                           from '@ui/list'
+import { MainPageHeader }                                              from '@components/main-page-header'
+import { NotesProvider }                                               from '@store/notes'
+import { Button }                                                      from '@ui/button'
+import { Input }                                                       from '@ui/input'
+import { Box, Column, Layout, Row }                                    from '@ui/layout'
+import { List }                                                        from '@ui/list'
 
-import messages                                           from './messages'
-import { addItem, deleteItem, searchNotes, toggleStatus } from './actions'
+import messages                                                        from './messages'
+import { addItem, deleteItem, filterNotes, searchNotes, toggleStatus } from './actions'
 
 export const App = () => {
   const intl = useIntl()
@@ -21,6 +21,7 @@ export const App = () => {
   ])
   const [newNote, setNewNote] = useState('')
   const [searchValue, setSearchValue] = useState('')
+  const [filter, setFilter] = useState('')
 
   return (
     <NotesProvider value={[notes, setNotes]}>
@@ -39,16 +40,21 @@ export const App = () => {
               color='#fff'
               borderColor='#17a2b8'
               borderRadius='4px 0 0 4px'
+              onClick={() => setFilter('')}
             >
               {intl.formatMessage(messages.all)}
             </Button>
-            <Button backgroundColor='transparent' borderRadius='0 4px 4px 0'>
+            <Button
+              backgroundColor='transparent'
+              borderRadius='0 4px 4px 0'
+              onClick={() => setFilter('liked')}
+            >
               {intl.formatMessage(messages.liked)}
             </Button>
           </Row>
           <Layout flexBasis={20} />
           <List
-            visibleNotes={searchNotes(notes, searchValue)}
+            visibleNotes={filterNotes(searchNotes(notes, searchValue), filter)}
             deleteItem={deleteItem}
             toggleStatus={toggleStatus}
           />
