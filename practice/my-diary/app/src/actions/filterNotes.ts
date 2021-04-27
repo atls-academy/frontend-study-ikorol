@@ -9,9 +9,9 @@ export const filterNotes = (notes, searchValue, filter) => {
   }
 
   switch (filter) {
-    case 'liked': {
+    case 'liked':
       return filteredNotes.filter(note => note.liked)
-    }
+
     case 'all':
       return filteredNotes
 
@@ -19,6 +19,6 @@ export const filterNotes = (notes, searchValue, filter) => {
       return filteredNotes.filter(note => note.important)
 
     default:
-      return filterNotes
+      return filteredNotes
   }
 }
