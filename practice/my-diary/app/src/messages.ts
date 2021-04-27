@@ -19,6 +19,10 @@ export default defineMessages({
     id: `${name}.liked`,
     defaultMessage: 'Liked',
   },
+  important: {
+    id: `${name}.important`,
+    defaultMessage: 'Important',
+  },
   add: {
     id: `${name}.add`,
     defaultMessage: 'Add',

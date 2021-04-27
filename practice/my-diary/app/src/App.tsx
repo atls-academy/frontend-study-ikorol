@@ -1,15 +1,15 @@
-import React, { useState }                                             from 'react'
-import { useIntl }                                                     from 'react-intl'
+import React, { useState }                                from 'react'
+import { useIntl }                                        from 'react-intl'
 
-import { MainPageHeader }                                              from '@components/main-page-header'
-import { NotesProvider }                                               from '@store/notes'
-import { Button }                                                      from '@ui/button'
-import { Input }                                                       from '@ui/input'
-import { Box, Column, Layout, Row }                                    from '@ui/layout'
-import { List }                                                        from '@ui/list'
+import { MainPageHeader }                                 from '@components/main-page-header'
+import { NotesProvider }                                  from '@store/notes'
+import { Button }                                         from '@ui/button'
+import { Input }                                          from '@ui/input'
+import { Box, Column, Layout, Row }                       from '@ui/layout'
+import { List }                                           from '@ui/list'
 
-import messages                                                        from './messages'
-import { addItem, deleteItem, filterNotes, searchNotes, toggleStatus } from './actions'
+import messages                                           from './messages'
+import { addItem, deleteItem, filterNotes, toggleStatus } from './actions'
 
 export const App = () => {
   const intl = useIntl()
@@ -21,7 +21,7 @@ export const App = () => {
   ])
   const [newNote, setNewNote] = useState('')
   const [searchValue, setSearchValue] = useState('')
-  const [filter, setFilter] = useState('')
+  const [filter, setFilter] = useState('all')
 
   return (
     <NotesProvider value={[notes, setNotes]}>
@@ -36,16 +36,24 @@ export const App = () => {
             />
             <Layout flexBasis={4} />
             <Button
-              backgroundColor='#17a2b8'
-              color='#fff'
-              borderColor='#17a2b8'
+              backgroundColor={filter === 'all' ? '#17a2b8' : 'transparent'}
+              color={filter === 'all' ? '#fff' : '#6c757d'}
               borderRadius='4px 0 0 4px'
-              onClick={() => setFilter('')}
+              onClick={() => setFilter('all')}
             >
               {intl.formatMessage(messages.all)}
             </Button>
             <Button
-              backgroundColor='transparent'
+              backgroundColor={filter === 'important' ? '#17a2b8' : 'transparent'}
+              color={filter === 'important' ? '#fff' : '#6c757d'}
+              borderRadius='0'
+              onClick={() => setFilter('important')}
+            >
+              {intl.formatMessage(messages.important)}
+            </Button>
+            <Button
+              backgroundColor={filter === 'liked' ? '#17a2b8' : 'transparent'}
+              color={filter === 'liked' ? '#fff' : '#6c757d'}
               borderRadius='0 4px 4px 0'
               onClick={() => setFilter('liked')}
             >
@@ -54,7 +62,7 @@ export const App = () => {
           </Row>
           <Layout flexBasis={20} />
           <List
-            visibleNotes={filterNotes(searchNotes(notes, searchValue), filter)}
+            visibleNotes={filterNotes(notes, searchValue, filter)}
             deleteItem={deleteItem}
             toggleStatus={toggleStatus}
           />

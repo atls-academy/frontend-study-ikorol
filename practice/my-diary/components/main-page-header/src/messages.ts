@@ -11,6 +11,10 @@ export default defineMessages({
     id: `${name}.post`,
     defaultMessage: 'posts',
   },
+  important: {
+    id: `${name}.important`,
+    defaultMessage: 'important',
+  },
   liked: {
     id: `${name}.liked`,
     defaultMessage: 'liked',
