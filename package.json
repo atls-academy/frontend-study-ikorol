@@ -12,7 +12,8 @@
     "lint": "actl lint",
     "commit": "actl commit",
     "typecheck": "actl typecheck",
-    "format": "actl format"
+    "format": "actl format",
+    "diary": "yarn workspace @practice/my-diary dev"
   },
   "workspaces": [
     "lessons/**/*",
