@@ -7,10 +7,6 @@ export default defineMessages({
     id: `${name}.search`,
     defaultMessage: 'Search by records',
   },
-  post: {
-    id: `${name}.post`,
-    defaultMessage: 'What are you thinking today',
-  },
   all: {
     id: `${name}.all`,
     defaultMessage: 'All',
@@ -22,9 +18,5 @@ export default defineMessages({
   important: {
     id: `${name}.important`,
     defaultMessage: 'Important',
-  },
-  add: {
-    id: `${name}.add`,
-    defaultMessage: 'Add',
   },
 })
