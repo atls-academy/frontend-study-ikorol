@@ -25,8 +25,8 @@ export const App = () => {
 
   return (
     <NotesProvider value={[notes, setNotes]}>
-      <Box className='root' width='800px'>
-        <Column>
+      <Box margin='auto' justifyContent='center' backgroundColor='#eaf5fc'>
+        <Column width='800px'>
           <MainPageHeader />
           <Layout flexBasis={20} />
           <Row justifyContent='space-between'>
