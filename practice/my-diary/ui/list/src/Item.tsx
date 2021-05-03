@@ -7,14 +7,15 @@ import { HeartIcon, StarIcon, TrashIcon } from '@ui/icons'
 import { Box, Layout, Row }               from '@ui/layout'
 import { Text }                           from '@ui/text'
 import { useNotes }                       from '@store/notes'
+import { theme }                          from '@ui/theme'
 
 const StyledItem = styled.li(
   () => ({
     display: 'flex',
     boxSizing: 'border-box',
     width: '100%',
-    borderRadius: '4px',
-    backgroundColor: '#fff',
+    borderRadius: theme.radii.normal,
+    backgroundColor: theme.colors.white,
   }),
   color,
   border,
@@ -33,16 +34,16 @@ export const Item = ({ note, deleteItem, toggleStatus }) => {
         <Layout flexBasis={3} />
         <Box>
           <Button
-            backgroundColor='#fff'
+            backgroundColor={theme.colors.white}
             border='none'
             width='40px'
             onClick={() => setNotes(toggleStatus(notes, note.id, 'important'))}
           >
-            <StarIcon color={note.important ? '#FFD700' : '#6c757d'} />
+            <StarIcon color={note.important ? theme.colors.yellow : theme.colors.darkGrey} />
           </Button>
           <Layout flexBasis={3} />
           <Button
-            backgroundColor='#fff'
+            backgroundColor={theme.colors.white}
             border='none'
             width='40px'
             onClick={() => setNotes(deleteItem(notes, note.id))}
@@ -50,7 +51,7 @@ export const Item = ({ note, deleteItem, toggleStatus }) => {
             <TrashIcon />
           </Button>
           <Layout flexBasis={3} />
-          <Button backgroundColor='#fff' border='none' width='40px'>
+          <Button backgroundColor={theme.colors.white} border='none' width='40px'>
             <HeartIcon opacity={note.liked ? '1' : '0'} />
           </Button>
         </Box>

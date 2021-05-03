@@ -8,17 +8,19 @@
     "@types/react-dom": "^17.0.1"
   },
   "dependencies": {
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-intl": "^5.15.7",
+    "@components/main-page-header": "0.0.0",
+    "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.1.5",
+    "@store/notes": "0.0.0",
     "@ui/button": "0.0.0",
     "@ui/icons": "0.0.0",
-    "@ui/text": "0.0.0",
     "@ui/input": "0.0.0",
     "@ui/layout": "0.0.0",
     "@ui/list": "0.0.0",
-    "@store/notes": "0.0.0",
-    "@components/main-page-header": "0.0.0"
+    "@ui/theme": "0.0.0",
+    "@ui/text": "0.0.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-intl": "^5.15.7"
   }
 }
