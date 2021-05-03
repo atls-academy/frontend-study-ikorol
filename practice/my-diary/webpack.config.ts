@@ -1,17 +1,31 @@
-import { join } from 'path'
+import HTMLWebpackPlugin from 'html-webpack-plugin'
+import template          from 'html-webpack-template'
+import path              from 'path'
 
 export const mode = 'development'
 export const entry = ['./app/src/index']
 export const output = {
-  path: `${__dirname}/public/dist`,
+  path: `${__dirname}/dist`,
   filename: 'bundle.js',
 }
+
+export const plugins = [
+  new HTMLWebpackPlugin({
+    inject: false,
+    template,
+    appMountId: 'root',
+    title: 'My diary',
+    scripts: ['bundle.js'],
+  }),
+]
+
 export const devServer = {
-  contentBase: join(__dirname, 'public'),
+  contentBase: path.join(__dirname, 'dist'),
   compress: true,
   port: 9000,
   open: true,
 }
+
 export const module = {
   rules: [
     {
