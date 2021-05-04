@@ -4,11 +4,18 @@ import { Column } from '@ui/layout'
 
 import { Item }   from './Item'
 
-export const List: any = ({ visibleNotes, deleteItem, toggleStatus }) => {
+export const List: any = ({ notes, setNotes, visibleNotes, deleteItem, toggleStatus }) => {
   return (
     <Column>
       {visibleNotes.map(item => (
-        <Item note={item} key={item.id} deleteItem={deleteItem} toggleStatus={toggleStatus} />
+        <Item
+          notes={notes}
+          setNotes={setNotes}
+          note={item}
+          key={item.id}
+          deleteItem={deleteItem}
+          toggleStatus={toggleStatus}
+        />
       ))}
     </Column>
   )

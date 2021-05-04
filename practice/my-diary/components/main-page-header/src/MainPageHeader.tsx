@@ -4,7 +4,6 @@ import { useIntl }                  from 'react-intl'
 import { Box, Column, Layout, Row } from '@ui/layout'
 import { Space, Text }              from '@ui/text'
 import { useNotes }                 from '@store/notes'
-import { theme }                    from '@ui/theme'
 
 import messages                     from './messages'
 
@@ -14,13 +13,13 @@ export const MainPageHeader = () => {
 
   return (
     <Row justifyContent='space-between'>
-      <Text fontSize={theme.fontSizes.large} fontWeight='bold'>
+      <Text fontSize='large' fontWeight='bold'>
         {intl.formatMessage(messages.name)}
       </Text>
       <Box>
         <Column>
           <Layout flexBasis={10} />
-          <Text fontSize={theme.fontSizes.medium}>
+          <Text fontSize='medium'>
             {notes.length}
             <Space />
             {intl.formatMessage(messages.post)}
