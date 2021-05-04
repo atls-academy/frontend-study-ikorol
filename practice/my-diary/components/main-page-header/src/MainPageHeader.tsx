@@ -13,13 +13,13 @@ export const MainPageHeader = () => {
 
   return (
     <Row justifyContent='space-between'>
-      <Text fontSize='32px' fontWeight='bold'>
+      <Text fontSize='large' fontWeight='bold'>
         {intl.formatMessage(messages.name)}
       </Text>
       <Box>
         <Column>
           <Layout flexBasis={10} />
-          <Text fontSize='22px'>
+          <Text fontSize='medium'>
             {notes.length}
             <Space />
             {intl.formatMessage(messages.post)}

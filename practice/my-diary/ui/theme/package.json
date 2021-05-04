@@ -1,0 +1,9 @@
+{
+  "name": "@ui/theme",
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "src/index.ts",
+  "devDependencies": {
+    "react": "^17.0.1"
+  }
+}

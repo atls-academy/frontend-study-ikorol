@@ -21,25 +21,25 @@ export const PostControls = () => {
       />
       <Layout flexBasis={4} />
       <Button
-        backgroundColor={filter === 'all' ? '#17a2b8' : 'transparent'}
-        color={filter === 'all' ? '#fff' : '#6c757d'}
-        borderRadius='4px 0 0 4px'
+        backgroundColor={filter === 'all' ? 'blue' : 'transparent'}
+        color={filter === 'all' ? 'white' : 'gray'}
+        borderRadius='leftSide'
         onClick={() => setFilter('all')}
       >
         {intl.formatMessage(messages.all)}
       </Button>
       <Button
-        backgroundColor={filter === 'important' ? '#17a2b8' : 'transparent'}
-        color={filter === 'important' ? '#fff' : '#6c757d'}
+        backgroundColor={filter === 'important' ? 'blue' : 'transparent'}
+        color={filter === 'important' ? 'white' : 'gray'}
         borderRadius='0'
         onClick={() => setFilter('important')}
       >
         {intl.formatMessage(messages.important)}
       </Button>
       <Button
-        backgroundColor={filter === 'liked' ? '#17a2b8' : 'transparent'}
-        color={filter === 'liked' ? '#fff' : '#6c757d'}
-        borderRadius='0 4px 4px 0'
+        backgroundColor={filter === 'liked' ? 'blue' : 'transparent'}
+        color={filter === 'liked' ? 'white' : 'gray'}
+        borderRadius='rightSide'
         onClick={() => setFilter('liked')}
       >
         {intl.formatMessage(messages.liked)}
