@@ -26,7 +26,7 @@ export const App = () => {
       <NotesProvider value={[notes, setNotes]}>
         <SearchValueProvider value={[searchValue, setSearchValue]}>
           <FilterProvider value={[filter, setFilter]}>
-            <Box margin='auto' justifyContent='center' backgroundColor='#eaf5fc'>
+            <Box margin='auto' justifyContent='center' backgroundColor='lightBlue'>
               <Column width='800px'>
                 <MainPageHeader />
                 <Layout flexBasis={20} />
