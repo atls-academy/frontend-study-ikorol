@@ -12,8 +12,6 @@ const StyledItem = styled.li(
     display: 'flex',
     boxSizing: 'border-box',
     width: '100%',
-    borderRadius: '4px',
-    backgroundColor: '#fff',
   }),
   color,
   border,
@@ -22,7 +20,11 @@ const StyledItem = styled.li(
 export const Item = ({ notes, setNotes, note, deleteItem, toggleStatus }) => (
   <>
     <Row>
-      <StyledItem onDoubleClick={() => setNotes(toggleStatus(notes, note.id, 'liked'))}>
+      <StyledItem
+        onDoubleClick={() => setNotes(toggleStatus(notes, note.id, 'liked'))}
+        backgroundColor='white'
+        borderRadius='normal'
+      >
         <Text lineHeight='40px' padding='0 6px'>
           {note.note}
         </Text>
@@ -30,16 +32,16 @@ export const Item = ({ notes, setNotes, note, deleteItem, toggleStatus }) => (
       <Layout flexBasis={3} />
       <Box>
         <Button
-          backgroundColor='#fff'
+          backgroundColor='white'
           border='none'
           width='40px'
           onClick={() => setNotes(toggleStatus(notes, note.id, 'important'))}
         >
-          <StarIcon color={note.important ? '#FFD700' : '#6c757d'} />
+          <StarIcon color={note.important ? '#FFD700' : 'gray'} />
         </Button>
         <Layout flexBasis={3} />
         <Button
-          backgroundColor='#fff'
+          backgroundColor='white'
           border='none'
           width='40px'
           onClick={() => setNotes(deleteItem(notes, note.id))}
@@ -47,7 +49,7 @@ export const Item = ({ notes, setNotes, note, deleteItem, toggleStatus }) => (
           <TrashIcon />
         </Button>
         <Layout flexBasis={3} />
-        <Button backgroundColor='#fff' border='none' width='40px'>
+        <Button backgroundColor='white' border='none' width='40px'>
           <HeartIcon opacity={note.liked ? '1' : '0'} />
         </Button>
       </Box>
