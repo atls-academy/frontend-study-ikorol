@@ -2,7 +2,7 @@
   "name": "@practice/my-diary",
   "version": "0.0.0",
   "license": "MIT",
-  "repository": "https://github.com/ikorol3107/ikorol3107.github.io",
+  "repository": "https://frontend-study-ikorol.github.io",
   "scripts": {
     "build": "webpack",
     "dev": "webpack serve"
