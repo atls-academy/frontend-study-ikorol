@@ -1,0 +1,19 @@
+name: Deploy to GitHub pages
+on:
+  push:
+    branches:
+      - master
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install dependencies
+        run: yarn install
+      - name: Build
+        run: yarn workspase @practice/my-diary build
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.1
+        with:
+          branch: gh-pages
+          folder: practice/my-diary/dist
