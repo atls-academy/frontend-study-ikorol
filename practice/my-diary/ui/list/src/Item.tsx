@@ -12,8 +12,6 @@ const StyledItem = styled.li(
     display: 'flex',
     boxSizing: 'border-box',
     width: '100%',
-    borderRadius: 'normal',
-    backgroundColor: 'white',
   }),
   color,
   border,
@@ -22,7 +20,11 @@ const StyledItem = styled.li(
 export const Item = ({ notes, setNotes, note, deleteItem, toggleStatus }) => (
   <>
     <Row>
-      <StyledItem onDoubleClick={() => setNotes(toggleStatus(notes, note.id, 'liked'))}>
+      <StyledItem
+        onDoubleClick={() => setNotes(toggleStatus(notes, note.id, 'liked'))}
+        backgroundColor='white'
+        borderRadius='normal'
+      >
         <Text lineHeight='40px' padding='0 6px'>
           {note.note}
         </Text>
@@ -35,7 +37,7 @@ export const Item = ({ notes, setNotes, note, deleteItem, toggleStatus }) => (
           width='40px'
           onClick={() => setNotes(toggleStatus(notes, note.id, 'important'))}
         >
-          <StarIcon color={note.important ? 'yellow' : 'gray'} />
+          <StarIcon color={note.important ? '#FFD700' : 'gray'} />
         </Button>
         <Layout flexBasis={3} />
         <Button
