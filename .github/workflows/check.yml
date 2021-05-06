@@ -3,7 +3,7 @@ name: codelinter
 on: pull_request
 
 jobs:
-  codelinter:
+  checks:
     runs-on: ubuntu-latest
 
     steps:
