@@ -25,7 +25,7 @@ export const Item = ({ notes, setNotes, note, deleteItem, toggleStatus }) => (
         backgroundColor='white'
         borderRadius='normal'
       >
-        <Text lineHeight='40px' padding='0 6px'>
+        <Text lineHeight='40px' padding='0 50px' color='grayBlue'>
           {note.note}
         </Text>
       </StyledItem>

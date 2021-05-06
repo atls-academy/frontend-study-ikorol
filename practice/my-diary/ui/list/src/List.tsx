@@ -1,12 +1,13 @@
-import React      from 'react'
+import React              from 'react'
 
-import { Column } from '@ui/layout'
+import { Column, Layout } from '@ui/layout'
 
-import { Item }   from './Item'
+import { Item }           from './Item'
 
 export const List: any = ({ notes, setNotes, visibleNotes, deleteItem, toggleStatus }) => {
   return (
-    <Column>
+    <Column backgroundColor='white'>
+      <Layout flexBasis={50} />
       {visibleNotes.map(item => (
         <Item
           notes={notes}
@@ -17,6 +18,7 @@ export const List: any = ({ notes, setNotes, visibleNotes, deleteItem, toggleSta
           toggleStatus={toggleStatus}
         />
       ))}
+      <Layout flexBasis={50} />
     </Column>
   )
 }

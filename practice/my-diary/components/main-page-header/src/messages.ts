@@ -5,7 +5,7 @@ import { name }           from '../package.json'
 export default defineMessages({
   name: {
     id: `${name}.name`,
-    defaultMessage: 'Irina Korol',
+    defaultMessage: 'Website todo',
   },
   post: {
     id: `${name}.post`,

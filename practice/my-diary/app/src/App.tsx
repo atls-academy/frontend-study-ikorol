@@ -4,7 +4,6 @@ import { ThemeProvider }       from '@emotion/react'
 import * as theme              from '@ui/theme'
 import { FormAddPost }         from '@components/form-add-post'
 import { MainPageHeader }      from '@components/main-page-header'
-import { PostControls }        from '@components/post-controls'
 import { PostList }            from '@components/post-list'
 import { FilterProvider }      from '@store/filter'
 import { NotesProvider }       from '@store/notes'
@@ -26,15 +25,15 @@ export const App = () => {
       <NotesProvider value={[notes, setNotes]}>
         <SearchValueProvider value={[searchValue, setSearchValue]}>
           <FilterProvider value={[filter, setFilter]}>
-            <Box margin='auto' justifyContent='center' backgroundColor='lightBlue'>
+            <Box margin='auto' justifyContent='center' backgroundColor='purple'>
               <Column width='800px'>
+                <Layout flexBasis={100} />
                 <MainPageHeader />
-                <Layout flexBasis={20} />
-                <PostControls />
                 <Layout flexBasis={20} />
                 <PostList />
                 <Layout flexBasis={17} />
                 <FormAddPost />
+                <Layout flexBasis={50} />
               </Column>
             </Box>
           </FilterProvider>

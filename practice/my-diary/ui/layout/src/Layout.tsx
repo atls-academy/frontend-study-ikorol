@@ -5,7 +5,7 @@ const boxSizing = system({
   boxSizing: true,
 })
 
-export const Column = styled.div(layout, space, flexbox, position, boxSizing)
+export const Column = styled.div(layout, space, flexbox, position, color, boxSizing)
 
 Column.defaultProps = {
   width: '100%',
@@ -13,7 +13,7 @@ Column.defaultProps = {
   display: 'flex',
 }
 
-export const Row = styled.div(layout, space, flexbox, position, boxSizing)
+export const Row = styled.div(layout, space, flexbox, position, color, boxSizing)
 
 Row.defaultProps = {
   width: '100%',

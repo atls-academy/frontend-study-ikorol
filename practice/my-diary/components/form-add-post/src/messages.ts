@@ -9,6 +9,6 @@ export default defineMessages({
   },
   add: {
     id: `${name}.add`,
-    defaultMessage: 'Add',
+    defaultMessage: '+ New task',
   },
 })

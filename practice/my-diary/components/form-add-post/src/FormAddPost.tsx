@@ -22,11 +22,14 @@ export const FormAddPost = () => {
       />
       <Layout flexBasis={3} />
       <Button
+        color='white'
+        backgroundColor='deepPurple'
+        borderRadius='extra'
+        boxShadow='violet'
         onClick={() => {
           setNotes(addItem(notes, newNote))
           setNewNote('')
         }}
-        backgroundColor='transparent'
       >
         {intl.formatMessage(messages.add)}
       </Button>
