@@ -16,12 +16,6 @@ jobs:
         with:
           node-version: '14'
 
-      - name: Lint
-        run: yarn lint
-
-      - name: TypeCheck
-        run: yarn typecheck
-
       - name: Install dependencies
         run: yarn install
 
