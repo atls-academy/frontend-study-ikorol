@@ -30,7 +30,7 @@ export const Button = styled.button(
 Button.defaultProps = {
   color: '#6c757d',
   border: 'none',
-  height: '40px',
+  outline: 'none',
   fontSize: '17px',
   fontWeight: '400',
   textAlign: 'center',

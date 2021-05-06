@@ -4,6 +4,8 @@ export const toggleStatus = (notes, id, value) => {
   let newNote
   if (value === 'important') {
     newNote = { ...lastNote, important: !lastNote.important }
+  } else if (value === 'onHover') {
+    newNote = { ...lastNote, onHover: !lastNote.onHover }
   } else {
     newNote = { ...lastNote, liked: !lastNote.liked }
   }

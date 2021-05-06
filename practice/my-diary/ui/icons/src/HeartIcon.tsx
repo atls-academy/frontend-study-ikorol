@@ -17,7 +17,6 @@ export const HeartIcon = (props) => {
       version='1.1'
       width='17px'
       height='17px'
-      opasity={props.opacity}
       viewBox='0 0 391.837 391.837'
       fill={props.color || 'red'}
       {...props}

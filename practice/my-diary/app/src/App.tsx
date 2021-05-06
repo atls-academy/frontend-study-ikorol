@@ -13,9 +13,15 @@ import { Box, Column, Layout } from '@ui/layout'
 export const App = () => {
   const uniqueKey = () => Math.random() * Date.now()
   const [notes, setNotes] = useState([
-    { note: 'Flight to Moscow', important: false, liked: false, id: uniqueKey() },
-    { note: 'Friends meeting', important: true, liked: false, id: uniqueKey() },
-    { note: 'Buy a new frying pan in Ikea', important: false, liked: false, id: uniqueKey() },
+    { note: 'Flight to Moscow', important: false, liked: false, id: uniqueKey(), onHover: false },
+    { note: 'Friends meeting', important: true, liked: false, id: uniqueKey(), onHover: false },
+    {
+      note: 'Buy a new frying pan in Ikea',
+      important: false,
+      liked: false,
+      id: uniqueKey(),
+      onHover: false,
+    },
   ])
 
   const [searchValue, setSearchValue] = useState('')
@@ -26,12 +32,11 @@ export const App = () => {
         <SearchValueProvider value={[searchValue, setSearchValue]}>
           <FilterProvider value={[filter, setFilter]}>
             <Box margin='auto' justifyContent='center' backgroundColor='purple'>
-              <Column width='800px'>
+              <Column width='600px'>
                 <Layout flexBasis={100} />
                 <MainPageHeader />
                 <Layout flexBasis={20} />
                 <PostList />
-                <Layout flexBasis={17} />
                 <FormAddPost />
                 <Layout flexBasis={50} />
               </Column>

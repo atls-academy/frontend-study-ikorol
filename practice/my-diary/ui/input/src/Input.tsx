@@ -5,10 +5,10 @@ export const Input = styled.input(
   () => ({
     display: 'block',
     width: '100%',
-    padding: '0 6px',
-    color: '#495057',
+    height: '50px',
     backgroundColor: '#fff',
-    border: '1px solid #ced4da',
+    padding: '0 6px',
+    border: '1px solid #e4eaff',
     borderRadius: '4px',
     fontSize: 16,
     fontWeight: 400,
