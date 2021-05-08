@@ -4,10 +4,10 @@ import { useIntl }             from 'react-intl'
 import { Button }              from '@ui/button'
 import { Input }               from '@ui/input'
 import { Column, Layout, Row } from '@ui/layout'
+import { Space }               from '@ui/text'
 import { useNotes }            from '@store/notes'
 
 import messages                from './messages'
-import { Space }               from '../../../ui/text/src/Space'
 import { addItem }             from './actions'
 
 export const FormAddPost = () => {
@@ -19,7 +19,7 @@ export const FormAddPost = () => {
     <Column>
       <Column backgroundColor='white'>
         <Row opacity={inputStatus === 'visible' ? '1' : '0'}>
-          <Layout flexBasis={58} />
+          <Layout flexBasis={135} />
           <Input
             fontSize='normal'
             placeholder={intl.formatMessage(messages.post)}
@@ -28,15 +28,14 @@ export const FormAddPost = () => {
           />
           <Layout flexBasis={200} />
         </Row>
-        <Layout flexBasis={50} />
+        <Layout flexBasis={60} />
       </Column>
-
       <Button
         width='fit-content'
         height='80px'
         position='relative'
-        top='-25px'
-        left='170px'
+        top='-45px'
+        left='165px'
         fontSize='large'
         fontWeight='bold'
         color='white'
@@ -45,9 +44,11 @@ export const FormAddPost = () => {
         boxShadow='violet'
         onClick={() => {
           setInputStatus('visible')
-          if (inputStatus === 'visible') {
+          if (inputStatus === 'visible' && newNote !== '') {
             setNotes(addItem(notes, newNote))
             setNewNote('')
+            setInputStatus('invisible')
+          } else if (inputStatus === 'visible') {
             setInputStatus('invisible')
           }
         }}

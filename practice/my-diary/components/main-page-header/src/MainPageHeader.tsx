@@ -13,16 +13,17 @@ export const MainPageHeader = () => {
   const [notes] = useNotes()
 
   return (
-    <Row backgroundColor='deepPurple' height='100px' alignItems='center'>
-      <Layout flexBasis={30} />
+    <Row backgroundColor='deepPurple' lineHeights='gigant' alignItems='center'>
+      <Layout flexBasis={50} />
       <HamburgerButtonIcon />
 
-      <Layout flexBasis={240} />
+      <Layout flexBasis={220} />
       <Column>
         <Layout flexBasis={20} />
         <Text fontSize='large' fontWeight='bold' color='white'>
           {intl.formatMessage(messages.name)}
         </Text>
+        <Layout flexBasis={10} />
         <Box>
           <Column>
             <Text fontSize='small' color='white'>
@@ -38,6 +39,7 @@ export const MainPageHeader = () => {
               <Space />
               {intl.formatMessage(messages.liked)}
             </Text>
+            <Layout flexBasis={10} />
           </Column>
         </Box>
       </Column>

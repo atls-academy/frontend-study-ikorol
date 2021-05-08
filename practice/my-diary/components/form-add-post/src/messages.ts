@@ -13,6 +13,6 @@ export default defineMessages({
   },
   add: {
     id: `${name}.add`,
-    defaultMessage: 'add',
+    defaultMessage: 'Add',
   },
 })

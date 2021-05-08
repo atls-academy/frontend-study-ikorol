@@ -16,6 +16,7 @@ export const Button = styled.button(
     boxSizing: true,
     cursor: true,
     transition: true,
+    outline: true,
   }),
   typography,
   layout,
@@ -31,6 +32,9 @@ Button.defaultProps = {
   color: '#6c757d',
   border: 'none',
   outline: 'none',
+  '&:active': {
+    transform: 'scale(0.98)',
+  },
   fontSize: '17px',
   fontWeight: '400',
   textAlign: 'center',

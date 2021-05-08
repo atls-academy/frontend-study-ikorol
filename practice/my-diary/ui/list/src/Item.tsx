@@ -1,17 +1,17 @@
-import React                              from 'react'
-import styled                             from '@emotion/styled'
-import { border, color }                  from 'styled-system'
+import React                                                      from 'react'
+import styled                                                     from '@emotion/styled'
+import { border, color }                                          from 'styled-system'
 
-import { Button }                         from '@ui/button'
-import { HeartIcon, StarIcon, TrashIcon } from '@ui/icons'
-import { Box, Layout, Row }               from '@ui/layout'
-import { Text }                           from '@ui/text'
+import { Button }                                                 from '@ui/button'
+import { CircleDotIcon, DotIcon, HeartIcon, StarIcon, TrashIcon } from '@ui/icons'
+import { Box, Layout, Row }                                       from '@ui/layout'
+import { Text }                                                   from '@ui/text'
 
 const StyledItem = styled.li(
   () => ({
     display: 'flex',
     boxSizing: 'border-box',
-    width: '100%',
+    width: '470px',
   }),
   color,
   border,
@@ -23,20 +23,34 @@ export const Item = ({ notes, setNotes, note, deleteItem, toggleStatus }) => (
       onMouseEnter={() => setNotes(toggleStatus(notes, note.id, 'onHover'))}
       onMouseLeave={() => setNotes(toggleStatus(notes, note.id, 'onHover'))}
     >
-      <StyledItem
-        onDoubleClick={() => setNotes(toggleStatus(notes, note.id, 'liked'))}
-        backgroundColor='white'
+      <Layout flexBasis={70} />
+      <Box
+        onClick={() => setNotes(toggleStatus(notes, note.id, 'done'))}
+        display='flex'
+        alignItems='center'
       >
-        <Text lineHeight='40px' padding='0 50px' color='grayBlue'>
+        <Box position='relative' left='11px'>
+          <DotIcon opacity={note.done ? '1' : '0'} />
+        </Box>
+        <Box>
+          <CircleDotIcon />
+        </Box>
+      </Box>
+      <Layout flexBasis={30} />
+      <StyledItem onDoubleClick={() => setNotes(toggleStatus(notes, note.id, 'liked'))}>
+        <Text
+          lineHeight='large'
+          color='grayBlue'
+          textDecoration={note.done ? 'line-through' : 'none'}
+          textDecorationColor='#e4eaff'
+        >
           {note.note}
         </Text>
       </StyledItem>
-      <Layout flexBasis={3} />
       <Box>
         <Button
           backgroundColor='white'
           border='none'
-          width='40px'
           onClick={() => setNotes(toggleStatus(notes, note.id, 'important'))}
         >
           <StarIcon
@@ -44,19 +58,20 @@ export const Item = ({ notes, setNotes, note, deleteItem, toggleStatus }) => (
             color={note.important ? '#FFD700' : 'gray'}
           />
         </Button>
-
-        <Button backgroundColor='white' border='none' width='40px'>
+        <Button
+          backgroundColor='white'
+          border='none'
+          onClick={() => setNotes(toggleStatus(notes, note.id, 'liked'))}
+        >
           <HeartIcon
-            onClick={() => setNotes(toggleStatus(notes, note.id, 'liked'))}
             opacity={note.liked || note.onHover ? '1' : '0'}
             color={note.liked ? 'red' : 'gray'}
           />
         </Button>
-
         <Button
           backgroundColor='white'
           border='none'
-          width='40px'
+          color='grayBlue'
           onClick={() => setNotes(deleteItem(notes, note.id))}
           opacity={note.onHover ? '1' : '0'}
         >

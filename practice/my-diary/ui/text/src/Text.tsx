@@ -8,6 +8,8 @@ export const Text = styled.span(
     textTransform: true,
     textOverflow: true,
     cursor: true,
+    textDecoration: true,
+    textDecorationColor: true,
   }),
   color,
   space,

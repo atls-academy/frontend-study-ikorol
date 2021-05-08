@@ -13,14 +13,29 @@ import { Box, Column, Layout } from '@ui/layout'
 export const App = () => {
   const uniqueKey = () => Math.random() * Date.now()
   const [notes, setNotes] = useState([
-    { note: 'Flight to Moscow', important: false, liked: false, id: uniqueKey(), onHover: false },
-    { note: 'Friends meeting', important: true, liked: false, id: uniqueKey(), onHover: false },
+    {
+      note: 'Flight to Moscow',
+      important: false,
+      liked: false,
+      id: uniqueKey(),
+      onHover: false,
+      done: false,
+    },
+    {
+      note: 'Friends meeting',
+      important: false,
+      liked: false,
+      id: uniqueKey(),
+      onHover: false,
+      done: false,
+    },
     {
       note: 'Buy a new frying pan in Ikea',
       important: false,
       liked: false,
       id: uniqueKey(),
       onHover: false,
+      done: false,
     },
   ])
 
@@ -35,7 +50,7 @@ export const App = () => {
               <Column width='600px'>
                 <Layout flexBasis={100} />
                 <MainPageHeader />
-                <Layout flexBasis={20} />
+                <Layout flexBasis={30} />
                 <PostList />
                 <FormAddPost />
                 <Layout flexBasis={50} />

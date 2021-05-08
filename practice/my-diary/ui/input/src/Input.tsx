@@ -7,7 +7,7 @@ export const Input = styled.input(
     width: '100%',
     height: '50px',
     backgroundColor: '#fff',
-    padding: '0 6px',
+    padding: '0 20px',
     border: '1px solid #e4eaff',
     borderRadius: '4px',
     fontSize: 16,
