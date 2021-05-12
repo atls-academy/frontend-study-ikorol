@@ -15,7 +15,7 @@ export const Button = styled.button(
   system({
     boxSizing: true,
     cursor: true,
-    transition: true,
+    transform: true,
     outline: true,
   }),
   typography,

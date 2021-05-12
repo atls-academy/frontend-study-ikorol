@@ -4,10 +4,12 @@ import { ThemeProvider }       from '@emotion/react'
 import * as theme              from '@ui/theme'
 import { FormAddPost }         from '@components/form-add-post'
 import { MainPageHeader }      from '@components/main-page-header'
+import { PostControls }        from '@components/post-controls'
 import { PostList }            from '@components/post-list'
 import { FilterProvider }      from '@store/filter'
 import { NotesProvider }       from '@store/notes'
 import { SearchValueProvider } from '@store/search-value'
+import { ShowDrawerProvider }  from '@store/show-drawer'
 import { Box, Column, Layout } from '@ui/layout'
 
 export const App = () => {
@@ -41,21 +43,28 @@ export const App = () => {
 
   const [searchValue, setSearchValue] = useState('')
   const [filter, setFilter] = useState('all')
+  const [showDrawer, setShowDrawer] = useState(false)
+
   return (
     <ThemeProvider theme={theme}>
       <NotesProvider value={[notes, setNotes]}>
         <SearchValueProvider value={[searchValue, setSearchValue]}>
           <FilterProvider value={[filter, setFilter]}>
-            <Box margin='auto' justifyContent='center' backgroundColor='purple'>
-              <Column width='600px'>
-                <Layout flexBasis={100} />
-                <MainPageHeader />
-                <Layout flexBasis={30} />
-                <PostList />
-                <FormAddPost />
-                <Layout flexBasis={50} />
-              </Column>
-            </Box>
+            <ShowDrawerProvider value={[showDrawer, setShowDrawer]}>
+              <Box margin='auto' justifyContent='center' backgroundColor='purple'>
+                <Column width='600px'>
+                  <Layout flexBasis={100} />
+                  <MainPageHeader />
+                  <PostControls />
+                  <Layout flexBasis={30} />
+                  <Column>
+                    <PostList />
+                    <FormAddPost />
+                  </Column>
+                  <Layout flexBasis={50} />
+                </Column>
+              </Box>
+            </ShowDrawerProvider>
           </FilterProvider>
         </SearchValueProvider>
       </NotesProvider>
