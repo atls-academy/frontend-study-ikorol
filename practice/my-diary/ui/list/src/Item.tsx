@@ -1,6 +1,6 @@
 import React                                                      from 'react'
 import styled                                                     from '@emotion/styled'
-import { border, color }                                          from 'styled-system'
+import { border, color, system }                                  from 'styled-system'
 
 import { Button }                                                 from '@ui/button'
 import { CircleDotIcon, DotIcon, HeartIcon, StarIcon, TrashIcon } from '@ui/icons'
@@ -8,6 +8,9 @@ import { Box, Layout, Row }                                       from '@ui/layo
 import { Text }                                                   from '@ui/text'
 
 const StyledItem = styled.li(
+  system({
+    cursor: true,
+  }),
   () => ({
     display: 'flex',
     boxSizing: 'border-box',
@@ -37,7 +40,10 @@ export const Item = ({ notes, setNotes, note, deleteItem, toggleStatus }) => (
         </Box>
       </Box>
       <Layout flexBasis={30} />
-      <StyledItem onDoubleClick={() => setNotes(toggleStatus(notes, note.id, 'liked'))}>
+      <StyledItem
+        cursor='pointer'
+        onDoubleClick={() => setNotes(toggleStatus(notes, note.id, 'liked'))}
+      >
         <Text
           lineHeight='large'
           color='grayBlue'

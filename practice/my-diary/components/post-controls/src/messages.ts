@@ -19,4 +19,8 @@ export default defineMessages({
     id: `${name}.important`,
     defaultMessage: 'Important',
   },
+  clear: {
+    id: `${name}.clear`,
+    defaultMessage: 'Clear',
+  },
 })

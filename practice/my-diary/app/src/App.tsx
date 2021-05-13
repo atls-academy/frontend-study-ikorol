@@ -51,7 +51,16 @@ export const App = () => {
         <SearchValueProvider value={[searchValue, setSearchValue]}>
           <FilterProvider value={[filter, setFilter]}>
             <ShowDrawerProvider value={[showDrawer, setShowDrawer]}>
-              <Box margin='auto' justifyContent='center' backgroundColor='purple'>
+              <Box
+                margin='auto'
+                width='100%'
+                height='100%'
+                justifyContent='center'
+                backgroundColor='purple'
+                top='0'
+                left='0'
+                position='fixed'
+              >
                 <Column width='600px'>
                   <Layout flexBasis={100} />
                   <MainPageHeader />

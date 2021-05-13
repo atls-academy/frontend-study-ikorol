@@ -8,18 +8,16 @@ import { useNotes }                 from '@store/notes'
 import { useShowDrawer }            from '@store/show-drawer'
 
 import messages                     from './messages'
-import { openMenu }                 from './actions'
 
 export const MainPageHeader = () => {
   const intl = useIntl()
   const [notes] = useNotes()
-  const [showDrawer, setShowDrawer] = useShowDrawer()
-
+  const [, setShowDrawer] = useShowDrawer()
   return (
     <Column>
       <Row backgroundColor='deepPurple' lineHeights='gigant' alignItems='center'>
         <Layout flexBasis={50} />
-        <HamburgerButtonIcon onClick={() => setShowDrawer(openMenu(showDrawer))} />
+        <HamburgerButtonIcon cursor='pointer' onClick={() => setShowDrawer(true)} />
         <Layout flexBasis={220} />
         <Column>
           <Layout flexBasis={20} />

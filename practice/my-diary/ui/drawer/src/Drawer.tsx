@@ -10,29 +10,41 @@ const StyledDrawer = styled.div(
     transition: true,
   }),
   () => ({
-    width: '500px',
+    width: '600px',
+    height: '200px',
+    backgroundColor: '#fff',
     boxSizing: 'border-box',
     boxShadow: '2px 0 5px rgba(0,0,0,0.2)',
-    position: 'absolute',
+    position: 'fixed',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    top: '0',
     zIndex: 2,
-    transition: 'transform 0.5s easy-in-out',
   }),
   color,
   space,
 )
 
-export const Drawer = ({ onVisible, onClose, children, transform }) => {
+export const Drawer = ({ onVisible, onClose, children }) => {
   return (
-    <Box display={onVisible} justifyContent='center'>
+    <Box display={onVisible}>
       <Box
         onClick={onClose}
         position='absolute'
-        width='600px'
-        height='392px'
-        backgroundColor='rgba(0,0,0,0.1)'
+        top='0'
+        left='0'
+        width='100%'
+        height='100%'
+        backgroundColor='lightGray'
         zIndex={1}
       />
-      <StyledDrawer transform={transform}>{children}</StyledDrawer>
+      <StyledDrawer
+        transform={onVisible === 'flex' ? 'translateY(50%)' : 'translateY(0)'}
+        transition='transform 1s'
+      >
+        {children}
+      </StyledDrawer>
     </Box>
   )
 }
