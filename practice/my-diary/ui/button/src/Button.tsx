@@ -18,6 +18,12 @@ export const Button = styled.button(
     transform: true,
     outline: true,
   }),
+  () => ({
+    outline: 'none',
+    '&:active': {
+      transform: 'scale(0.98)',
+    },
+  }),
   typography,
   layout,
   space,
@@ -31,10 +37,6 @@ export const Button = styled.button(
 Button.defaultProps = {
   color: '#6c757d',
   border: 'none',
-  outline: 'none',
-  '&:active': {
-    transform: 'scale(0.98)',
-  },
   fontSize: '17px',
   fontWeight: '400',
   textAlign: 'center',

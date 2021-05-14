@@ -1,13 +1,10 @@
-import React                    from 'react'
-import styled                   from '@emotion/styled'
-import { color, space, system } from 'styled-system'
+import React            from 'react'
+import styled           from '@emotion/styled'
+import { color, space } from 'styled-system'
 
-import { Box }                  from '@ui/layout'
+import { Box }          from '@ui/layout'
 
 const StyledContainer = styled.div(
-  system({
-    visibility: true,
-  }),
   ({ visible }) => ({
     position: 'absolute',
     top: '0',
@@ -31,9 +28,6 @@ const StyledContainer = styled.div(
 )
 
 const StyledDrawer = styled.div(
-  system({
-    visibility: true,
-  }),
   ({ visible }) => ({
     width: '400px',
     height: '100%',
@@ -62,11 +56,11 @@ const StyledDrawer = styled.div(
   space,
 )
 
-export const Drawer = ({ visible, close, children }) => {
+export const Drawer = ({ isVisible, onClose, children }) => {
   return (
     <Box>
-      <StyledContainer onClick={close} visible={visible} />
-      <StyledDrawer visible={visible}>{children}</StyledDrawer>
+      <StyledContainer onClick={onClose} visible={isVisible} />
+      <StyledDrawer visible={isVisible}>{children}</StyledDrawer>
     </Box>
   )
 }

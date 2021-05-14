@@ -19,7 +19,7 @@ export const PostControls = () => {
 
   const intl = useIntl()
   return (
-    <Drawer visible={showDrawer} close={() => setShowDrawer(false)}>
+    <Drawer isVisible={showDrawer} onClose={() => setShowDrawer(false)}>
       <Box>
         <Column>
           <Layout flexBasis={120} />
