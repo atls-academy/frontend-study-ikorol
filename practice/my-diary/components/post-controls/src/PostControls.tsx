@@ -10,26 +10,33 @@ import { useSearchValue }      from '@store/search-value'
 import { useShowDrawer }       from '@store/show-drawer'
 
 import messages                from './messages'
+import { Space }               from '../../../ui/text/src/Space'
 
 export const PostControls = () => {
-  const [, setSearchValue] = useSearchValue()
+  const [searchValue, setSearchValue] = useSearchValue()
   const [filter, setFilter] = useFilter()
   const [showDrawer, setShowDrawer] = useShowDrawer()
+
   const intl = useIntl()
   return (
     <Drawer onVisible={showDrawer ? 'flex' : 'none'} onClose={() => setShowDrawer(false)}>
       <Box>
         <Column>
+          <Layout flexBasis={120} />
           <Box>
             <Input
               placeholder={intl.formatMessage(messages.search)}
               onChange={event => setSearchValue(event.target.value)}
+              value={searchValue}
             />
             <Button
               color='white'
               backgroundColor='deepPurple'
               borderRadius='rightSide'
-              onClick={() => setFilter('all')}
+              onClick={() => {
+                setFilter('all')
+                setSearchValue('')
+              }}
             >
               {intl.formatMessage(messages.clear)}
             </Button>
@@ -43,7 +50,9 @@ export const PostControls = () => {
               borderRadius='leftSide'
               onClick={() => setFilter('all')}
             >
+              <Space count={2} />
               {intl.formatMessage(messages.all)}
+              <Space count={2} />
             </Button>
             <Button
               backgroundColor={filter === 'important' ? 'deepPurple' : 'white'}
