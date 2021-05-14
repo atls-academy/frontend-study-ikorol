@@ -43,7 +43,7 @@ export const App = () => {
 
   const [searchValue, setSearchValue] = useState('')
   const [filter, setFilter] = useState('all')
-  const [showDrawer, setShowDrawer] = useState(false)
+  const [showDrawer, setShowDrawer] = useState(null)
 
   return (
     <ThemeProvider theme={theme}>

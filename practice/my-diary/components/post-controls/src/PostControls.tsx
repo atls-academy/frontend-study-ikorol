@@ -5,12 +5,12 @@ import { Button }              from '@ui/button'
 import { Drawer }              from '@ui/drawer'
 import { Input }               from '@ui/input'
 import { Box, Column, Layout } from '@ui/layout'
+import { Space }               from '@ui/text'
 import { useFilter }           from '@store/filter'
 import { useSearchValue }      from '@store/search-value'
 import { useShowDrawer }       from '@store/show-drawer'
 
 import messages                from './messages'
-import { Space }               from '../../../ui/text/src/Space'
 
 export const PostControls = () => {
   const [searchValue, setSearchValue] = useSearchValue()
@@ -19,7 +19,7 @@ export const PostControls = () => {
 
   const intl = useIntl()
   return (
-    <Drawer onVisible={showDrawer ? 'flex' : 'none'} onClose={() => setShowDrawer(false)}>
+    <Drawer visible={showDrawer} close={() => setShowDrawer(false)}>
       <Box>
         <Column>
           <Layout flexBasis={120} />

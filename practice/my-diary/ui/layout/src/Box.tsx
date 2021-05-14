@@ -16,6 +16,7 @@ export const Box = styled.div(
     boxSizing: true,
     overflowX: true,
     overflowY: true,
+    visibility: true,
   }),
   border,
   shadow,
