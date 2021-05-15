@@ -46,9 +46,8 @@ export const Item = ({ notes, setNotes, note, deleteItem, toggleStatus }) => (
       >
         <Text
           lineHeight='large'
-          color='grayBlue'
+          color='greyBlue'
           textDecoration={note.done ? 'line-through' : 'none'}
-          textDecorationColor='#e4eaff'
         >
           {note.note}
         </Text>
@@ -61,7 +60,7 @@ export const Item = ({ notes, setNotes, note, deleteItem, toggleStatus }) => (
         >
           <StarIcon
             opacity={note.important || note.onHover ? '1' : '0'}
-            color={note.important ? '#FFD700' : 'gray'}
+            color={note.important ? 'khaki' : 'gray'}
           />
         </Button>
         <Button
@@ -77,7 +76,7 @@ export const Item = ({ notes, setNotes, note, deleteItem, toggleStatus }) => (
         <Button
           backgroundColor='white'
           border='none'
-          color='grayBlue'
+          color='greyBlue'
           onClick={() => setNotes(deleteItem(notes, note.id))}
           opacity={note.onHover ? '1' : '0'}
         >

@@ -20,4 +20,5 @@ Text.defaultProps = {
   fontFamily: ['Segoe UI', 'Roboto', 'Ubuntu', 'sans-serif'],
   fontWeight: 'normal',
   fontSize: '20px',
+  textDecorationColor: '#e4eaff',
 }

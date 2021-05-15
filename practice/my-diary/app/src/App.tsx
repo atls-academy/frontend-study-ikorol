@@ -13,13 +13,12 @@ import { ShowDrawerProvider }  from '@store/show-drawer'
 import { Box, Column, Layout } from '@ui/layout'
 
 export const App = () => {
-  const uniqueKey = () => Math.random() * Date.now()
   const [notes, setNotes] = useState([
     {
       note: 'Flight to Moscow',
       important: false,
       liked: false,
-      id: uniqueKey(),
+      id: 1,
       onHover: false,
       done: false,
     },
@@ -27,7 +26,7 @@ export const App = () => {
       note: 'Friends meeting',
       important: false,
       liked: false,
-      id: uniqueKey(),
+      id: 2,
       onHover: false,
       done: false,
     },
@@ -35,7 +34,7 @@ export const App = () => {
       note: 'Buy a new frying pan in Ikea',
       important: false,
       liked: false,
-      id: uniqueKey(),
+      id: 3,
       onHover: false,
       done: false,
     },
@@ -52,7 +51,6 @@ export const App = () => {
           <FilterProvider value={[filter, setFilter]}>
             <ShowDrawerProvider value={[showDrawer, setShowDrawer]}>
               <Box
-                margin='auto'
                 width='100%'
                 height='100%'
                 justifyContent='center'

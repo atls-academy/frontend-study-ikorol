@@ -5,9 +5,8 @@ export const Input = styled.input(
   () => ({
     display: 'block',
     height: '40px',
-    backgroundColor: '#fff',
+    border: '1px solid',
     padding: '0 20px',
-    border: '1px solid #e4eaff',
     fontSize: 16,
     fontWeight: 400,
     outline: 'none',
@@ -16,3 +15,8 @@ export const Input = styled.input(
   border,
   color,
 )
+
+Input.defaultProps = {
+  borderColor: 'purple',
+  backgroundColor: 'white',
+}

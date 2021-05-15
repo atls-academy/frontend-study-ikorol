@@ -40,8 +40,9 @@ export const FormAddPost = () => {
         fontWeight='bold'
         color='white'
         backgroundColor='deepPurple'
-        borderRadius='gigant'
+        borderRadius='giant'
         boxShadow='violet'
+        border='none'
         onClick={() => {
           setInputStatus('visible')
           if (inputStatus === 'visible' && newNote !== '') {

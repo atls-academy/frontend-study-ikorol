@@ -35,8 +35,8 @@ export const Button = styled.button(
 )
 
 Button.defaultProps = {
-  color: '#6c757d',
-  border: 'none',
+  color: 'grey',
+  borderColor: 'purple',
   fontSize: '17px',
   fontWeight: '400',
   textAlign: 'center',

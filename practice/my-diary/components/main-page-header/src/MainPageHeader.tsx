@@ -15,7 +15,7 @@ export const MainPageHeader = () => {
   const [, setShowDrawer] = useShowDrawer()
   return (
     <Column>
-      <Row backgroundColor='deepPurple' lineHeights='gigant' alignItems='center'>
+      <Row backgroundColor='deepPurple' lineHeights='giant' alignItems='center'>
         <Layout flexBasis={50} />
         <HamburgerButtonIcon cursor='pointer' onClick={() => setShowDrawer(true)} />
         <Layout flexBasis={220} />

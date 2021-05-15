@@ -1,8 +1,8 @@
-import React            from 'react'
-import styled           from '@emotion/styled'
-import { color, space } from 'styled-system'
+import React                    from 'react'
+import styled                   from '@emotion/styled'
+import { color, shadow, space } from 'styled-system'
 
-import { Box }          from '@ui/layout'
+import { Box }                  from '@ui/layout'
 
 const StyledContainer = styled.div(
   ({ visible }) => ({
@@ -11,16 +11,15 @@ const StyledContainer = styled.div(
     left: '0',
     width: '100%',
     height: '100%',
-    backgroundColor: 'transperent',
     visibility: 'hidden',
     zIndex: 1,
     animation: `${visible ? 'appear' : visible === false && 'disappear'} 0.3s forwards`,
     '@keyframes appear': {
       from: { backgroundColor: 'transparent', visibility: 'hidden' },
-      to: { backgroundColor: 'rgba(0,0,0,0.2)', visibility: 'visible' },
+      to: { backgroundColor: 'grey', visibility: 'visible', opacity: '0.3' },
     },
     '@keyframes disappear': {
-      from: { backgroundColor: 'rgba(0,0,0,0.2)', visibility: 'visible' },
+      from: { backgroundColor: 'grey', visibility: 'visible', opacity: '0.3' },
       to: { backgroundColor: 'transparent', visibility: 'hidden' },
     },
   }),
@@ -31,9 +30,8 @@ const StyledDrawer = styled.div(
   ({ visible }) => ({
     width: '400px',
     height: '100%',
-    backgroundColor: '#fff',
+    backgroundColor: 'white',
     boxSizing: 'border-box',
-    boxShadow: '2px 0 5px rgba(0,0,0,0.2)',
     position: 'fixed',
     display: 'flex',
     justifyContent: 'center',
@@ -54,13 +52,16 @@ const StyledDrawer = styled.div(
   }),
   color,
   space,
+  shadow,
 )
 
 export const Drawer = ({ isVisible, onClose, children }) => {
   return (
     <Box>
       <StyledContainer onClick={onClose} visible={isVisible} />
-      <StyledDrawer visible={isVisible}>{children}</StyledDrawer>
+      <StyledDrawer visible={isVisible} boxShadow='darkGrey'>
+        {children}
+      </StyledDrawer>
     </Box>
   )
 }

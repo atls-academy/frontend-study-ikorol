@@ -33,6 +33,7 @@ export const PostControls = () => {
               color='white'
               backgroundColor='deepPurple'
               borderRadius='rightSide'
+              border='1px solid'
               onClick={() => {
                 setFilter('all')
                 setSearchValue('')
@@ -46,7 +47,7 @@ export const PostControls = () => {
             <Button
               backgroundColor={filter === 'all' ? 'deepPurple' : 'white'}
               color={filter === 'all' ? 'white' : 'grayBlue'}
-              border='1px solid #e4eaff'
+              border='1px solid'
               borderRadius='leftSide'
               onClick={() => setFilter('all')}
             >
@@ -57,7 +58,7 @@ export const PostControls = () => {
             <Button
               backgroundColor={filter === 'important' ? 'deepPurple' : 'white'}
               color={filter === 'important' ? 'white' : 'grayBlue'}
-              border='1px solid #e4eaff'
+              border='1px solid'
               onClick={() => setFilter('important')}
             >
               {intl.formatMessage(messages.important)}
@@ -65,7 +66,7 @@ export const PostControls = () => {
             <Button
               backgroundColor={filter === 'liked' ? 'deepPurple' : 'white'}
               color={filter === 'liked' ? 'white' : 'grayBlue'}
-              border='1px solid #e4eaff'
+              border='1px solid'
               borderRadius='rightSide'
               onClick={() => setFilter('liked')}
             >
