@@ -7,7 +7,6 @@ export const filterNotes = (notes, searchValue, filter) => {
       return item.note.toLowerCase().indexOf(searchValue.toLowerCase()) > -1
     })
   }
-
   switch (filter) {
     case 'liked':
       return filteredNotes.filter(note => note.liked)

@@ -16,10 +16,10 @@ const StyledContainer = styled.div(
     animation: `${visible ? 'appear' : visible === false && 'disappear'} 0.3s forwards`,
     '@keyframes appear': {
       from: { backgroundColor: 'transparent', visibility: 'hidden' },
-      to: { backgroundColor: 'grey', visibility: 'visible', opacity: '0.3' },
+      to: { backgroundColor: 'gray', visibility: 'visible', opacity: '0.3' },
     },
     '@keyframes disappear': {
-      from: { backgroundColor: 'grey', visibility: 'visible', opacity: '0.3' },
+      from: { backgroundColor: 'gray', visibility: 'visible', opacity: '0.3' },
       to: { backgroundColor: 'transparent', visibility: 'hidden' },
     },
   }),
@@ -59,7 +59,7 @@ export const Drawer = ({ isVisible, onClose, children }) => {
   return (
     <Box>
       <StyledContainer onClick={onClose} visible={isVisible} />
-      <StyledDrawer visible={isVisible} boxShadow='darkGrey'>
+      <StyledDrawer visible={isVisible} boxShadow='darkGray'>
         {children}
       </StyledDrawer>
     </Box>

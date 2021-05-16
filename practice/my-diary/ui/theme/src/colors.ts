@@ -1,9 +1,9 @@
 export const colors = {
-  grey: '#6c757d',
+  gray: '#6c757d',
   purple: '#e4eaff',
   deepPurple: '#b07fec',
   blue: '#17a2b8',
-  greyBlue: '#919abc',
+  grayBlue: '#919abc',
   white: '#fff',
   yellow: '#FFD700',
 }
