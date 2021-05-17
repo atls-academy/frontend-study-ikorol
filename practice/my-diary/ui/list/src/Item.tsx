@@ -22,7 +22,6 @@ const StyledItem = styled.li(
 
 export const Item = ({ notes, setNotes, note, deleteItem, toggleStatus }) => {
   const [hover, setHover] = useState(false)
-
   return (
     <>
       <Row onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>

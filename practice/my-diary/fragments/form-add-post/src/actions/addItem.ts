@@ -1,9 +1,11 @@
+import { nanoid } from 'nanoid'
+
 export const addItem = (notes, text) => {
   const newItem = {
     note: text,
     important: false,
     liked: false,
-    id: Date.now(),
+    id: nanoid(),
   }
   return [...notes, newItem]
 }

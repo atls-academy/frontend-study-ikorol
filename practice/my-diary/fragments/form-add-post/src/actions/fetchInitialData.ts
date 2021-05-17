@@ -1,13 +1,10 @@
-export const fetchInitialData = (notes, textArray) => {
+import { addItem } from './addItem'
+import { mocks }   from './mocks'
+
+export const fetchInitialData = () => {
   let newNotes = []
-  textArray.forEach(text => {
-    const newItem = {
-      note: text,
-      important: false,
-      liked: false,
-      id: Math.round(Math.random() * 5) + Date.now(),
-    }
-    newNotes = [...newNotes, newItem]
+  mocks.forEach(text => {
+    newNotes = addItem(newNotes, text)
   })
-  return notes.concat(newNotes)
+  return newNotes
 }
