@@ -13,7 +13,7 @@ export const List: any = ({ notes, setNotes, visibleNotes, deleteItem, toggleSta
           notes={notes}
           setNotes={setNotes}
           note={item}
-          key={Math.random() * Date.now()}
+          key={item.id}
           deleteItem={deleteItem}
           toggleStatus={toggleStatus}
         />

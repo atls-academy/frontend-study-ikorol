@@ -8,10 +8,10 @@
     "@types/react-dom": "^17.0.1"
   },
   "dependencies": {
-    "@components/form-add-post": "0.0.0",
-    "@components/main-page-header": "0.0.0",
-    "@components/post-controls": "0.0.0",
-    "@components/post-list": "0.0.0",
+    "@fragments/form-add-post": "0.0.0",
+    "@fragments/main-page-header": "0.0.0",
+    "@fragments/post-controls": "0.0.0",
+    "@fragments/post-list": "0.0.0",
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.1.5",
     "@store/filter": "0.0.0",
