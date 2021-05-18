@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useIntl }                    from 'react-intl'
 
-import { Button }                     from '@ui/button'
+import { AddTaskButton }              from '@ui/button'
 import { Input }                      from '@ui/input'
 import { Column, Layout, Row }        from '@ui/layout'
 import { Space }                      from '@ui/text'
@@ -34,19 +34,7 @@ export const FormAddPost = () => {
         </Row>
         <Layout flexBasis={60} />
       </Column>
-      <Button
-        width='fit-content'
-        height='80px'
-        position='relative'
-        top='-45px'
-        left='165px'
-        fontSize='large'
-        fontWeight='bold'
-        color='white'
-        backgroundColor='deepPurple'
-        borderRadius='giant'
-        boxShadow='violet'
-        border='none'
+      <AddTaskButton
         onClick={() => {
           setInputStatus('visible')
           if (inputStatus === 'visible' && newNote !== '') {
@@ -61,7 +49,7 @@ export const FormAddPost = () => {
         <Space count={5} />
         {intl.formatMessage(messages.newTask)}
         <Space count={5} />
-      </Button>
+      </AddTaskButton>
     </Column>
   )
 }
