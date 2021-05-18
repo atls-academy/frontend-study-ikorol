@@ -1,7 +1,7 @@
 import React                        from 'react'
 import { useIntl }                  from 'react-intl'
 
-import { HamburgerButtonIcon }      from '@ui/icons'
+import { BurgerButtonIcon }         from '@ui/icons'
 import { Box, Column, Layout, Row } from '@ui/layout'
 import { Space, Text }              from '@ui/text'
 import { useNotes }                 from '@store/notes'
@@ -17,7 +17,7 @@ export const MainPageHeader = () => {
     <Column>
       <Row backgroundColor='deepPurple' lineHeights='giant' alignItems='center'>
         <Layout flexBasis={50} />
-        <HamburgerButtonIcon cursor='pointer' onClick={() => setShowDrawer(true)} />
+        <BurgerButtonIcon cursor='pointer' onClick={() => setShowDrawer(true)} />
         <Layout flexBasis={220} />
         <Column>
           <Layout flexBasis={20} />

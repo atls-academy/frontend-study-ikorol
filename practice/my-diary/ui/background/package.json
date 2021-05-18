@@ -1,0 +1,14 @@
+{
+  "name": "@ui/background",
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "src/index.ts",
+  "devDependencies": {
+    "@types/styled-system": "^5.1.10"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.1.5",
+    "@emotion/styled": "^11.1.5",
+    "styled-system": "^5.1.0"
+  }
+}

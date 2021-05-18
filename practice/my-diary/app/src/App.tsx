@@ -10,7 +10,8 @@ import { FilterProvider }      from '@store/filter'
 import { NotesProvider }       from '@store/notes'
 import { SearchValueProvider } from '@store/search-value'
 import { ShowDrawerProvider }  from '@store/show-drawer'
-import { Box, Column, Layout } from '@ui/layout'
+import { Background }          from '@ui/background'
+import { Column, Layout }      from '@ui/layout'
 
 export const App = () => {
   const [notes, setNotes] = useState([])
@@ -24,15 +25,7 @@ export const App = () => {
         <SearchValueProvider value={[searchValue, setSearchValue]}>
           <FilterProvider value={[filter, setFilter]}>
             <ShowDrawerProvider value={[showDrawer, setShowDrawer]}>
-              <Box
-                width='100%'
-                height='100%'
-                justifyContent='center'
-                backgroundColor='purple'
-                top='0'
-                left='0'
-                position='fixed'
-              >
+              <Background>
                 <Column width='600px'>
                   <Layout flexBasis={100} />
                   <MainPageHeader />
@@ -44,7 +37,7 @@ export const App = () => {
                   </Column>
                   <Layout flexBasis={50} />
                 </Column>
-              </Box>
+              </Background>
             </ShowDrawerProvider>
           </FilterProvider>
         </SearchValueProvider>
