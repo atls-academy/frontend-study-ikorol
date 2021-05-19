@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useIntl }                    from 'react-intl'
 
-import { Button }                     from '@ui/button'
+import { GiantButton }                from '@ui/button'
 import { Input }                      from '@ui/input'
 import { Column, Layout, Row }        from '@ui/layout'
 import { Space }                      from '@ui/text'
@@ -23,7 +23,7 @@ export const FormAddPost = () => {
     <Column>
       <Column backgroundColor='white'>
         <Row opacity={isVisible ? '1' : '0'}>
-          <Layout flexBasis={135} />
+          <Layout flexBasis={100} />
           <Input
             fontSize='normal'
             placeholder={intl.formatMessage(messages.post)}
@@ -32,20 +32,11 @@ export const FormAddPost = () => {
           />
           <Layout flexBasis={200} />
         </Row>
-        <Layout flexBasis={60} />
+        <Layout flexBasis={40} />
       </Column>
       <Row justifyContent='center'>
-        <Button
-          width='fit-content'
-          height='80px'
+        <GiantButton
           marginTop='-30px'
-          fontSize='large'
-          fontWeight='bold'
-          color='white'
-          backgroundColor='deepPurple'
-          borderRadius='giant'
-          boxShadow='violet'
-          border='none'
           onClick={() => {
             setIsVisible(!isVisible)
             if (newNote) {
@@ -58,7 +49,7 @@ export const FormAddPost = () => {
           <Space count={5} />
           {intl.formatMessage(messages.newTask)}
           <Space count={5} />
-        </Button>
+        </GiantButton>
       </Row>
     </Column>
   )

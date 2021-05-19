@@ -11,6 +11,7 @@
     "@fragments/main-page-header": "0.0.0",
     "@fragments/post-controls": "0.0.0",
     "@fragments/post-list": "0.0.0",
+    "@ui/background": "0.0.0",
     "@ui/icons": "0.0.0",
     "@ui/layout": "^0.0.0",
     "@store/show-drawer": "0.0.0",

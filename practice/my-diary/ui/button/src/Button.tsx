@@ -14,12 +14,11 @@ import {
 export const Button = styled.button(
   system({
     boxSizing: true,
-    cursor: true,
     transform: true,
-    outline: true,
   }),
   () => ({
     outline: 'none',
+    cursor: 'pointer',
     '&:active': {
       transform: 'scale(0.98)',
     },
@@ -40,5 +39,4 @@ Button.defaultProps = {
   fontSize: '17px',
   fontWeight: '400',
   textAlign: 'center',
-  cursor: 'pointer',
 }
