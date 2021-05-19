@@ -22,8 +22,7 @@ export const FormAddPost = () => {
   return (
     <Column>
       <Column backgroundColor='white'>
-        <Row opacity={isVisible ? '1' : '0'}>
-          <Layout flexBasis={80} />
+        <Row opacity={isVisible ? '1' : '0'} justifyContent='center'>
           <Input
             fontSize='normal'
             placeholder={intl.formatMessage(messages.post)}
