@@ -5,7 +5,6 @@ import { Button }                            from './Button'
 
 export const GiantButton = styled(Button)(
   () => ({
-    height: '80px',
     width: 'fit-content',
     fontSize: 32,
     fontWeight: 'bold',
@@ -20,6 +19,7 @@ export const GiantButton = styled(Button)(
 
 GiantButton.defaultProps = {
   color: 'white',
+  height: '80px',
   backgroundColor: 'deepPurple',
   boxShadow: 'violet',
 }

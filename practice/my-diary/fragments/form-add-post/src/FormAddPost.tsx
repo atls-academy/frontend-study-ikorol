@@ -23,16 +23,15 @@ export const FormAddPost = () => {
     <Column>
       <Column backgroundColor='white'>
         <Row opacity={isVisible ? '1' : '0'}>
-          <Layout flexBasis={100} />
+          <Layout flexBasis={80} />
           <Input
             fontSize='normal'
             placeholder={intl.formatMessage(messages.post)}
             onChange={event => setNewNote(event.target.value)}
             value={newNote}
           />
-          <Layout flexBasis={200} />
         </Row>
-        <Layout flexBasis={40} />
+        <Layout flexBasis={60} />
       </Column>
       <Row justifyContent='center'>
         <GiantButton
