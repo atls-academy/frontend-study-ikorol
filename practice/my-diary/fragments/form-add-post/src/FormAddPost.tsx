@@ -13,7 +13,7 @@ import { addItem, fetchInitialData }  from './actions'
 export const FormAddPost = () => {
   const [newNote, setNewNote] = useState('')
   const [notes, setNotes] = useNotes()
-  const [inputStatus, setInputStatus] = useState('invisible')
+  const [isVisible, setIsVisible] = useState(false)
   const intl = useIntl()
 
   useEffect(() => {
@@ -22,7 +22,7 @@ export const FormAddPost = () => {
   return (
     <Column>
       <Column backgroundColor='white'>
-        <Row opacity={inputStatus === 'visible' ? '1' : '0'}>
+        <Row opacity={isVisible ? '1' : '0'}>
           <Layout flexBasis={135} />
           <Input
             fontSize='normal'
@@ -47,13 +47,11 @@ export const FormAddPost = () => {
           boxShadow='violet'
           border='none'
           onClick={() => {
-            setInputStatus('visible')
-            if (inputStatus === 'visible' && newNote !== '') {
+            setIsVisible(!isVisible)
+            if (newNote) {
               setNotes(addItem(notes, newNote))
               setNewNote('')
-              setInputStatus('invisible')
-            } else if (inputStatus === 'visible') {
-              setInputStatus('invisible')
+              setIsVisible(false)
             }
           }}
         >
