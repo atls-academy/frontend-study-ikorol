@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useIntl }                    from 'react-intl'
 
-import { AddTaskButton }              from '@ui/button'
+import { Button }                     from '@ui/button'
 import { Input }                      from '@ui/input'
 import { Column, Layout, Row }        from '@ui/layout'
 import { Space }                      from '@ui/text'
@@ -34,22 +34,34 @@ export const FormAddPost = () => {
         </Row>
         <Layout flexBasis={60} />
       </Column>
-      <AddTaskButton
-        onClick={() => {
-          setInputStatus('visible')
-          if (inputStatus === 'visible' && newNote !== '') {
-            setNotes(addItem(notes, newNote))
-            setNewNote('')
-            setInputStatus('invisible')
-          } else if (inputStatus === 'visible') {
-            setInputStatus('invisible')
-          }
-        }}
-      >
-        <Space count={5} />
-        {intl.formatMessage(messages.newTask)}
-        <Space count={5} />
-      </AddTaskButton>
+      <Row justifyContent='center'>
+        <Button
+          width='fit-content'
+          height='80px'
+          marginTop='-30px'
+          fontSize='large'
+          fontWeight='bold'
+          color='white'
+          backgroundColor='deepPurple'
+          borderRadius='giant'
+          boxShadow='violet'
+          border='none'
+          onClick={() => {
+            setInputStatus('visible')
+            if (inputStatus === 'visible' && newNote !== '') {
+              setNotes(addItem(notes, newNote))
+              setNewNote('')
+              setInputStatus('invisible')
+            } else if (inputStatus === 'visible') {
+              setInputStatus('invisible')
+            }
+          }}
+        >
+          <Space count={5} />
+          {intl.formatMessage(messages.newTask)}
+          <Space count={5} />
+        </Button>
+      </Row>
     </Column>
   )
 }

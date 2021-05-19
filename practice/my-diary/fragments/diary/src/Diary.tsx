@@ -4,19 +4,11 @@ import { FormAddPost }         from '@fragments/form-add-post'
 import { MainPageHeader }      from '@fragments/main-page-header'
 import { PostControls }        from '@fragments/post-controls'
 import { PostList }            from '@fragments/post-list'
-import { Box, Column, Layout } from '@ui/layout'
+import { Column, Layout, Row } from '@ui/layout'
 
 export const Diary = () => {
   return (
-    <Box
-      height='100%'
-      width='100%'
-      top='0'
-      left='0'
-      position='fixed'
-      justifyContent='center'
-      backgroundColor='purple'
-    >
+    <Row height='100%' position='fixed' justifyContent='center' backgroundColor='purple'>
       <Column width='600px'>
         <Layout flexBasis={100} />
         <MainPageHeader />
@@ -28,6 +20,6 @@ export const Diary = () => {
         </Column>
         <Layout flexBasis={50} />
       </Column>
-    </Box>
+    </Row>
   )
 }
