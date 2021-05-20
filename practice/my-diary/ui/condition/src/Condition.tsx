@@ -2,6 +2,6 @@ import React   from 'react'
 
 import { Box } from '@ui/layout'
 
-export const Condition = ({ visible, children }) => {
-  return <Box display={visible ? 'flex' : 'none'}>{children}</Box>
+export const Condition = ({ match, children }) => {
+  return match ? <Box>{children}</Box> : <Box>{}</Box>
 }

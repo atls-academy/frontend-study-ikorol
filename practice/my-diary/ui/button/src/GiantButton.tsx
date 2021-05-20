@@ -5,7 +5,6 @@ import { Button }                            from './Button'
 
 export const GiantButton = styled(Button)(
   () => ({
-    width: 'fit-content',
     fontSize: 32,
     fontWeight: 'bold',
     borderRadius: 35,

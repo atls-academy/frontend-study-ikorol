@@ -4,7 +4,7 @@ import { useIntl }                    from 'react-intl'
 import { GiantButton }                from '@ui/button'
 import { Condition }                  from '@ui/condition'
 import { Input }                      from '@ui/input'
-import { Column, Layout, Row }        from '@ui/layout'
+import { Column, Row }                from '@ui/layout'
 import { Space }                      from '@ui/text'
 import { useNotes }                   from '@store/notes'
 
@@ -23,19 +23,16 @@ export const FormAddPost = () => {
 
   return (
     <Column>
-      <Column backgroundColor='white' height='90px'>
-        <Condition visible={isVisible}>
-          <Row justifyContent='center'>
-            <Input
-              fontSize='normal'
-              placeholder={intl.formatMessage(messages.post)}
-              onChange={event => setNewNote(event.target.value)}
-              value={newNote}
-            />
-          </Row>
+      <Row justifyContent='center' backgroundColor='white' height='90px'>
+        <Condition match={isVisible}>
+          <Input
+            fontSize='normal'
+            placeholder={intl.formatMessage(messages.post)}
+            onChange={event => setNewNote(event.target.value)}
+            value={newNote}
+          />
         </Condition>
-        <Layout flexBasis={60} />
-      </Column>
+      </Row>
       <Row justifyContent='center'>
         <GiantButton
           marginTop='-30px'
