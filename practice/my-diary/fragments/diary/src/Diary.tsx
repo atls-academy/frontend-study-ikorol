@@ -11,7 +11,7 @@ export const Diary = () => {
   return (
     <Background backgroundColor='purple'>
       <Row justifyContent='center'>
-        <Column width='600px' justifySelf='center'>
+        <Column width='600px'>
           <Layout flexBasis={100} />
           <MainPageHeader />
           <PostControls />

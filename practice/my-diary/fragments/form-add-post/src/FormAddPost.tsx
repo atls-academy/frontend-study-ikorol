@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useIntl }                    from 'react-intl'
 
 import { GiantButton }                from '@ui/button'
+import { Condition }                  from '@ui/condition'
 import { Input }                      from '@ui/input'
 import { Column, Layout, Row }        from '@ui/layout'
 import { Space }                      from '@ui/text'
@@ -19,17 +20,20 @@ export const FormAddPost = () => {
   useEffect(() => {
     setNotes(fetchInitialData())
   }, [])
+
   return (
     <Column>
-      <Column backgroundColor='white'>
-        <Row opacity={isVisible ? '1' : '0'} justifyContent='center'>
-          <Input
-            fontSize='normal'
-            placeholder={intl.formatMessage(messages.post)}
-            onChange={event => setNewNote(event.target.value)}
-            value={newNote}
-          />
-        </Row>
+      <Column backgroundColor='white' height='90px'>
+        <Condition visible={isVisible}>
+          <Row justifyContent='center'>
+            <Input
+              fontSize='normal'
+              placeholder={intl.formatMessage(messages.post)}
+              onChange={event => setNewNote(event.target.value)}
+              value={newNote}
+            />
+          </Row>
+        </Condition>
         <Layout flexBasis={60} />
       </Column>
       <Row justifyContent='center'>
