@@ -51,22 +51,14 @@ export const Item = ({ notes, setNotes, note, deleteItem, toggleStatus }) => {
             {note.note}
           </Text>
         </StyledItem>
-        <Button
-          backgroundColor='white'
-          border='none'
-          onClick={() => setNotes(toggleStatus(notes, note.id, 'important'))}
-        >
+        <Button size='mini' onClick={() => setNotes(toggleStatus(notes, note.id, 'important'))}>
           <StarIcon
             opacity={note.important || hover ? '1' : '0'}
             color={note.important ? 'khaki' : 'gray'}
           />
         </Button>
         <Layout flexBasis={10} />
-        <Button
-          backgroundColor='white'
-          border='none'
-          onClick={() => setNotes(toggleStatus(notes, note.id, 'liked'))}
-        >
+        <Button size='mini' onClick={() => setNotes(toggleStatus(notes, note.id, 'liked'))}>
           <HeartIcon
             opacity={note.liked || hover ? '1' : '0'}
             color={note.liked ? 'red' : 'gray'}
@@ -74,9 +66,7 @@ export const Item = ({ notes, setNotes, note, deleteItem, toggleStatus }) => {
         </Button>
         <Layout flexBasis={10} />
         <Button
-          backgroundColor='white'
-          border='none'
-          color='grayBlue'
+          size='mini'
           onClick={() => setNotes(deleteItem(notes, note.id))}
           opacity={hover ? '1' : '0'}
         >

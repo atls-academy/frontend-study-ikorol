@@ -11,6 +11,7 @@
     "@emotion/styled": "^11.1.5",
     "@ui/icons": "^0.0.0",
     "react": "^17.0.1",
-    "styled-system": "^5.1.0"
+    "styled-system": "^5.1.0",
+    "styled-tools": "^1.7.2"
   }
 }

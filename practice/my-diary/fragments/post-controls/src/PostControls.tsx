@@ -1,23 +1,31 @@
-import React                        from 'react'
-import { useIntl }                  from 'react-intl'
+import React                   from 'react'
+import { useIntl }             from 'react-intl'
 
-import { Drawer }                   from '@ui/drawer'
-import { Filter }                   from '@ui/filter'
-import { Input }                    from '@ui/input'
-import { Box, Column, Layout, Row } from '@ui/layout'
-import { Space }                    from '@ui/text'
-import { useFilter }                from '@store/filter'
-import { useSearchValue }           from '@store/search-value'
-import { useShowDrawer }            from '@store/show-drawer'
+import { Button }              from '@ui/button'
+import { Drawer }              from '@ui/drawer'
+import { Filter }              from '@ui/filter'
+import { Input }               from '@ui/input'
+import { Column, Layout, Row } from '@ui/layout'
+import { Text }                from '@ui/text'
+import { Space }               from '@ui/text'
+import { useFilter }           from '@store/filter'
+import { useSearchValue }      from '@store/search-value'
+import { useShowDrawer }       from '@store/show-drawer'
 
-import messages                     from './messages'
+import messages                from './messages'
 
 export const PostControls = () => {
   const [searchValue, setSearchValue] = useSearchValue()
   const [filter, setFilter] = useFilter()
   const [showDrawer, setShowDrawer] = useShowDrawer()
-
   const intl = useIntl()
+
+  const filterMessages = [
+    intl.formatMessage(messages.all),
+    intl.formatMessage(messages.important),
+    intl.formatMessage(messages.liked),
+  ]
+
   return (
     <Drawer isVisible={showDrawer} onClose={() => setShowDrawer(false)}>
       <Column>
@@ -25,26 +33,25 @@ export const PostControls = () => {
         <Row justifyContent='center'>
           <Input
             placeholder={intl.formatMessage(messages.search)}
-            onChange={event => setSearchValue(event.target.value)}
+            onChange={(event) => setSearchValue(event.target.value)}
             value={searchValue}
           />
-          <Box
+          <Button
+            size='small'
             borderRadius='rightSide'
-            color='white'
             backgroundColor={searchValue !== '' ? 'deepPurple' : 'lightPurple'}
-            cursor='pointer'
             onClick={() => {
               setFilter('all')
               setSearchValue('')
             }}
           >
             <Space count={2} />
-            {intl.formatMessage(messages.clear)}
+            <Text>{intl.formatMessage(messages.clear)}</Text>
             <Space count={2} />
-          </Box>
+          </Button>
         </Row>
         <Layout flexBasis={30} />
-        <Filter filter={filter} setFilter={setFilter} messages={messages} />
+        <Filter filter={filter} setFilter={setFilter} messages={filterMessages} />
       </Column>
     </Drawer>
   )

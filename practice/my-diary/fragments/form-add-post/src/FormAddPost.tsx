@@ -5,7 +5,7 @@ import { Button }                     from '@ui/button'
 import { Condition }                  from '@ui/condition'
 import { Input }                      from '@ui/input'
 import { Column, Row }                from '@ui/layout'
-import { Space }                      from '@ui/text'
+import { Space, Text }                from '@ui/text'
 import { useNotes }                   from '@store/notes'
 
 import messages                       from './messages'
@@ -29,7 +29,7 @@ export const FormAddPost = () => {
             <Input
               fontSize='normal'
               placeholder={intl.formatMessage(messages.post)}
-              onChange={event => setNewNote(event.target.value)}
+              onChange={(event) => setNewNote(event.target.value)}
               value={newNote}
             />
           </Condition>
@@ -37,9 +37,9 @@ export const FormAddPost = () => {
       </Row>
       <Row justifyContent='center'>
         <Button
-          height='80px'
-          marginTop='-30px'
           boxShadow='violet'
+          marginTop='-30px'
+          size='large'
           onClick={() => {
             setIsVisible(!isVisible)
             if (newNote) {
@@ -50,7 +50,7 @@ export const FormAddPost = () => {
           }}
         >
           <Space count={5} />
-          {intl.formatMessage(messages.newTask)}
+          <Text>{intl.formatMessage(messages.newTask)}</Text>
           <Space count={5} />
         </Button>
       </Row>

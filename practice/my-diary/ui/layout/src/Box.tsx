@@ -1,15 +1,5 @@
-import styled from '@emotion/styled'
-import {
-  border,
-  color,
-  flexbox,
-  layout,
-  position,
-  shadow,
-  space,
-  system,
-  typography,
-} from 'styled-system'
+import styled                                                              from '@emotion/styled'
+import { border, color, flexbox, layout, position, shadow, space, system } from 'styled-system'
 
 export const Box = styled.div(
   system({
@@ -23,7 +13,6 @@ export const Box = styled.div(
   shadow,
   color,
   flexbox,
-  typography,
   layout,
   position,
   space,
@@ -33,8 +22,9 @@ Box.defaultProps = {
   display: 'flex',
   boxSizing: 'border-box',
   fontFamily: ['Roboto', 'Ubuntu', 'sans-serif'],
-  fontSize: 15,
+  fontSize: 'small',
   fontWeight: 'bold',
   alignItems: 'center',
-  border: '1px solid #e4eaff',
+  border: '1px solid',
+  borderColor: 'purple',
 }

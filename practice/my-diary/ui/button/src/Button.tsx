@@ -1,21 +1,8 @@
-import styled from '@emotion/styled'
-import {
-  border,
-  color,
-  flexbox,
-  layout,
-  position,
-  shadow,
-  space,
-  system,
-  typography,
-} from 'styled-system'
+import styled                           from '@emotion/styled'
+import { border, color, shadow, space } from 'styled-system'
+import { switchProp }                   from 'styled-tools'
 
 export const Button = styled.button(
-  system({
-    boxSizing: true,
-    transform: true,
-  }),
   () => ({
     outline: 'none',
     cursor: 'pointer',
@@ -24,21 +11,27 @@ export const Button = styled.button(
       transform: 'scale(0.98)',
     },
   }),
-  typography,
-  layout,
-  space,
-  color,
-  flexbox,
-  shadow,
-  position,
+  switchProp('size', () => ({
+    large: {
+      backgroundColor: '#b07fec',
+      height: '80px',
+      borderRadius: 35,
+      border: 'none',
+      color: 'white',
+    },
+    small: {
+      backgroundColor: 'deepPurple',
+      borderRadius: 35,
+      border: '1px solid #e4eaff',
+      color: 'white',
+    },
+    mini: {
+      backgroundColor: 'white',
+      border: 'none',
+    },
+  })),
   border,
+  color,
+  space,
+  shadow,
 )
-
-Button.defaultProps = {
-  color: 'white',
-  backgroundColor: 'deepPurple',
-  fontSize: 32,
-  borderRadius: 35,
-  textAlign: 'center',
-  border: 'none',
-}
