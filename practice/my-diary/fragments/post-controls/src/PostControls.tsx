@@ -1,16 +1,16 @@
-import React                   from 'react'
-import { useIntl }             from 'react-intl'
+import React                        from 'react'
+import { useIntl }                  from 'react-intl'
 
-import { Button }              from '@ui/button'
-import { Drawer }              from '@ui/drawer'
-import { Input }               from '@ui/input'
-import { Box, Column, Layout } from '@ui/layout'
-import { Space }               from '@ui/text'
-import { useFilter }           from '@store/filter'
-import { useSearchValue }      from '@store/search-value'
-import { useShowDrawer }       from '@store/show-drawer'
+import { Drawer }                   from '@ui/drawer'
+import { Filter }                   from '@ui/filter'
+import { Input }                    from '@ui/input'
+import { Box, Column, Layout, Row } from '@ui/layout'
+import { Space }                    from '@ui/text'
+import { useFilter }                from '@store/filter'
+import { useSearchValue }           from '@store/search-value'
+import { useShowDrawer }            from '@store/show-drawer'
 
-import messages                from './messages'
+import messages                     from './messages'
 
 export const PostControls = () => {
   const [searchValue, setSearchValue] = useSearchValue()
@@ -20,61 +20,32 @@ export const PostControls = () => {
   const intl = useIntl()
   return (
     <Drawer isVisible={showDrawer} onClose={() => setShowDrawer(false)}>
-      <Box>
-        <Column>
-          <Layout flexBasis={120} />
-          <Box>
-            <Input
-              placeholder={intl.formatMessage(messages.search)}
-              onChange={event => setSearchValue(event.target.value)}
-              value={searchValue}
-            />
-            <Button
-              color='white'
-              backgroundColor='deepPurple'
-              borderRadius='rightSide'
-              border='1px solid'
-              onClick={() => {
-                setFilter('all')
-                setSearchValue('')
-              }}
-            >
-              {intl.formatMessage(messages.clear)}
-            </Button>
+      <Column>
+        <Layout flexBasis={120} />
+        <Row justifyContent='center'>
+          <Input
+            placeholder={intl.formatMessage(messages.search)}
+            onChange={event => setSearchValue(event.target.value)}
+            value={searchValue}
+          />
+          <Box
+            borderRadius='rightSide'
+            color='white'
+            backgroundColor={searchValue !== '' ? 'deepPurple' : 'lightPurple'}
+            cursor='pointer'
+            onClick={() => {
+              setFilter('all')
+              setSearchValue('')
+            }}
+          >
+            <Space count={2} />
+            {intl.formatMessage(messages.clear)}
+            <Space count={2} />
           </Box>
-          <Layout flexBasis={20} />
-          <Box justifyContent='center' height='40px'>
-            <Button
-              backgroundColor={filter === 'all' ? 'deepPurple' : 'white'}
-              color={filter === 'all' ? 'white' : 'grayBlue'}
-              border='1px solid'
-              borderRadius='leftSide'
-              onClick={() => setFilter('all')}
-            >
-              <Space count={2} />
-              {intl.formatMessage(messages.all)}
-              <Space count={2} />
-            </Button>
-            <Button
-              backgroundColor={filter === 'important' ? 'deepPurple' : 'white'}
-              color={filter === 'important' ? 'white' : 'grayBlue'}
-              border='1px solid'
-              onClick={() => setFilter('important')}
-            >
-              {intl.formatMessage(messages.important)}
-            </Button>
-            <Button
-              backgroundColor={filter === 'liked' ? 'deepPurple' : 'white'}
-              color={filter === 'liked' ? 'white' : 'grayBlue'}
-              border='1px solid'
-              borderRadius='rightSide'
-              onClick={() => setFilter('liked')}
-            >
-              {intl.formatMessage(messages.liked)}
-            </Button>
-          </Box>
-        </Column>
-      </Box>
+        </Row>
+        <Layout flexBasis={30} />
+        <Filter filter={filter} setFilter={setFilter} messages={messages} />
+      </Column>
     </Drawer>
   )
 }

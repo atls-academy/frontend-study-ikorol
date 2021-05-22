@@ -17,6 +17,7 @@ export const Box = styled.div(
     overflowX: true,
     overflowY: true,
     visibility: true,
+    cursor: true,
   }),
   border,
   shadow,
@@ -32,4 +33,8 @@ Box.defaultProps = {
   display: 'flex',
   boxSizing: 'border-box',
   fontFamily: ['Roboto', 'Ubuntu', 'sans-serif'],
+  fontSize: 15,
+  fontWeight: 'bold',
+  alignItems: 'center',
+  border: '1px solid #e4eaff',
 }

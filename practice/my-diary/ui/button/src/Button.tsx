@@ -19,6 +19,7 @@ export const Button = styled.button(
   () => ({
     outline: 'none',
     cursor: 'pointer',
+    fontWeight: 'bold',
     '&:active': {
       transform: 'scale(0.98)',
     },
@@ -34,9 +35,10 @@ export const Button = styled.button(
 )
 
 Button.defaultProps = {
-  color: 'gray',
-  borderColor: 'purple',
-  fontSize: '17px',
-  fontWeight: '400',
+  color: 'white',
+  backgroundColor: 'deepPurple',
+  fontSize: 32,
+  borderRadius: 35,
   textAlign: 'center',
+  border: 'none',
 }

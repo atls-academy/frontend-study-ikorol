@@ -1,50 +1,44 @@
-import React                        from 'react'
-import { useIntl }                  from 'react-intl'
+import React                   from 'react'
+import { useIntl }             from 'react-intl'
 
-import { BurgerButtonIcon }         from '@ui/icons'
-import { Box, Column, Layout, Row } from '@ui/layout'
-import { Space, Text }              from '@ui/text'
-import { useNotes }                 from '@store/notes'
-import { useShowDrawer }            from '@store/show-drawer'
+import { BurgerButtonIcon }    from '@ui/icons'
+import { Column, Layout, Row } from '@ui/layout'
+import { Space, Text }         from '@ui/text'
+import { useNotes }            from '@store/notes'
+import { useShowDrawer }       from '@store/show-drawer'
 
-import messages                     from './messages'
+import messages                from './messages'
 
 export const MainPageHeader = () => {
   const intl = useIntl()
   const [notes] = useNotes()
   const [, setShowDrawer] = useShowDrawer()
   return (
-    <Column>
-      <Row backgroundColor='deepPurple' lineHeights='giant' alignItems='center'>
-        <Layout flexBasis={50} />
-        <BurgerButtonIcon cursor='pointer' onClick={() => setShowDrawer(true)} />
-        <Layout flexBasis={220} />
-        <Column>
-          <Layout flexBasis={20} />
-          <Text fontSize='large' fontWeight='bold' color='white'>
-            {intl.formatMessage(messages.name)}
-          </Text>
-          <Layout flexBasis={10} />
-          <Box>
-            <Column>
-              <Text fontSize='small' color='white'>
-                {notes.length}
-                <Space />
-                {intl.formatMessage(messages.post)}
-                <Space count={3} />
-                {notes.filter(item => item.important).length}
-                <Space />
-                {intl.formatMessage(messages.important)}
-                <Space count={3} />
-                {notes.filter(item => item.liked).length}
-                <Space />
-                {intl.formatMessage(messages.liked)}
-              </Text>
-              <Layout flexBasis={10} />
-            </Column>
-          </Box>
-        </Column>
-      </Row>
-    </Column>
+    <Row backgroundColor='deepPurple' lineHeights='giant' alignItems='center'>
+      <Layout flexBasis={50} />
+      <BurgerButtonIcon cursor='pointer' onClick={() => setShowDrawer(true)} />
+      <Layout flexBasis={220} />
+      <Column>
+        <Layout flexBasis={20} />
+        <Text fontSize='large' fontWeight='bold' color='white'>
+          {intl.formatMessage(messages.name)}
+        </Text>
+        <Layout flexBasis={10} />
+        <Text fontSize='small' color='white'>
+          {notes.length}
+          <Space />
+          {intl.formatMessage(messages.post)}
+          <Space count={3} />
+          {notes.filter(item => item.important).length}
+          <Space />
+          {intl.formatMessage(messages.important)}
+          <Space count={3} />
+          {notes.filter(item => item.liked).length}
+          <Space />
+          {intl.formatMessage(messages.liked)}
+        </Text>
+        <Layout flexBasis={10} />
+      </Column>
+    </Row>
   )
 }

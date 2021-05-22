@@ -11,6 +11,7 @@
     "@store/search-value": "0.0.0",
     "@ui/button": "0.0.0",
     "@ui/drawer": "0.0.0",
+    "@ui/filter": "0.0.0",
     "@ui/input": "0.0.0",
     "@ui/layout": "^0.0.0",
     "@store/show-drawer": "0.0.0",

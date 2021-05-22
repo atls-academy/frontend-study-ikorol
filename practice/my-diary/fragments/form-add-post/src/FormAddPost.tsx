@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useIntl }                    from 'react-intl'
 
-import { GiantButton }                from '@ui/button'
+import { Button }                     from '@ui/button'
 import { Condition }                  from '@ui/condition'
 import { Input }                      from '@ui/input'
 import { Column, Row }                from '@ui/layout'
@@ -24,18 +24,22 @@ export const FormAddPost = () => {
   return (
     <Column>
       <Row justifyContent='center' backgroundColor='white' height='90px'>
-        <Condition match={isVisible}>
-          <Input
-            fontSize='normal'
-            placeholder={intl.formatMessage(messages.post)}
-            onChange={event => setNewNote(event.target.value)}
-            value={newNote}
-          />
-        </Condition>
+        <Column alignItems='center'>
+          <Condition match={isVisible}>
+            <Input
+              fontSize='normal'
+              placeholder={intl.formatMessage(messages.post)}
+              onChange={event => setNewNote(event.target.value)}
+              value={newNote}
+            />
+          </Condition>
+        </Column>
       </Row>
       <Row justifyContent='center'>
-        <GiantButton
+        <Button
+          height='80px'
           marginTop='-30px'
+          boxShadow='violet'
           onClick={() => {
             setIsVisible(!isVisible)
             if (newNote) {
@@ -48,7 +52,7 @@ export const FormAddPost = () => {
           <Space count={5} />
           {intl.formatMessage(messages.newTask)}
           <Space count={5} />
-        </GiantButton>
+        </Button>
       </Row>
     </Column>
   )

@@ -18,7 +18,6 @@ export const List: any = ({ notes, setNotes, visibleNotes, deleteItem, toggleSta
           toggleStatus={toggleStatus}
         />
       ))}
-      <Layout flexBasis={10} />
     </Column>
   )
 }

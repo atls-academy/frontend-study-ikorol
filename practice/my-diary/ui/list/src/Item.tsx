@@ -15,6 +15,7 @@ const StyledItem = styled.li(
     display: 'flex',
     boxSizing: 'border-box',
     width: '470px',
+    hyphens: 'auto',
   }),
   color,
   border,
@@ -25,18 +26,17 @@ export const Item = ({ notes, setNotes, note, deleteItem, toggleStatus }) => {
   return (
     <>
       <Row onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
-        <Layout flexBasis={70} />
+        <Layout flexBasis={80} />
         <Box
           onClick={() => setNotes(toggleStatus(notes, note.id, 'done'))}
           display='flex'
-          alignItems='center'
+          border='none'
+          cursor='pointer'
         >
-          <Box position='relative' left='11px'>
+          <Box position='relative' left='11px' border='none'>
             <DotIcon opacity={note.done ? '1' : '0'} />
           </Box>
-          <Box>
-            <CircleDotIcon />
-          </Box>
+          <CircleDotIcon />
         </Box>
         <Layout flexBasis={30} />
         <StyledItem
@@ -51,37 +51,37 @@ export const Item = ({ notes, setNotes, note, deleteItem, toggleStatus }) => {
             {note.note}
           </Text>
         </StyledItem>
-        <Box>
-          <Button
-            backgroundColor='white'
-            border='none'
-            onClick={() => setNotes(toggleStatus(notes, note.id, 'important'))}
-          >
-            <StarIcon
-              opacity={note.important || hover ? '1' : '0'}
-              color={note.important ? 'khaki' : 'gray'}
-            />
-          </Button>
-          <Button
-            backgroundColor='white'
-            border='none'
-            onClick={() => setNotes(toggleStatus(notes, note.id, 'liked'))}
-          >
-            <HeartIcon
-              opacity={note.liked || hover ? '1' : '0'}
-              color={note.liked ? 'red' : 'gray'}
-            />
-          </Button>
-          <Button
-            backgroundColor='white'
-            border='none'
-            color='grayBlue'
-            onClick={() => setNotes(deleteItem(notes, note.id))}
-            opacity={hover ? '1' : '0'}
-          >
-            <TrashIcon />
-          </Button>
-        </Box>
+        <Button
+          backgroundColor='white'
+          border='none'
+          onClick={() => setNotes(toggleStatus(notes, note.id, 'important'))}
+        >
+          <StarIcon
+            opacity={note.important || hover ? '1' : '0'}
+            color={note.important ? 'khaki' : 'gray'}
+          />
+        </Button>
+        <Layout flexBasis={10} />
+        <Button
+          backgroundColor='white'
+          border='none'
+          onClick={() => setNotes(toggleStatus(notes, note.id, 'liked'))}
+        >
+          <HeartIcon
+            opacity={note.liked || hover ? '1' : '0'}
+            color={note.liked ? 'red' : 'gray'}
+          />
+        </Button>
+        <Layout flexBasis={10} />
+        <Button
+          backgroundColor='white'
+          border='none'
+          color='grayBlue'
+          onClick={() => setNotes(deleteItem(notes, note.id))}
+          opacity={hover ? '1' : '0'}
+        >
+          <TrashIcon />
+        </Button>
         <Layout flexBasis={50} />
       </Row>
       <Layout flexBasis={6} />

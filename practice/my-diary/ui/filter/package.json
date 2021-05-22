@@ -1,0 +1,19 @@
+{
+  "name": "@ui/filter",
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "src/index.ts",
+  "devDependencies": {
+    "@types/styled-system": "^5.1.10"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.1.5",
+    "@emotion/styled": "^11.1.5",
+    "@ui/icons": "^0.0.0",
+    "@ui/layout": "0.0.0",
+    "@ui/text": "0.0.0",
+    "react": "^17.0.1",
+    "react-intl": "^5.15.7",
+    "styled-system": "^5.1.0"
+  }
+}

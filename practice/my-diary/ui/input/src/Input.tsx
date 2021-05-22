@@ -19,4 +19,5 @@ export const Input = styled.input(
 Input.defaultProps = {
   borderColor: 'purple',
   backgroundColor: 'white',
+  overflowWrap: 'break-word',
 }
