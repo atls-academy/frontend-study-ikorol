@@ -19,6 +19,7 @@ export const Text = styled.span(
 Text.defaultProps = {
   fontFamily: ['Segoe UI', 'Roboto', 'Ubuntu', 'sans-serif'],
   fontWeight: 'normal',
-  fontSize: '20px',
+  fontSize: 'normal',
   textDecorationColor: '#e4eaff',
+  padding: '0 10px',
 }

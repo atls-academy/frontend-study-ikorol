@@ -2,7 +2,6 @@ import styled                                                     from '@emotion
 import React, { useState }                                        from 'react'
 import { border, color, system }                                  from 'styled-system'
 
-import { Button }                                                 from '@ui/button'
 import { CircleDotIcon, DotIcon, HeartIcon, StarIcon, TrashIcon } from '@ui/icons'
 import { Box, Layout, Row }                                       from '@ui/layout'
 import { Text }                                                   from '@ui/text'
@@ -16,6 +15,7 @@ const StyledItem = styled.li(
     boxSizing: 'border-box',
     width: '470px',
     hyphens: 'auto',
+    cursor: 'pointer',
   }),
   color,
   border,
@@ -27,54 +27,46 @@ export const Item = ({ notes, setNotes, note, deleteItem, toggleStatus }) => {
     <>
       <Row onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
         <Layout flexBasis={80} />
-        <Box
-          onClick={() => setNotes(toggleStatus(notes, note.id, 'done'))}
-          display='flex'
-          border='none'
-          cursor='pointer'
-        >
+        <Box cursor='pointer' onClick={() => setNotes(toggleStatus(notes, note.id, 'done'))}>
           <Box position='relative' left='11px' border='none'>
             <DotIcon opacity={note.done ? '1' : '0'} />
           </Box>
           <CircleDotIcon />
         </Box>
         <Layout flexBasis={30} />
-        <StyledItem
-          cursor='pointer'
-          onDoubleClick={() => setNotes(toggleStatus(notes, note.id, 'liked'))}
-        >
+        <StyledItem onDoubleClick={() => setNotes(toggleStatus(notes, note.id, 'liked'))}>
           <Text
-            lineHeight='large'
+            lineHeight='medium'
             color='grayBlue'
             textDecoration={note.done ? 'line-through' : 'none'}
           >
             {note.note}
           </Text>
         </StyledItem>
-        <Button size='mini' onClick={() => setNotes(toggleStatus(notes, note.id, 'important'))}>
+        <Box cursor='pointer' onClick={() => setNotes(toggleStatus(notes, note.id, 'important'))}>
           <StarIcon
             opacity={note.important || hover ? '1' : '0'}
             color={note.important ? 'khaki' : 'gray'}
           />
-        </Button>
-        <Layout flexBasis={10} />
-        <Button size='mini' onClick={() => setNotes(toggleStatus(notes, note.id, 'liked'))}>
+        </Box>
+        <Layout flexBasis={20} />
+        <Box cursor='pointer' onClick={() => setNotes(toggleStatus(notes, note.id, 'liked'))}>
           <HeartIcon
             opacity={note.liked || hover ? '1' : '0'}
             color={note.liked ? 'red' : 'gray'}
           />
-        </Button>
-        <Layout flexBasis={10} />
-        <Button
-          size='mini'
+        </Box>
+        <Layout flexBasis={20} />
+        <Box
+          cursor='pointer'
           onClick={() => setNotes(deleteItem(notes, note.id))}
           opacity={hover ? '1' : '0'}
         >
           <TrashIcon />
-        </Button>
+        </Box>
         <Layout flexBasis={50} />
       </Row>
-      <Layout flexBasis={6} />
+      <Layout flexBasis={20} />
     </>
   )
 }

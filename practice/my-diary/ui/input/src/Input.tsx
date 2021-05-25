@@ -1,23 +1,23 @@
-import styled                        from '@emotion/styled'
-import { border, color, typography } from 'styled-system'
+import React           from 'react'
 
-export const Input = styled.input(
-  () => ({
-    display: 'block',
-    height: '40px',
-    border: '1px solid',
-    padding: '0 20px',
-    fontSize: 16,
-    fontWeight: 400,
-    outline: 'none',
-  }),
-  typography,
-  border,
-  color,
-)
+import { Box }         from '@ui/layout'
+import { Text }        from '@ui/text'
 
-Input.defaultProps = {
-  borderColor: 'purple',
-  backgroundColor: 'white',
-  overflowWrap: 'break-word',
+import { ClearButton } from './addons'
+import { InputProps }  from './Input.interface'
+import { StyledInput } from './parts'
+
+export const Input = ({ search, onClear, buttonValue, ...props }: InputProps) => {
+  return (
+    <Box>
+      <StyledInput {...props} />
+      {search ? (
+        <ClearButton onClick={onClear}>
+          <Text>{buttonValue}</Text>
+        </ClearButton>
+      ) : (
+        <div />
+      )}
+    </Box>
+  )
 }

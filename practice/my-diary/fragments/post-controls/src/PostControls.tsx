@@ -1,13 +1,10 @@
 import React                   from 'react'
 import { useIntl }             from 'react-intl'
 
-import { Button }              from '@ui/button'
 import { Drawer }              from '@ui/drawer'
 import { Filter }              from '@ui/filter'
 import { Input }               from '@ui/input'
 import { Column, Layout, Row } from '@ui/layout'
-import { Text }                from '@ui/text'
-import { Space }               from '@ui/text'
 import { useFilter }           from '@store/filter'
 import { useSearchValue }      from '@store/search-value'
 import { useShowDrawer }       from '@store/show-drawer'
@@ -20,7 +17,7 @@ export const PostControls = () => {
   const [showDrawer, setShowDrawer] = useShowDrawer()
   const intl = useIntl()
 
-  const filterMessages = [
+  const filterOptions = [
     intl.formatMessage(messages.all),
     intl.formatMessage(messages.important),
     intl.formatMessage(messages.liked),
@@ -32,26 +29,16 @@ export const PostControls = () => {
         <Layout flexBasis={120} />
         <Row justifyContent='center'>
           <Input
+            search
+            onClear={() => setSearchValue('')}
             placeholder={intl.formatMessage(messages.search)}
-            onChange={(event) => setSearchValue(event.target.value)}
+            onChange={event => setSearchValue(event.target.value)}
             value={searchValue}
+            buttonValue={intl.formatMessage(messages.clear)}
           />
-          <Button
-            size='small'
-            borderRadius='rightSide'
-            backgroundColor={searchValue !== '' ? 'deepPurple' : 'lightPurple'}
-            onClick={() => {
-              setFilter('all')
-              setSearchValue('')
-            }}
-          >
-            <Space count={2} />
-            <Text>{intl.formatMessage(messages.clear)}</Text>
-            <Space count={2} />
-          </Button>
         </Row>
         <Layout flexBasis={30} />
-        <Filter filter={filter} setFilter={setFilter} messages={filterMessages} />
+        <Filter filter={filter} setFilter={setFilter} options={filterOptions} />
       </Column>
     </Drawer>
   )

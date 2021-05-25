@@ -1,8 +1,8 @@
-import React                    from 'react'
-import styled                   from '@emotion/styled'
-import { color, shadow, space } from 'styled-system'
+import React             from 'react'
+import styled            from '@emotion/styled'
+import { color, shadow } from 'styled-system'
 
-import { Box }                  from '@ui/layout'
+import { Box }           from '@ui/layout'
 
 const StyledContainer = styled.div(
   ({ visible }) => ({
@@ -51,7 +51,6 @@ const StyledDrawer = styled.div(
     },
   }),
   color,
-  space,
   shadow,
 )
 

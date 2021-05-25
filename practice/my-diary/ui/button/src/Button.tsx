@@ -1,37 +1,42 @@
-import styled                           from '@emotion/styled'
-import { border, color, shadow, space } from 'styled-system'
-import { switchProp }                   from 'styled-tools'
+import styled          from '@emotion/styled'
+import { shadow }      from 'styled-system'
+import { switchProp }  from 'styled-tools'
 
-export const Button = styled.button(
+import { Box }         from '@ui/layout'
+
+import { ButtonProps } from './types'
+
+export const Button = styled(Box)<ButtonProps>(
   () => ({
     outline: 'none',
     cursor: 'pointer',
-    fontWeight: 'bold',
     '&:active': {
       transform: 'scale(0.98)',
     },
   }),
-  switchProp('size', () => ({
+  switchProp('type', ({ theme, isEmpty, isSelected, isPlaced }) => ({
     large: {
       backgroundColor: '#b07fec',
+      justifyContent: 'center',
+      marginTop: '-30px',
       height: '80px',
+      width: '250px',
       borderRadius: 35,
       border: 'none',
       color: 'white',
+      boxShadow: theme.shadows.violet,
     },
-    small: {
-      backgroundColor: 'deepPurple',
-      borderRadius: 35,
-      border: '1px solid #e4eaff',
-      color: 'white',
+    search: {
+      borderRadius: theme.radii.rightSide,
+      backgroundColor: isEmpty ? theme.colors.lightPurple : theme.colors.deepPurple,
     },
-    mini: {
-      backgroundColor: 'white',
-      border: 'none',
+    filter: {
+      border: '1px solid',
+      borderColor: theme.colors.purple,
+      backgroundColor: isSelected ? theme.colors.deepPurple : theme.colors.white,
+      borderRadius:
+        isPlaced === 'last' ? theme.radii.rightSide : isPlaced === 'first' && theme.radii.leftSide,
     },
   })),
-  border,
-  color,
-  space,
   shadow,
 )

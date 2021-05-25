@@ -17,9 +17,9 @@ export const MainPageHeader = () => {
     <Row backgroundColor='deepPurple' lineHeights='giant' alignItems='center'>
       <Layout flexBasis={50} />
       <BurgerButtonIcon cursor='pointer' onClick={() => setShowDrawer(true)} />
-      <Layout flexBasis={220} />
+      <Layout flexBasis={210} />
       <Column>
-        <Layout flexBasis={20} />
+        <Layout flexBasis={30} />
         <Text fontSize='large' fontWeight='bold' color='white'>
           {intl.formatMessage(messages.name)}
         </Text>
