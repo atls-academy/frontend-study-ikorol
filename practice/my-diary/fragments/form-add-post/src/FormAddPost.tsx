@@ -36,7 +36,10 @@ export const FormAddPost = () => {
       </Row>
       <Row justifyContent='center'>
         <Button
-          type='large'
+          size='giant'
+          borderRadius='round'
+          shadow='purple'
+          marginTop='-30px'
           onClick={() => {
             setIsVisible(!isVisible)
             if (newNote) {
@@ -46,7 +49,7 @@ export const FormAddPost = () => {
             }
           }}
         >
-          <Text fontSize='large' fontWeight='bold'>
+          <Text fontSize='large' fontWeight='bold' color='white'>
             {intl.formatMessage(messages.newTask)}
           </Text>
         </Button>

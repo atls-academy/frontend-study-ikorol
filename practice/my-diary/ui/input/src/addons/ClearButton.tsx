@@ -1,11 +1,7 @@
-import React                             from 'react'
-import styled                            from '@emotion/styled'
+import React      from 'react'
 
-import { ClearButtonProps }              from './ClearButton.interface'
-import { createBaseStyles, shapeStyles } from './ClearButton.styles'
-import { appearanceStyles }              from './ClearButton.styles'
+import { Button } from '@ui/button'
 
-// TODO rewrite with UI Button
-const StyledButton = styled.button(createBaseStyles(), appearanceStyles, shapeStyles)
-
-export const ClearButton = ({ ...props }: ClearButtonProps) => <StyledButton {...props} />
+export const ClearButton = ({ ...props }) => (
+  <Button color='deepPurple' borderRadius='right' {...props} />
+)

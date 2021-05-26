@@ -28,14 +28,16 @@ export const PostControls = () => {
       <Column>
         <Layout flexBasis={120} />
         <Row justifyContent='center'>
+          <Layout flexBasis={30} />
           <Input
             search
             onClear={() => setSearchValue('')}
             placeholder={intl.formatMessage(messages.search)}
             onChange={event => setSearchValue(event.target.value)}
             value={searchValue}
-            buttonValue={intl.formatMessage(messages.clear)}
+            addonName={intl.formatMessage(messages.clear)}
           />
+          <Layout flexBasis={30} />
         </Row>
         <Layout flexBasis={30} />
         <Filter filter={filter} setFilter={setFilter} options={filterOptions} />

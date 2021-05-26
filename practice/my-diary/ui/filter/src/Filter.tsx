@@ -1,33 +1,35 @@
-import React      from 'react'
+import React           from 'react'
 
-import { Button } from '@ui/button'
-import { Row }    from '@ui/layout'
-import { Text }   from '@ui/text'
+import { Button }      from '@ui/button'
+import { Layout, Row } from '@ui/layout'
+import { Text }        from '@ui/text'
 
 export const Filter = ({ filter, setFilter, options }) => {
   const checkButtonPlace = (option, index) => {
     if (index === 0) {
-      return 'first'
+      return 'left'
     }
     if (options.length - 1 === index) {
-      return 'last'
+      return 'right'
     }
-    return 'middle'
+    return 'none'
   }
 
   return (
-    <Row justifyContent='center' height='40px'>
+    <Row justifyContent='center'>
+      <Layout flexBasis={40} />
       {options.map((option, index) => (
         <Button
-          type='filter'
           key={option}
+          color={filter === option.toLowerCase() ? 'deepPurple' : 'white'}
           isSelected={filter === option.toLowerCase()}
-          isPlaced={checkButtonPlace(option, index)}
+          borderRadius={checkButtonPlace(option, index)}
           onClick={() => setFilter(option.toLowerCase())}
         >
           <Text color={filter === option.toLowerCase() ? 'white' : 'grayBlue'}>{option}</Text>
         </Button>
       ))}
+      <Layout flexBasis={40} />
     </Row>
   )
 }

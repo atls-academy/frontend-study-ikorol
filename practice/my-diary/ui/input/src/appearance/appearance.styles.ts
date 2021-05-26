@@ -1,6 +1,6 @@
 import { TypographyProps, styleFn } from 'styled-system'
 
-import { InputAppearanceStyles }    from './appearance.interfaces'
+import { InputAppearanceStyles }    from './appearance.interface'
 
 export const createColorStyles = (
   color: string,
