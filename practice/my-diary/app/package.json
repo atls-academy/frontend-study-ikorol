@@ -8,8 +8,8 @@
     "@types/react-dom": "^17.0.1"
   },
   "dependencies": {
-    "@fragments/diary": "0.0.0",
     "@emotion/react": "^11.1.5",
+    "@fragments/diary": "0.0.0",
     "@store/filter": "0.0.0",
     "@store/notes": "0.0.0",
     "@store/search-value": "0.0.0",
@@ -17,6 +17,6 @@
     "@ui/theme": "0.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-intl": "^5.15.7"
+    "react-intl": "^5.18.1"
   }
 }

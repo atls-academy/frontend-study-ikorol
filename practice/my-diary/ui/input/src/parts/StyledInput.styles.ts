@@ -6,26 +6,29 @@ import { createBaseShape }        from '../shape'
 
 export const baseStyles = createBaseStyles()
 
-export const normalSizeStyles = createBaseShape({
-  size: 15,
-  fontFamily: 'Gordita, sans-serif',
-  fontSize: 15,
-  border: '1px solid',
-})
+export const normalSizeStyles = ({ theme }) =>
+  createBaseShape({
+    size: 15,
+    fontFamily: 'Gordita, sans-serif',
+    fontSize: theme.fontSizes.normal,
+    border: '1px solid',
+  })
 
-export const smallSizeStyles = createBaseShape({
-  size: 10,
-  fontFamily: 'Gordita, sans-serif',
-  fontSize: 10,
-  border: '.5px solid',
-})
+export const smallSizeStyles = ({ theme }) =>
+  createBaseShape({
+    size: 10,
+    fontFamily: 'Gordita, sans-serif',
+    fontSize: theme.fontSizes.small,
+    border: '.5px solid',
+  })
 
-export const largeSizeStyles = createBaseShape({
-  size: 20,
-  fontFamily: 'Gordita, sans-serif',
-  fontSize: 20,
-  border: '1px solid',
-})
+export const largeSizeStyles = ({ theme }) =>
+  createBaseShape({
+    size: 20,
+    fontFamily: 'Gordita, sans-serif',
+    fontSize: theme.fontSizes.medium,
+    border: '1px solid',
+  })
 
 export const shapeStyles = switchProp(prop('size', 'large'), () => ({
   normal: normalSizeStyles,

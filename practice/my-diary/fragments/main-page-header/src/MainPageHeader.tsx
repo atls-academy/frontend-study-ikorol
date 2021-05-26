@@ -24,7 +24,7 @@ export const MainPageHeader = () => {
           {intl.formatMessage(messages.name)}
         </Text>
         <Layout flexBasis={10} />
-        <Text fontSize='small' color='white'>
+        <Text fontSize='normal' color='white'>
           {notes.length}
           <Space />
           {intl.formatMessage(messages.post)}

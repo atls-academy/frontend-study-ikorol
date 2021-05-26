@@ -32,10 +32,8 @@ export const PostControls = () => {
           <Input
             search
             onClear={() => setSearchValue('')}
-            placeholder={intl.formatMessage(messages.search)}
             onChange={event => setSearchValue(event.target.value)}
             value={searchValue}
-            addonName={intl.formatMessage(messages.clear)}
           />
           <Layout flexBasis={30} />
         </Row>
