@@ -1,7 +1,23 @@
 import styled                               from '@emotion/styled'
 import { color, space, system, typography } from 'styled-system'
+import { switchProp }                       from 'styled-tools'
 
-export const Text = styled.span(
+interface TextProps {
+  fontWeight?: string | number
+  fontSize?: string | number
+  lineHeight?: string | number
+  padding?: string | number
+  fontFamily?: string
+  textDecoration?: string
+  decorationColor?: string
+}
+const decorationColor = switchProp('decorationColor', ({ theme }) => ({
+  purple: {
+    textDecorationColor: theme.colors.purple,
+  },
+}))
+
+export const Text = styled.span<TextProps>(
   system({
     wordBreak: true,
     whiteSpace: true,
@@ -9,17 +25,17 @@ export const Text = styled.span(
     textOverflow: true,
     cursor: true,
     textDecoration: true,
-    textDecorationColor: true,
   }),
   color,
   space,
   typography,
+  decorationColor,
 )
 
 Text.defaultProps = {
-  fontFamily: ['Segoe UI', 'Roboto', 'Ubuntu', 'sans-serif'],
   fontWeight: 'normal',
   fontSize: 'medium',
-  textDecorationColor: '#e4eaff',
   padding: '0 10px',
+  fontFamily: 'standart',
+  decorationColor: 'purple',
 }

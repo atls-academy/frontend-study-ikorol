@@ -4,7 +4,7 @@ import { Button }           from '@ui/button'
 import { Layout, Row }      from '@ui/layout'
 import { Text }             from '@ui/text'
 
-import { checkButtonPlace } from './actions'
+import { checkButtonPlace } from './utils'
 
 export const Filter = ({ filter, setFilter, options }) => {
   const lastOption = options.length - 1
