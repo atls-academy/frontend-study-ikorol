@@ -1,6 +1,7 @@
 import React           from 'react'
 import { useIntl }     from 'react-intl'
 
+import { Condition }   from '@ui/condition'
 import { Box }         from '@ui/layout'
 import { Text }        from '@ui/text'
 
@@ -15,13 +16,11 @@ export const Input = ({ search, onClear, ...props }: InputProps) => {
   return (
     <Box>
       <StyledInput placeholder={placeholder} {...props} />
-      {search ? (
+      <Condition match={search}>
         <ClearButton onClick={onClear} color={value === '' ? 'lightPurple' : 'deepPurple'}>
           <Text color='white'>{intl.formatMessage(messages.clear)}</Text>
         </ClearButton>
-      ) : (
-        <div />
-      )}
+      </Condition>
     </Box>
   )
 }

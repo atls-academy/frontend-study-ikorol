@@ -2,9 +2,12 @@ import { styleFn }                from 'styled-system'
 
 import { ButtonAppearanceStyles } from './appearance.interface'
 
-export const createColorStyles = (backgroundColor, borderColor, boxShadow): styleFn => () => ({
+export const createColorStyles = (backgroundColor, borderColor): styleFn => () => ({
   backgroundColor,
   borderColor,
+})
+
+export const createShadowStyles = (boxShadow): styleFn => () => ({
   boxShadow,
 })
 
@@ -13,5 +16,6 @@ export const createAppearanceStyles = ({
   borderColor,
   boxShadow,
 }: ButtonAppearanceStyles): styleFn => () => ({
-  ...createColorStyles(backgroundColor, borderColor, boxShadow)(),
+  ...createColorStyles(backgroundColor, borderColor)(),
+  ...createShadowStyles(boxShadow)(),
 })

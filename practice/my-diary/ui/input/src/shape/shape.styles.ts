@@ -14,7 +14,4 @@ export const createBaseShape = ({
   fontSize,
   border,
   borderRadius,
-  '&:placeholder': {
-    color: 'gray',
-  },
 })

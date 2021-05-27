@@ -13,7 +13,9 @@ export const createColorStyles = (
 })
 
 export const createPlaceholderStyles = (styles: TypographyProps): styleFn => () => ({
-  '&:placeholder': styles,
+  '&::placeholder': {
+    color: styles,
+  },
 })
 
 export const createAppearanceStyles = ({
@@ -22,4 +24,7 @@ export const createAppearanceStyles = ({
   borderColor,
 }: InputAppearanceStyles): styleFn => () => ({
   ...createColorStyles(fontColor, backgroundColor, borderColor)(),
+  '&::placeholder': {
+    color: 'silver',
+  },
 })

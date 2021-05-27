@@ -4,7 +4,7 @@ import { color, shadow } from 'styled-system'
 
 import { Box }           from '@ui/layout'
 
-const StyledContainer = styled.div(
+const Blackout = styled.div(
   ({ visible }) => ({
     position: 'absolute',
     top: '0',
@@ -57,7 +57,7 @@ const StyledDrawer = styled.div(
 export const Drawer = ({ isVisible, onClose, children }) => {
   return (
     <Box>
-      <StyledContainer onClick={onClose} visible={isVisible} />
+      <Blackout onClick={onClose} visible={isVisible} />
       <StyledDrawer visible={isVisible} boxShadow='darkGray'>
         {children}
       </StyledDrawer>
