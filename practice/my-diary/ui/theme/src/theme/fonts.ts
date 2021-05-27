@@ -1,3 +1,3 @@
 export const fonts = {
-  standart: 'Gordita, sans-serif',
+  standard: 'Gordita, sans-serif',
 }

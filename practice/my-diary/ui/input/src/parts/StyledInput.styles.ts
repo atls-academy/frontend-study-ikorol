@@ -9,7 +9,7 @@ export const baseStyles = createBaseStyles()
 export const normalSizeStyles = ({ theme }) =>
   createBaseShape({
     size: 15,
-    fontFamily: theme.fonts.standart,
+    fontFamily: theme.fonts.standard,
     fontSize: theme.fontSizes.normal,
     border: '1px solid',
   })
@@ -17,7 +17,7 @@ export const normalSizeStyles = ({ theme }) =>
 export const smallSizeStyles = ({ theme }) =>
   createBaseShape({
     size: 10,
-    fontFamily: theme.fonts.standart,
+    fontFamily: theme.fonts.standard,
     fontSize: theme.fontSizes.small,
     border: '.5px solid',
   })
@@ -25,7 +25,7 @@ export const smallSizeStyles = ({ theme }) =>
 export const largeSizeStyles = ({ theme }) =>
   createBaseShape({
     size: 20,
-    fontFamily: theme.fonts.standart,
+    fontFamily: theme.fonts.standard,
     fontSize: theme.fontSizes.medium,
     border: '1px solid',
   })
