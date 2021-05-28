@@ -13,9 +13,7 @@ export const createColorStyles = (
 })
 
 export const createPlaceholderStyles = (styles: TypographyProps): styleFn => () => ({
-  '&::placeholder': {
-    color: styles,
-  },
+  '&:placeholder': styles,
 })
 
 export const createAppearanceStyles = ({

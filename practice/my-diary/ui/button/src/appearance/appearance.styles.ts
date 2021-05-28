@@ -7,15 +7,25 @@ export const createColorStyles = (backgroundColor, borderColor): styleFn => () =
   borderColor,
 })
 
-export const createShadowStyles = (boxShadow): styleFn => () => ({
-  boxShadow,
+export const createShadowStyles = (
+  shadowOffsetX,
+  shadowOffsetY,
+  shadowBlur,
+  shadowSize,
+  shadowColor,
+): styleFn => () => ({
+  boxShadow: `${shadowOffsetX} ${shadowOffsetY} ${shadowBlur}px ${shadowSize}px ${shadowColor}`,
 })
 
 export const createAppearanceStyles = ({
   backgroundColor,
   borderColor,
-  boxShadow,
+  shadowOffsetX = 0,
+  shadowOffsetY = 0,
+  shadowBlur = 0,
+  shadowSize = 0,
+  shadowColor,
 }: ButtonAppearanceStyles): styleFn => () => ({
   ...createColorStyles(backgroundColor, borderColor)(),
-  ...createShadowStyles(boxShadow)(),
+  ...createShadowStyles(shadowOffsetX, shadowOffsetY, shadowBlur, shadowSize, shadowColor)(),
 })

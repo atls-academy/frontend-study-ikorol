@@ -7,11 +7,7 @@ export const createBaseShape = (size: number | string, width: number | string): 
   width,
 })
 
-export const createBorderStyles = (
-  border: string,
-  borderRadius: string | number,
-  borderWeight: string | number,
-): styleFn => () => ({
+export const createBorderStyles = (border, borderRadius, borderWeight): styleFn => () => ({
   border,
   borderRadius,
   borderWeight,
