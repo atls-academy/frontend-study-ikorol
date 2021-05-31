@@ -1,7 +1,7 @@
 import React                from 'react'
 
 import { Button }           from '@ui/button'
-import { Layout, Row }      from '@ui/layout'
+import { Box, Layout, Row } from '@ui/layout'
 import { Text }             from '@ui/text'
 
 import { checkButtonPlace } from './utils'
@@ -12,15 +12,17 @@ export const Filter = ({ filter, setFilter, options }) => {
     <Row justifyContent='center'>
       <Layout flexBasis={40} />
       {options.map((option, index) => (
-        <Button
-          key={option}
-          color={filter === option.toLowerCase() ? 'deepPurple' : 'white'}
-          borderRadius={checkButtonPlace(index, lastOption)}
-          isSelected={filter === option.toLowerCase()}
-          onClick={() => setFilter(option.toLowerCase())}
-        >
-          <Text color={filter === option.toLowerCase() ? 'white' : 'grayBlue'}>{option}</Text>
-        </Button>
+        <Box key={option} width='100px'>
+          <Button
+            color={filter === option.toLowerCase() ? 'deepPurple' : 'white'}
+            border='standard'
+            borderRadius={checkButtonPlace(index, lastOption)}
+            isSelected={filter === option.toLowerCase()}
+            onClick={() => setFilter(option.toLowerCase())}
+          >
+            <Text color={filter === option.toLowerCase() ? 'white' : 'grayBlue'}>{option}</Text>
+          </Button>
+        </Box>
       ))}
       <Layout flexBasis={40} />
     </Row>

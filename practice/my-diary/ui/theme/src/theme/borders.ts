@@ -1,3 +1,4 @@
 export const borders = {
-  normal: '1px solid #6c757d',
+  normal: '1px solid',
+  medium: '2px solid',
 }

@@ -4,7 +4,7 @@ import { useIntl }                    from 'react-intl'
 import { Button }                     from '@ui/button'
 import { Condition }                  from '@ui/condition'
 import { Input }                      from '@ui/input'
-import { Column, Row }                from '@ui/layout'
+import { Box, Column, Row }           from '@ui/layout'
 import { Text }                       from '@ui/text'
 import { useNotes }                   from '@store/notes'
 
@@ -22,7 +22,7 @@ export const FormAddPost = () => {
   }, [])
 
   return (
-    <Column>
+    <Column alignItems='center'>
       <Row justifyContent='center' backgroundColor='white' height='90px'>
         <Column alignItems='center'>
           <Condition match={isVisible}>
@@ -34,10 +34,10 @@ export const FormAddPost = () => {
           </Condition>
         </Column>
       </Row>
-      <Row justifyContent='center'>
+      <Box justifyContent='center' width='270px'>
         <Button
           size='giant'
-          borderRadius='round'
+          borderRadius='giant'
           shadow='purple'
           marginTop='-30px'
           onClick={() => {
@@ -53,7 +53,7 @@ export const FormAddPost = () => {
             {intl.formatMessage(messages.newTask)}
           </Text>
         </Button>
-      </Row>
+      </Box>
     </Column>
   )
 }

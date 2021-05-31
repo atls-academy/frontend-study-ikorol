@@ -1,10 +1,10 @@
-import styled                                                     from '@emotion/styled'
-import React, { useState }                                        from 'react'
-import { border, color, system }                                  from 'styled-system'
+import styled                             from '@emotion/styled'
+import React, { useState }                from 'react'
+import { border, color, system }          from 'styled-system'
 
-import { CircleDotIcon, DotIcon, HeartIcon, StarIcon, TrashIcon } from '@ui/icons'
-import { Box, Layout, Row }                                       from '@ui/layout'
-import { Text }                                                   from '@ui/text'
+import { HeartIcon, StarIcon, TrashIcon } from '@ui/icons'
+import { Box, Layout, Row }               from '@ui/layout'
+import { Text }                           from '@ui/text'
 
 const StyledItem = styled.li(
   system({
@@ -13,7 +13,7 @@ const StyledItem = styled.li(
   () => ({
     display: 'flex',
     boxSizing: 'border-box',
-    width: '470px',
+    width: '100%',
     hyphens: 'auto',
     cursor: 'pointer',
   }),
@@ -25,14 +25,23 @@ export const Item = ({ notes, setNotes, note, deleteItem, toggleStatus }) => {
   const [hover, setHover] = useState(false)
   return (
     <>
-      <Row onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
+      <Row
+        alignItems='center'
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+      >
         <Layout flexBasis={80} />
-        <Box cursor='pointer' onClick={() => setNotes(toggleStatus(notes, note.id, 'done'))}>
-          <Box position='relative' left='11px' border='none'>
-            <DotIcon opacity={note.done ? '1' : '0'} />
-          </Box>
-          <CircleDotIcon />
-        </Box>
+        <Box
+          cursor='pointer'
+          width='16px'
+          height='12px'
+          onClick={() => setNotes(toggleStatus(notes, note.id, 'done'))}
+          backgroundColor={note.done ? 'deepPurple' : 'none'}
+          border='medium'
+          borderColor='grayBlue'
+          borderRadius='giant'
+        />
+
         <Layout flexBasis={30} />
         <StyledItem onDoubleClick={() => setNotes(toggleStatus(notes, note.id, 'liked'))}>
           <Text

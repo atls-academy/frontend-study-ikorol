@@ -17,7 +17,11 @@ export const Input = ({ search, onClear, ...props }: InputProps) => {
     <Box>
       <StyledInput placeholder={placeholder} {...props} />
       <Condition match={search}>
-        <ClearButton onClick={onClear} color={value === '' ? 'lightPurple' : 'deepPurple'}>
+        <ClearButton
+          onClick={onClear}
+          color={value === '' ? 'lightPurple' : 'deepPurple'}
+          border='standard'
+        >
           <Text color='white'>{intl.formatMessage(messages.clear)}</Text>
         </ClearButton>
       </Condition>

@@ -5,6 +5,7 @@ import { space }       from 'styled-system'
 import { ButtonProps } from './Button.interface'
 import {
   baseStyles,
+  borderStyles,
   colorStyles,
   roundedBorderStyles,
   shadowStyles,
@@ -15,6 +16,7 @@ const StyledButton = styled.div<any>(
   baseStyles,
   sizeStyles,
   roundedBorderStyles,
+  borderStyles,
   colorStyles,
   shadowStyles,
   space,

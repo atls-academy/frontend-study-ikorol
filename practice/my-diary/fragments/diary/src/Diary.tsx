@@ -9,8 +9,8 @@ import { Column, Layout } from '@ui/layout'
 
 export const Diary = () => {
   return (
-    <Background backgroundColor='purple'>
-      <Column alignItems='center' width='600px'>
+    <Background backgroundColor='purple' height='100vh' justifyContent='center'>
+      <Column width='600px'>
         <Layout flexBasis={100} />
         <MainPageHeader />
         <PostControls />

@@ -1,11 +1,12 @@
-import styled    from '@emotion/styled'
-import { color } from 'styled-system'
+import styled                     from '@emotion/styled'
+import { color, flexbox, layout } from 'styled-system'
 
 export const Background = styled.div(
   () => ({
     display: 'flex',
-    height: '100vh',
-    justifyContent: 'center',
+    height: 'cover',
   }),
   color,
+  layout,
+  flexbox,
 )

@@ -36,13 +36,13 @@ export const shapeStyles = switchProp(prop('size', 'large'), () => ({
   large: largeSizeStyles,
 }))
 
-export const normalColorStyles = ({ theme }) =>
+export const purpleColorStyles = ({ theme }) =>
   createAppearanceStyles({
     fontColor: theme.colors.grayBlue,
     backgroundColor: theme.colors.white,
     borderColor: theme.colors.purple,
   })
 
-export const appearanceStyles = switchProp(prop('color', 'normal'), () => ({
-  normal: normalColorStyles,
+export const appearanceStyles = switchProp(prop('color', 'purple'), () => ({
+  purple: purpleColorStyles,
 }))
