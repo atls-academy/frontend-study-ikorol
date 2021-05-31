@@ -4,7 +4,7 @@ import { useIntl }                    from 'react-intl'
 import { Button }                     from '@ui/button'
 import { Condition }                  from '@ui/condition'
 import { Input }                      from '@ui/input'
-import { Box, Column, Row }           from '@ui/layout'
+import { Box, Column, Layout, Row }   from '@ui/layout'
 import { Text }                       from '@ui/text'
 import { useNotes }                   from '@store/notes'
 
@@ -23,7 +23,7 @@ export const FormAddPost = () => {
 
   return (
     <Column alignItems='center'>
-      <Row justifyContent='center' backgroundColor='white' height='90px'>
+      <Row justifyContent='center' backgroundColor='white'>
         <Column alignItems='center'>
           <Condition match={isVisible}>
             <Input
@@ -32,9 +32,10 @@ export const FormAddPost = () => {
               value={newNote}
             />
           </Condition>
+          <Layout flexBasis={isVisible ? 40 : 82} />
         </Column>
       </Row>
-      <Box justifyContent='center' width='270px'>
+      <Box justifyContent='center' width='40%'>
         <Button
           size='giant'
           borderRadius='giant'
@@ -49,7 +50,7 @@ export const FormAddPost = () => {
             }
           }}
         >
-          <Text fontSize='large' fontWeight='bold' color='white'>
+          <Text fontSize='giant' fontWeight='bold' color='white'>
             {intl.formatMessage(messages.newTask)}
           </Text>
         </Button>

@@ -10,7 +10,7 @@ import { Column, Layout } from '@ui/layout'
 export const Diary = () => {
   return (
     <Background backgroundColor='purple' height='100vh' justifyContent='center'>
-      <Column width='600px'>
+      <Column width='35%'>
         <Layout flexBasis={100} />
         <MainPageHeader />
         <PostControls />
