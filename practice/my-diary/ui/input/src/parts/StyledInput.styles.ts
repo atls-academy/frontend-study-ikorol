@@ -41,6 +41,9 @@ export const purpleColorStyles = ({ theme }) =>
     fontColor: theme.colors.grayBlue,
     backgroundColor: theme.colors.white,
     borderColor: theme.colors.purple,
+    placeholderStyles: {
+      color: theme.colors.silver,
+    },
   })
 
 export const appearanceStyles = switchProp(prop('color', 'purple'), () => ({

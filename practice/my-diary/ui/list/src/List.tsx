@@ -6,7 +6,7 @@ import { Item }           from './Item'
 
 export const List: any = ({ notes, setNotes, visibleNotes, deleteItem, toggleStatus }) => {
   return (
-    <Column backgroundColor='white' minHeight='250px'>
+    <Column backgroundColor='white'>
       <Layout flexBasis={50} />
       {visibleNotes.map(item => (
         <Item

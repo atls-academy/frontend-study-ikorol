@@ -1,5 +1,6 @@
 import React                                     from 'react'
 
+import { Box }                                   from '@ui/layout'
 import { List }                                  from '@ui/list'
 import { useFilter }                             from '@store/filter'
 import { useNotes }                              from '@store/notes'
@@ -13,12 +14,14 @@ export const PostList = () => {
   const [filter] = useFilter()
 
   return (
-    <List
-      notes={notes}
-      setNotes={setNotes}
-      visibleNotes={filterNotes(notes, searchValue, filter)}
-      deleteItem={deleteItem}
-      toggleStatus={toggleStatus}
-    />
+    <Box minHeight='30%' backgroundColor='white' alignItems='flex-start' overflow='auto'>
+      <List
+        notes={notes}
+        setNotes={setNotes}
+        visibleNotes={filterNotes(notes, searchValue, filter)}
+        deleteItem={deleteItem}
+        toggleStatus={toggleStatus}
+      />
+    </Box>
   )
 }

@@ -19,7 +19,7 @@ export const MainPageHeader = () => {
       <BurgerButtonIcon cursor='pointer' onClick={() => setShowDrawer(true)} />
       <Column alignItems='center'>
         <Layout flexBasis={30} />
-        <Text fontSize='large' fontWeight='bold' color='white'>
+        <Text fontSize='large' fontWeight='bold' color='white' textAlign='center'>
           {intl.formatMessage(messages.name)}
         </Text>
         <Layout flexBasis={10} />
