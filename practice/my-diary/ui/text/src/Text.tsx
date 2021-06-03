@@ -8,6 +8,10 @@ export const Text = styled.span(
     textTransform: true,
     textOverflow: true,
     cursor: true,
+    textDecoration: true,
+  }),
+  ({ textDecorationColor, theme }) => ({
+    textDecorationColor: theme.colors[textDecorationColor] || textDecorationColor,
   }),
   color,
   space,
@@ -15,7 +19,9 @@ export const Text = styled.span(
 )
 
 Text.defaultProps = {
-  fontFamily: ['Segoe UI', 'Roboto', 'Ubuntu', 'sans-serif'],
   fontWeight: 'normal',
-  fontSize: '20px',
+  fontSize: 'medium',
+  padding: '0 10px',
+  fontFamily: 'standard',
+  textDecorationColor: 'purple',
 }

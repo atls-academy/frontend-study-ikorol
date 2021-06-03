@@ -1,0 +1,23 @@
+{
+  "name": "@fragments/post-controls",
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "src/index.ts",
+  "dependencies": {
+    "@emotion/react": "^11.1.5",
+    "@emotion/styled": "^11.1.5",
+    "@store/filter": "0.0.0",
+    "@store/notes": "0.0.0",
+    "@store/search-value": "0.0.0",
+    "@store/show-drawer": "0.0.0",
+    "@ui/button": "0.0.0",
+    "@ui/drawer": "0.0.0",
+    "@ui/filter": "0.0.0",
+    "@ui/input": "0.0.0",
+    "@ui/layout": "^0.0.0",
+    "@ui/text": "^0.0.0",
+    "@ui/theme": "^0.0.0",
+    "react": "^17.0.1",
+    "react-intl": "^5.18.1"
+  }
+}

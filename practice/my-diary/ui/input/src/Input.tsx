@@ -1,19 +1,30 @@
-import styled                        from '@emotion/styled'
-import { border, color, typography } from 'styled-system'
+import React           from 'react'
+import { useIntl }     from 'react-intl'
 
-export const Input = styled.input(
-  () => ({
-    display: 'block',
-    width: '100%',
-    padding: '0 6px',
-    color: '#495057',
-    backgroundColor: '#fff',
-    border: '1px solid #ced4da',
-    borderRadius: '4px',
-    fontSize: 16,
-    fontWeight: 400,
-  }),
-  typography,
-  border,
-  color,
-)
+import { Condition }   from '@ui/condition'
+import { Box }         from '@ui/layout'
+import { Text }        from '@ui/text'
+
+import messages        from './messages'
+import { ClearButton } from './addons'
+import { InputProps }  from './Input.interface'
+import { StyledInput } from './parts'
+
+export const Input = ({ search, onClear, ...props }: InputProps) => {
+  const intl = useIntl()
+  const { value, placeholder } = props
+  return (
+    <Box>
+      <StyledInput placeholder={placeholder} {...props} />
+      <Condition match={search}>
+        <ClearButton
+          onClick={onClear}
+          color={value === '' ? 'lightPurple' : 'deepPurple'}
+          border='standard'
+        >
+          <Text color='white'>{intl.formatMessage(messages.clear)}</Text>
+        </ClearButton>
+      </Condition>
+    </Box>
+  )
+}

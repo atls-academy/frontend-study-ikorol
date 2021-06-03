@@ -1,42 +1,27 @@
-import React, { useState }     from 'react'
-import { ThemeProvider }       from '@emotion/react'
+import React, { useState }                   from 'react'
 
-import * as theme              from '@ui/theme'
-import { FormAddPost }         from '@components/form-add-post'
-import { MainPageHeader }      from '@components/main-page-header'
-import { PostControls }        from '@components/post-controls'
-import { PostList }            from '@components/post-list'
-import { FilterProvider }      from '@store/filter'
-import { NotesProvider }       from '@store/notes'
-import { SearchValueProvider } from '@store/search-value'
-import { Box, Column, Layout } from '@ui/layout'
+import { Diary }                             from '@fragments/diary'
+import { FilterProvider }                    from '@store/filter'
+import { NotesProvider }                     from '@store/notes'
+import { SearchValueProvider }               from '@store/search-value'
+import { ShowDrawerProvider }                from '@store/show-drawer'
+import { ThemeProvider, injectGlobalStyles } from '@ui/theme'
 
 export const App = () => {
-  const uniqueKey = () => Math.random() * Date.now()
-  const [notes, setNotes] = useState([
-    { note: 'Flight to Moscow', important: false, liked: false, id: uniqueKey() },
-    { note: 'Friends meeting', important: true, liked: false, id: uniqueKey() },
-    { note: 'Buy a new frying pan in Ikea', important: false, liked: false, id: uniqueKey() },
-  ])
-
+  const [notes, setNotes] = useState([])
   const [searchValue, setSearchValue] = useState('')
   const [filter, setFilter] = useState('all')
+  const [showDrawer, setShowDrawer] = useState<boolean>(null)
+  injectGlobalStyles()
+
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider>
       <NotesProvider value={[notes, setNotes]}>
         <SearchValueProvider value={[searchValue, setSearchValue]}>
           <FilterProvider value={[filter, setFilter]}>
-            <Box margin='auto' justifyContent='center' backgroundColor='lightBlue'>
-              <Column width='800px'>
-                <MainPageHeader />
-                <Layout flexBasis={20} />
-                <PostControls />
-                <Layout flexBasis={20} />
-                <PostList />
-                <Layout flexBasis={17} />
-                <FormAddPost />
-              </Column>
-            </Box>
+            <ShowDrawerProvider value={[showDrawer, setShowDrawer]}>
+              <Diary />
+            </ShowDrawerProvider>
           </FilterProvider>
         </SearchValueProvider>
       </NotesProvider>
