@@ -24,7 +24,7 @@ export const FormAddPost = () => {
   return (
     <Column alignItems='center'>
       <Row justifyContent='center' backgroundColor='white'>
-        <Column alignItems='center'>
+        <Column alignItems='center' width='70%'>
           <Condition match={isVisible}>
             <Input
               placeholder={intl.formatMessage(messages.post)}
@@ -50,7 +50,7 @@ export const FormAddPost = () => {
             }
           }}
         >
-          <Text fontSize='giant' fontWeight='bold' color='white'>
+          <Text fontSize={['medium', 'large', 'giant']} fontWeight='bold' color='white'>
             {intl.formatMessage(messages.newTask)}
           </Text>
         </Button>

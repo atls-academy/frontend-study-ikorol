@@ -14,7 +14,12 @@ export const PostList = () => {
   const [filter] = useFilter()
 
   return (
-    <Box minHeight='30%' backgroundColor='white' alignItems='flex-start' overflow='auto'>
+    <Box
+      minHeight={['60%', '60%', '30%']}
+      backgroundColor='white'
+      alignItems='flex-start'
+      overflow='auto'
+    >
       <List
         notes={notes}
         setNotes={setNotes}
