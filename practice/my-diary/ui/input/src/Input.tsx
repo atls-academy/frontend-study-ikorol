@@ -15,14 +15,16 @@ export const Input = ({ search, onClear, ...props }: InputProps) => {
   const { value, placeholder } = props
   return (
     <Box>
-      <StyledInput placeholder={placeholder} {...props} />
+      <StyledInput fontSize={['normal', 'normal', 'large']} placeholder={placeholder} {...props} />
       <Condition match={search}>
         <ClearButton
           onClick={onClear}
           color={value === '' ? 'lightPurple' : 'deepPurple'}
           border='standard'
         >
-          <Text color='white'>{intl.formatMessage(messages.clear)}</Text>
+          <Text fontSize={['normal', 'medium', 'giant']} color='white'>
+            {intl.formatMessage(messages.clear)}
+          </Text>
         </ClearButton>
       </Condition>
     </Box>

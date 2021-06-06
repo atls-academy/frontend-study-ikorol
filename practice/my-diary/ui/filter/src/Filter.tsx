@@ -20,7 +20,12 @@ export const Filter = ({ filter, setFilter, options }) => {
             isSelected={filter === option.toLowerCase()}
             onClick={() => setFilter(option.toLowerCase())}
           >
-            <Text color={filter === option.toLowerCase() ? 'white' : 'grayBlue'}>{option}</Text>
+            <Text
+              fontSize={['normal', 'medium', 'giant']}
+              color={filter === option.toLowerCase() ? 'white' : 'grayBlue'}
+            >
+              {option}
+            </Text>
           </Button>
         </Box>
       ))}
