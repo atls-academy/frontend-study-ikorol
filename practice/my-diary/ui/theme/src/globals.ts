@@ -5,6 +5,10 @@ export const injectGlobalStyles = () => {
     'html, body': {
       padding: 0,
       margin: 0,
+      height: '100%',
+    },
+    '#root': {
+      height: '100%',
     },
   })
 }

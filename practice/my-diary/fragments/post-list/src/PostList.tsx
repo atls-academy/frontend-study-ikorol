@@ -15,7 +15,7 @@ export const PostList = () => {
 
   return (
     <Box
-      minHeight={['60%', '60%', '30%']}
+      minHeight={['300px', '500px', '250px']}
       backgroundColor='white'
       alignItems='flex-start'
       overflow='auto'

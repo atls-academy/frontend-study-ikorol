@@ -58,7 +58,7 @@ export const Drawer = ({ isVisible, onClose, children }) => {
   return (
     <Box>
       <Blackout onClick={onClose} visible={isVisible} />
-      <StyledDrawer visible={isVisible} boxShadow='darkGray' width={['70%', '50%', '40%']}>
+      <StyledDrawer visible={isVisible} boxShadow='darkGray' width={['300px', '500px', '500px']}>
         {children}
       </StyledDrawer>
     </Box>

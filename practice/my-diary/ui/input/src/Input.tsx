@@ -2,7 +2,7 @@ import React           from 'react'
 import { useIntl }     from 'react-intl'
 
 import { Condition }   from '@ui/condition'
-import { Box }         from '@ui/layout'
+import { Row }         from '@ui/layout'
 import { Text }        from '@ui/text'
 
 import messages        from './messages'
@@ -14,7 +14,7 @@ export const Input = ({ search, onClear, ...props }: InputProps) => {
   const intl = useIntl()
   const { value, placeholder } = props
   return (
-    <Box>
+    <Row>
       <StyledInput fontSize={['normal', 'normal', 'large']} placeholder={placeholder} {...props} />
       <Condition match={search}>
         <ClearButton
@@ -27,6 +27,6 @@ export const Input = ({ search, onClear, ...props }: InputProps) => {
           </Text>
         </ClearButton>
       </Condition>
-    </Box>
+    </Row>
   )
 }

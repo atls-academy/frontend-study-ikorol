@@ -12,7 +12,7 @@ export const Filter = ({ filter, setFilter, options }) => {
     <Row justifyContent='center'>
       <Layout flexBasis={40} />
       {options.map((option, index) => (
-        <Box key={option} width='30%'>
+        <Box key={option} width='100px'>
           <Button
             color={filter === option.toLowerCase() ? 'deepPurple' : 'white'}
             border='standard'
@@ -21,7 +21,7 @@ export const Filter = ({ filter, setFilter, options }) => {
             onClick={() => setFilter(option.toLowerCase())}
           >
             <Text
-              fontSize={['normal', 'medium', 'giant']}
+              fontSize={['normal', 'medium', 'medium']}
               color={filter === option.toLowerCase() ? 'white' : 'grayBlue'}
             >
               {option}
