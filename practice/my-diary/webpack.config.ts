@@ -16,6 +16,7 @@ export const plugins = [
     appMountId: 'root',
     title: 'My diary',
     scripts: ['bundle.js'],
+    mobile: true,
   }),
 ]
 

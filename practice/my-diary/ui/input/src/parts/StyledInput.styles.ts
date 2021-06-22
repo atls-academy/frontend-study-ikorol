@@ -10,7 +10,6 @@ export const normalSizeStyles = ({ theme }) =>
   createBaseShape({
     size: 15,
     fontFamily: theme.fonts.standard,
-    fontSize: theme.fontSizes.normal,
     border: '1px solid',
   })
 
@@ -18,7 +17,6 @@ export const smallSizeStyles = ({ theme }) =>
   createBaseShape({
     size: 10,
     fontFamily: theme.fonts.standard,
-    fontSize: theme.fontSizes.small,
     border: '.5px solid',
   })
 
@@ -26,7 +24,6 @@ export const largeSizeStyles = ({ theme }) =>
   createBaseShape({
     size: 20,
     fontFamily: theme.fonts.standard,
-    fontSize: theme.fontSizes.medium,
     border: '1px solid',
   })
 
@@ -34,6 +31,24 @@ export const shapeStyles = switchProp(prop('size', 'large'), () => ({
   normal: normalSizeStyles,
   small: smallSizeStyles,
   large: largeSizeStyles,
+}))
+
+export const largeFontSizeStyles = ({ theme }) =>
+  createBaseShape({
+    fontSize: theme.fontSizes.medium,
+  })
+export const smallFontSizeStyles = ({ theme }) =>
+  createBaseShape({
+    fontSize: theme.fontSizes.small,
+  })
+export const normalFontSizeStyles = ({ theme }) =>
+  createBaseShape({
+    fontSize: theme.fontSizes.normal,
+  })
+export const fontSizeStyles = switchProp(prop('fontSize', 'large'), () => ({
+  normal: normalFontSizeStyles,
+  small: smallFontSizeStyles,
+  large: largeFontSizeStyles,
 }))
 
 export const purpleColorStyles = ({ theme }) =>

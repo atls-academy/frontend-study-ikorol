@@ -1,8 +1,8 @@
-import React             from 'react'
-import styled            from '@emotion/styled'
-import { color, shadow } from 'styled-system'
+import React                     from 'react'
+import styled                    from '@emotion/styled'
+import { color, layout, shadow } from 'styled-system'
 
-import { Box }           from '@ui/layout'
+import { Box }                   from '@ui/layout'
 
 const Blackout = styled.div(
   ({ visible }) => ({
@@ -28,7 +28,6 @@ const Blackout = styled.div(
 
 const StyledDrawer = styled.div(
   ({ visible }) => ({
-    width: '400px',
     height: '100%',
     backgroundColor: 'white',
     boxSizing: 'border-box',
@@ -52,13 +51,14 @@ const StyledDrawer = styled.div(
   }),
   color,
   shadow,
+  layout,
 )
 
 export const Drawer = ({ isVisible, onClose, children }) => {
   return (
     <Box>
       <Blackout onClick={onClose} visible={isVisible} />
-      <StyledDrawer visible={isVisible} boxShadow='darkGray'>
+      <StyledDrawer visible={isVisible} boxShadow='darkGray' width={['300px', '500px', '500px']}>
         {children}
       </StyledDrawer>
     </Box>

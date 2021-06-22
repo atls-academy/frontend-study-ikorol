@@ -26,16 +26,18 @@ export const FormAddPost = () => {
       <Row justifyContent='center' backgroundColor='white'>
         <Column alignItems='center'>
           <Condition match={isVisible}>
-            <Input
-              placeholder={intl.formatMessage(messages.post)}
-              onChange={event => setNewNote(event.target.value)}
-              value={newNote}
-            />
+            <Box width={['200px', '350px', '250px']}>
+              <Input
+                placeholder={intl.formatMessage(messages.post)}
+                onChange={event => setNewNote(event.target.value)}
+                value={newNote}
+              />
+            </Box>
           </Condition>
           <Layout flexBasis={isVisible ? 40 : 82} />
         </Column>
       </Row>
-      <Box justifyContent='center' width='40%'>
+      <Box justifyContent='center' width={['150px', '200px', '200px']}>
         <Button
           size='giant'
           borderRadius='giant'
@@ -50,7 +52,7 @@ export const FormAddPost = () => {
             }
           }}
         >
-          <Text fontSize='giant' fontWeight='bold' color='white'>
+          <Text fontSize={['medium', 'large', 'medium']} fontWeight='bold' color='white'>
             {intl.formatMessage(messages.newTask)}
           </Text>
         </Button>
