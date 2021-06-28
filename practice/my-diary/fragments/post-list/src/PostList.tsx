@@ -1,11 +1,12 @@
 import React                                     from 'react'
 
 import { Box }                                   from '@ui/layout'
-import { List }                                  from '@ui/list'
 import { useFilter }                             from '@store/filter'
 import { useNotes }                              from '@store/notes'
 import { useSearchValue }                        from '@store/search-value'
 
+// import { List } from '@ui/list'
+import { TodoList }                              from '../../../../../packages/todoList'
 import { deleteItem, filterNotes, toggleStatus } from './actions'
 
 export const PostList = () => {
@@ -20,7 +21,7 @@ export const PostList = () => {
       alignItems='flex-start'
       overflow='auto'
     >
-      <List
+      <TodoList
         notes={notes}
         setNotes={setNotes}
         visibleNotes={filterNotes(notes, searchValue, filter)}

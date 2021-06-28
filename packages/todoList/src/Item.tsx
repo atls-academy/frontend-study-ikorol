@@ -23,6 +23,18 @@ const StyledItem = styled.li(
 
 export const Item = ({ notes, setNotes, note, deleteItem, toggleStatus }) => {
   const [hover, setHover] = useState(false)
+  const colors = {
+    grayBlue: '#919abc',
+  }
+  const radii = {
+    giant: 35,
+  }
+  const borders = {
+    medium: '2px solid',
+  }
+  const lineHeights = {
+    medium: 1.6,
+  }
   return (
     <>
       <Row
@@ -36,17 +48,17 @@ export const Item = ({ notes, setNotes, note, deleteItem, toggleStatus }) => {
           width='16px'
           height='12px'
           onClick={() => setNotes(toggleStatus(notes, note.id, 'done'))}
-          backgroundColor={note.done ? 'deepPurple' : 'none'}
-          border='medium'
-          borderColor='grayBlue'
-          borderRadius='giant'
+          backgroundColor={note.done ? colors.grayBlue : 'none'}
+          border={borders.medium}
+          borderColor={colors.grayBlue}
+          borderRadius={radii.giant}
         />
 
         <Layout flexBasis={30} />
         <StyledItem onDoubleClick={() => setNotes(toggleStatus(notes, note.id, 'liked'))}>
           <Text
-            lineHeight='medium'
-            color='grayBlue'
+            lineHeight={lineHeights.medium}
+            color={colors.grayBlue}
             textDecoration={note.done ? 'line-through' : 'none'}
           >
             {note.note}
