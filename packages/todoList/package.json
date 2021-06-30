@@ -1,6 +1,6 @@
 {
-  "name": "@academy/ikorol",
-  "version": "0.0.1",
+  "name": "@ikorol/todolist",
+  "version": "0.0.2",
   "license": "MIT",
   "main": "src/index.ts",
   "devDependencies": {
