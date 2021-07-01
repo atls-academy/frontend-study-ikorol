@@ -1,6 +1,6 @@
 {
   "name": "@ikorol/todolist",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
   "main": "src/index.ts",
   "devDependencies": {
@@ -13,6 +13,9 @@
     "react": "^17.0.1",
     "styled-system": "^5.1.0"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
