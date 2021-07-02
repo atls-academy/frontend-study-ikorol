@@ -1,8 +1,8 @@
 {
   "name": "@ikorol/todolist",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "license": "MIT",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
   "devDependencies": {
     "@types/styled-system": "^5.1.10"
   },
