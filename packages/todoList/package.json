@@ -1,9 +1,8 @@
 {
   "name": "@ikorol/todolist",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "license": "MIT",
   "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
   "devDependencies": {
     "@atlantis-lab/actl": "^0.4.37",
     "@atlantis-lab/tsconfig": "^0.1.12",
