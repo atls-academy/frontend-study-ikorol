@@ -1,7 +1,7 @@
 import React              from 'react'
 
-import { Column, Layout } from '../layout'
 import { Item }           from './Item'
+import { Column, Layout } from './layout'
 
 export const TodoList: any = ({ notes, setNotes, visibleNotes, deleteItem, toggleStatus }) => {
   return (

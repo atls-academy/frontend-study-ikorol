@@ -1,12 +1,11 @@
 import React                                     from 'react'
+import { TodoList }                              from '@ikorol/todolist'
 
 import { Box }                                   from '@ui/layout'
 import { useFilter }                             from '@store/filter'
 import { useNotes }                              from '@store/notes'
 import { useSearchValue }                        from '@store/search-value'
 
-// import { List } from '@ui/list'
-import { TodoList }                              from '../../../../../packages/todoList'
 import { deleteItem, filterNotes, toggleStatus } from './actions'
 
 export const PostList = () => {

@@ -1,13 +1,13 @@
-# @academy/ikorol
+# @ikorol/todolist
 
 > ToDo list
 
 ## Install
 
 ```bash
-npm i @academy/ikorol
+npm i @ikorol/todolist
 
-yarn add @academy/ikorol
+yarn add @ikorol/todolist
 ```
 
 ## Usage
@@ -15,7 +15,7 @@ yarn add @academy/ikorol
 ```jsx
 import React from 'react'
 
-import TodoList from '@academy/ikorol'
+import TodoList from '@ikorol/todolist'
 
 export const PostList = () => {
   return (
