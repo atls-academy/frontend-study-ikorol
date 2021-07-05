@@ -1,16 +1,5 @@
 /* eslint-disable */
-import React  from 'react'
-import styled from '@emotion/styled'
-
-const StyledHeartIcon = styled.i`
-  display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: inherit;
-  text-rendering: auto;
-  color: red;
-  opacity: 1;
-
-`
+import React from 'react'
 
 export const HeartIcon = (props) => {
   return (

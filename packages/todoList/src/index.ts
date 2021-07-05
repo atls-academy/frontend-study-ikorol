@@ -1,2 +1,2 @@
-export * from './TodoList'
-export * from './Item'
+export * from './todoList.component'
+export * from './item.component'

@@ -1,12 +1,14 @@
 import React                                     from 'react'
-import { TodoList }                              from '@ikorol/todolist'
 
 import { Box }                                   from '@ui/layout'
 import { useFilter }                             from '@store/filter'
 import { useNotes }                              from '@store/notes'
 import { useSearchValue }                        from '@store/search-value'
 
+import { TodoList }                              from '../../../../../packages/todoList/src'
 import { deleteItem, filterNotes, toggleStatus } from './actions'
+
+// import { TodoList } from '@ikorol/todolist'
 
 export const PostList = () => {
   const [notes, setNotes] = useNotes()

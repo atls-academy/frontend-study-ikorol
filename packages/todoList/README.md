@@ -1,6 +1,6 @@
 # @ikorol/todolist
 
-> ToDo list
+> Todo list
 
 ## Install
 

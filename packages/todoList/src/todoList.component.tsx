@@ -1,9 +1,17 @@
 import React              from 'react'
+import { FC }             from 'react'
 
-import { Item }           from './Item'
+import { Item }           from './item.component'
 import { Column, Layout } from './layout'
+import { TodoListProps }  from './todo-list.interface'
 
-export const TodoList: any = ({ notes, setNotes, visibleNotes, deleteItem, toggleStatus }) => {
+export const TodoList: FC<TodoListProps> = ({
+  notes,
+  setNotes,
+  visibleNotes,
+  deleteItem,
+  toggleStatus,
+}) => {
   return (
     <Column backgroundColor='white'>
       <Layout flexBasis={50} />
