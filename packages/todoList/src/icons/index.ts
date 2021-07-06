@@ -1,3 +1,3 @@
-export * from './heartIcon.component'
-export * from './trashIcon.component'
-export * from './starIcon.component'
+export * from './heart-icon.component'
+export * from './trash-icon.component'
+export * from './star-icon.component'

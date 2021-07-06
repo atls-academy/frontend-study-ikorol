@@ -1674,10 +1674,10 @@
     intl-messageformat "9.7.1"
     tslib "^2.1.0"
 
-"@ikorol/todolist@^0.0.12":
-  version "0.0.12"
-  resolved "https://registry.yarnpkg.com/@ikorol/todolist/-/todolist-0.0.12.tgz#98063ab39e6a41d2803883fa75b0209e8a09e810"
-  integrity sha512-xvsvN6RevJF8X0phucUClrUoh36FggGH2HO8qBIpvbNdEYrWYP1VHNkHOqURR/3DP3+LDcqz03IZH7hccObUwA==
+"@ikorol/todolist@^0.0.14":
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/@ikorol/todolist/-/todolist-0.0.14.tgz#c0942bb8ae01adbb9c9a57317a6f3a89724cf9ee"
+  integrity sha512-We0QkYNxVfv3o3vuBZyZlvWL33HOnXh2MhY7xjtF3SEBXrCJIsrLXEm7JC9bqSeZz4GxwxIBzfAAOpBC+x0jIQ==
   dependencies:
     react "^17.0.2"
     react-dom "^17.0.2"
@@ -3224,7 +3224,7 @@
     "@typescript-eslint/typescript-estree" "4.15.2"
     debug "^4.1.1"
 
-"@typescript-eslint/parser@^4.28.1", "@typescript-eslint/parser@^4.4.1":
+"@typescript-eslint/parser@^4.4.1":
   version "4.28.1"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-4.28.1.tgz#5181b81658414f47291452c15bf6cd44a32f85bd"
   integrity sha512-UjrMsgnhQIIK82hXGaD+MCN8IfORS1CbMdu7VlZbYa8LCZtbZjJA26De4IPQB7XYZbL8gJ99KWNj0l6WD0guJg==

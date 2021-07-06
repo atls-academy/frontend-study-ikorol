@@ -6,7 +6,7 @@
   "dependencies": {
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.1.5",
-    "@ikorol/todolist": "^0.0.12",
+    "@ikorol/todolist": "^0.0.14",
     "@store/filter": "0.0.0",
     "@store/notes": "0.0.0",
     "@store/search-value": "0.0.0",

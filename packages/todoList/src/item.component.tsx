@@ -1,10 +1,11 @@
-import styled                             from '@emotion/styled'
-import React, { useState }                from 'react'
-import { border, color, system }          from 'styled-system'
+import styled                                  from '@emotion/styled'
+import React, { useState }                     from 'react'
+import { border, color, system }               from 'styled-system'
 
-import { HeartIcon, StarIcon, TrashIcon } from './icons'
-import { Box, Layout, Row }               from './layout'
-import { Text }                           from './text'
+import { HeartIcon, StarIcon, TrashIcon }      from './icons'
+import { Box, Layout, Row }                    from './layout'
+import { Text }                                from './text'
+import { borders, colors, lineHeights, radii } from './theme'
 
 const StyledItem = styled.li(
   system({
@@ -23,18 +24,7 @@ const StyledItem = styled.li(
 
 export const Item = ({ notes, setNotes, note, deleteItem, toggleStatus }) => {
   const [hover, setHover] = useState(false)
-  const colors = {
-    grayBlue: '#919abc',
-  }
-  const radii = {
-    giant: 35,
-  }
-  const borders = {
-    medium: '2px solid',
-  }
-  const lineHeights = {
-    medium: 1.8,
-  }
+
   return (
     <>
       <Row
