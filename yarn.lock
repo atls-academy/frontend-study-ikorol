@@ -1674,10 +1674,10 @@
     intl-messageformat "9.7.1"
     tslib "^2.1.0"
 
-"@ikorol/todolist@^0.0.14":
-  version "0.0.14"
-  resolved "https://registry.yarnpkg.com/@ikorol/todolist/-/todolist-0.0.14.tgz#c0942bb8ae01adbb9c9a57317a6f3a89724cf9ee"
-  integrity sha512-We0QkYNxVfv3o3vuBZyZlvWL33HOnXh2MhY7xjtF3SEBXrCJIsrLXEm7JC9bqSeZz4GxwxIBzfAAOpBC+x0jIQ==
+"@ikorol/todolist@^0.0.15":
+  version "0.0.15"
+  resolved "https://registry.yarnpkg.com/@ikorol/todolist/-/todolist-0.0.15.tgz#f4e67f49f1f03bf72e3363ee65f574e636d64895"
+  integrity sha512-3EPqkOdFya6Ux9r/tlXOXiRQo8pxuk302yreZa4N1QigYMqaEj2+ZCg2EeIZ4t4Z9HLFu2qS11pVq6NjRSFoTw==
   dependencies:
     react "^17.0.2"
     react-dom "^17.0.2"
