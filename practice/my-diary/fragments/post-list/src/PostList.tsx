@@ -1,7 +1,7 @@
 import React                                     from 'react'
+import { TodoList }                              from '@ikorol/todolist'
 
 import { Box }                                   from '@ui/layout'
-import { List }                                  from '@ui/list'
 import { useFilter }                             from '@store/filter'
 import { useNotes }                              from '@store/notes'
 import { useSearchValue }                        from '@store/search-value'
@@ -20,7 +20,7 @@ export const PostList = () => {
       alignItems='flex-start'
       overflow='auto'
     >
-      <List
+      <TodoList
         notes={notes}
         setNotes={setNotes}
         visibleNotes={filterNotes(notes, searchValue, filter)}
