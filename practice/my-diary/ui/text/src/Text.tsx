@@ -15,7 +15,7 @@ export const Text = styled.span(
   }),
   color,
   space,
-  typography,
+  typography
 )
 
 Text.defaultProps = {

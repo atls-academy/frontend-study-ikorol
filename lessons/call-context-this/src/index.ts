@@ -59,6 +59,6 @@ console.log(double(3))
  * In event handlers, use 'event.target' instead of 'this'.
  */
 const btn: any = document.querySelector('button')
-btn.addEventListener('click', e => {
+btn.addEventListener('click', (e) => {
   e.target.style.backgroundColor = 'red'
 })

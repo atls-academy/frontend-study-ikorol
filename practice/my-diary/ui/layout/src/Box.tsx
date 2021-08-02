@@ -10,7 +10,7 @@ export const Box = styled.div(
   color,
   flexbox,
   layout,
-  position,
+  position
 )
 Box.defaultProps = {
   display: 'flex',

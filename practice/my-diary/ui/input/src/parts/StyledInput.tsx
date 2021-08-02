@@ -9,5 +9,5 @@ export const StyledInput = styled.input<any>(
   baseStyles,
   shapeStyles,
   fontSizeStyles,
-  appearanceStyles,
+  appearanceStyles
 )

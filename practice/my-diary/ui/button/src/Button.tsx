@@ -19,8 +19,6 @@ const StyledButton = styled.div<any>(
   borderStyles,
   colorStyles,
   shadowStyles,
-  space,
+  space
 )
-export const Button = (props: ButtonProps) => {
-  return <StyledButton {...props} />
-}
+export const Button = (props: ButtonProps) => <StyledButton {...props} />

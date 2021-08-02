@@ -7,9 +7,9 @@
     "@types/styled-system": "^5.1.10"
   },
   "dependencies": {
-    "react": "^17.0.1",
     "@emotion/styled": "^11.1.5",
     "@ui/layout": "0.0.0",
+    "react": "^17.0.1",
     "styled-system": "^5.1.0"
   }
 }

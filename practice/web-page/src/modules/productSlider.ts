@@ -18,7 +18,7 @@ function productSlider({ container, slide, nextArrow, prevArrow, totalCounter, c
       slideIndex = slides.length
     }
 
-    slides.forEach(item => {
+    slides.forEach((item) => {
       let itemStyle = item.style.display
       itemStyle = 'none'
       return itemStyle
@@ -31,7 +31,7 @@ function productSlider({ container, slide, nextArrow, prevArrow, totalCounter, c
       currentSlide.textContent = slideIndex.toString()
     }
 
-    sliderDots.forEach(item => {
+    sliderDots.forEach((item) => {
       let itemOpacity = item.style.opacity
       itemOpacity = '.5'
 

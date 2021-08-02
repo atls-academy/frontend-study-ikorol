@@ -1,7 +1,5 @@
 function countdownTimer(id, deadline) {
-  function getTimeRemaining(
-    endTime: string,
-  ): {
+  function getTimeRemaining(endTime: string): {
     total: number
     days: number
     hours: number

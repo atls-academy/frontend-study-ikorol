@@ -33,7 +33,7 @@ function userForms(formSelector, modalTimer) {
   }
 
   function postFormData(form: HTMLFormElement) {
-    form.addEventListener('submit', event => {
+    form.addEventListener('submit', (event) => {
       event.preventDefault()
 
       const statusMessage = document.createElement('img')

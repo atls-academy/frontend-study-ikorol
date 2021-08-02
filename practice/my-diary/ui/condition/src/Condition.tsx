@@ -1,3 +1,1 @@
-export const Condition = ({ match, children }) => {
-  return match ? children : []
-}
+export const Condition = ({ match, children }) => (match ? children : [])

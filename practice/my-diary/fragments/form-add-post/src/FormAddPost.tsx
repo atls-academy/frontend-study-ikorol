@@ -19,7 +19,7 @@ export const FormAddPost = () => {
 
   useEffect(() => {
     setNotes(fetchInitialData())
-  }, [])
+  }, [setNotes])
 
   return (
     <Column alignItems='center'>
@@ -29,7 +29,7 @@ export const FormAddPost = () => {
             <Box width={['200px', '350px', '250px']}>
               <Input
                 placeholder={intl.formatMessage(messages.post)}
-                onChange={event => setNewNote(event.target.value)}
+                onChange={(event) => setNewNote(event.target.value)}
                 value={newNote}
               />
             </Box>

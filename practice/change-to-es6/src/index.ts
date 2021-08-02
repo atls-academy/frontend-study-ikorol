@@ -44,12 +44,12 @@ function makeBusiness(
   owner: string,
   director: string = 'Victor',
   cash: number,
-  allEmployees: string[],
+  allEmployees: string[]
 ) {
   const sumSponsors = [...sponsors.eu, ...sponsors.rus, 'unexpected sponsor']
 
   console.log(
-    `We have a business. Owner: ${owner}, director: ${director}. Our budget: ${cash}. And our employees: ${allEmployees}`,
+    `We have a business. Owner: ${owner}, director: ${director}. Our budget: ${cash}. And our employees: ${allEmployees}`
   )
   console.log('And we have a sponsors: ')
   console.log(...sumSponsors)

@@ -18,7 +18,7 @@ const StyledItem = styled.li(
     cursor: 'pointer',
   }),
   color,
-  border,
+  border
 )
 
 export const Item = ({ notes, setNotes, note, deleteItem, toggleStatus }) => {

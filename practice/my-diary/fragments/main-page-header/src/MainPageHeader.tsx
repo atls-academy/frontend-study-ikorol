@@ -28,11 +28,11 @@ export const MainPageHeader = () => {
           <Space />
           {intl.formatMessage(messages.post)}
           <Space count={3} />
-          {notes.filter(item => item.important).length}
+          {notes.filter((item) => item.important).length}
           <Space />
           {intl.formatMessage(messages.important)}
           <Space count={3} />
-          {notes.filter(item => item.liked).length}
+          {notes.filter((item) => item.liked).length}
           <Space />
           {intl.formatMessage(messages.liked)}
         </Text>

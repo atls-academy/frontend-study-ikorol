@@ -32,7 +32,7 @@ export const PostControls = () => {
           <Input
             search
             onClear={() => setSearchValue('')}
-            onChange={event => setSearchValue(event.target.value)}
+            onChange={(event) => setSearchValue(event.target.value)}
             value={searchValue}
             placeholder={intl.formatMessage(messages.search)}
           />

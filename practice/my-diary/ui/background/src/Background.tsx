@@ -8,5 +8,5 @@ export const Background = styled.div(
   }),
   color,
   layout,
-  flexbox,
+  flexbox
 )

@@ -23,7 +23,7 @@ const Blackout = styled.div(
       to: { backgroundColor: 'transparent', visibility: 'hidden' },
     },
   }),
-  color,
+  color
 )
 
 const StyledDrawer = styled.div(
@@ -51,16 +51,14 @@ const StyledDrawer = styled.div(
   }),
   color,
   shadow,
-  layout,
+  layout
 )
 
-export const Drawer = ({ isVisible, onClose, children }) => {
-  return (
-    <Box>
-      <Blackout onClick={onClose} visible={isVisible} />
-      <StyledDrawer visible={isVisible} boxShadow='darkGray' width={['300px', '500px', '500px']}>
-        {children}
-      </StyledDrawer>
-    </Box>
-  )
-}
+export const Drawer = ({ isVisible, onClose, children }) => (
+  <Box>
+    <Blackout onClick={onClose} visible={isVisible} />
+    <StyledDrawer visible={isVisible} boxShadow='darkGray' width={['300px', '500px', '500px']}>
+      {children}
+    </StyledDrawer>
+  </Box>
+)

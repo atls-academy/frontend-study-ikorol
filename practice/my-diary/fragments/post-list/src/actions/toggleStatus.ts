@@ -1,5 +1,5 @@
 export const toggleStatus = (notes, id, value) => {
-  const index = notes.findIndex(customElements => customElements.id === id)
+  const index = notes.findIndex((customElements) => customElements.id === id)
   const lastNote = notes[index]
   let newNote
   if (value === 'onHover') {

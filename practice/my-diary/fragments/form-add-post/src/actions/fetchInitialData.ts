@@ -3,7 +3,7 @@ import { mocks }   from './mocks'
 
 export const fetchInitialData = () => {
   let newNotes = []
-  mocks.forEach(text => {
+  mocks.forEach((text) => {
     newNotes = addItem(newNotes, text)
   })
   return newNotes
