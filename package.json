@@ -13,7 +13,7 @@
     "lerna": "3.22.1",
     "next-compose-plugins": "^2.2.1",
     "react-intl": "^5.20.6",
-    "typescript": "^4.m1.3"
+    "typescript": "^4.3.5"
   },
   "workspaces": [
     "lessons/**/*",

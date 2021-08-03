@@ -67,6 +67,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:practice/my-diary/fragments/form-add-post"
       },
       {
+        "name": "@fragments/main-page",
+        "reference": "workspace:practice/my-diary/fragments/main-page"
+      },
+      {
         "name": "@fragments/main-page-header",
         "reference": "workspace:practice/my-diary/fragments/main-page-header"
       },
@@ -148,6 +152,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     "fallbackExclusionList": [
       ["@fragments/diary", ["workspace:practice/my-diary/fragments/diary"]],
       ["@fragments/form-add-post", ["workspace:practice/my-diary/fragments/form-add-post"]],
+      ["@fragments/main-page", ["workspace:practice/my-diary/fragments/main-page"]],
       ["@fragments/main-page-header", ["workspace:practice/my-diary/fragments/main-page-header"]],
       ["@fragments/post-controls", ["workspace:practice/my-diary/fragments/post-controls"]],
       ["@fragments/post-list", ["workspace:practice/my-diary/fragments/post-list"]],
@@ -2096,6 +2101,25 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "SOFT",
         }]
       ]],
+      ["@fragments/main-page", [
+        ["workspace:practice/my-diary/fragments/main-page", {
+          "packageLocation": "./practice/my-diary/fragments/main-page/",
+          "packageDependencies": [
+            ["@fragments/main-page", "workspace:practice/my-diary/fragments/main-page"],
+            ["@emotion/react", "virtual:f3415a9620668fca153780a757a22ac0c45bd55d159ef1bbb8b02ce8e57704dad9a59be99245177ecddb56e606e4cc1f411fa9a103d95dd2b1a4a170456aaafe#npm:11.4.0"],
+            ["@emotion/styled", "virtual:f3415a9620668fca153780a757a22ac0c45bd55d159ef1bbb8b02ce8e57704dad9a59be99245177ecddb56e606e4cc1f411fa9a103d95dd2b1a4a170456aaafe#npm:11.3.0"],
+            ["@fragments/diary", "workspace:practice/my-diary/fragments/diary"],
+            ["@store/filter", "workspace:practice/my-diary/store/filter"],
+            ["@store/notes", "workspace:practice/my-diary/store/notes"],
+            ["@store/search-value", "workspace:practice/my-diary/store/search-value"],
+            ["@store/show-drawer", "workspace:practice/my-diary/store/show-drawer"],
+            ["@ui/theme", "workspace:practice/my-diary/ui/theme"],
+            ["react", "npm:17.0.2"],
+            ["react-intl", "virtual:64bf529d34b059c8c8774b1bc6cfbfafbf8008dd1b49fa9a39df68b618dd542be10e9231a195e2081ad7cf5855d126aed380630645ea6ae0dad319c81007cfa8#npm:5.20.6"]
+          ],
+          "linkType": "SOFT",
+        }]
+      ]],
       ["@fragments/main-page-header", [
         ["workspace:practice/my-diary/fragments/main-page-header", {
           "packageLocation": "./practice/my-diary/fragments/main-page-header/",
@@ -3383,6 +3407,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@atls/next-config-with-pnp-workspaces", "npm:0.0.1"],
             ["@emotion/react", "virtual:51c3b92b3bc17dbee4a42523f19a5348dc99ea83acdacf55a40bd00ca02842cb29b5b75da6338a804108e709e963e092f2af8c0a131f79aa18df4b911a16dbc7#npm:11.4.0"],
             ["@fragments/diary", "workspace:practice/my-diary/fragments/diary"],
+            ["@fragments/main-page", "workspace:practice/my-diary/fragments/main-page"],
             ["@store/filter", "workspace:practice/my-diary/store/filter"],
             ["@store/notes", "workspace:practice/my-diary/store/notes"],
             ["@store/search-value", "workspace:practice/my-diary/store/search-value"],
