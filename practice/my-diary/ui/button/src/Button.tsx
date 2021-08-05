@@ -12,13 +12,4 @@ import {
   sizeStyles,
 } from './Button.styles'
 
-const StyledButton = styled.div<any>(
-  baseStyles,
-  sizeStyles,
-  roundedBorderStyles,
-  borderStyles,
-  colorStyles,
-  shadowStyles,
-  space
-)
-export const Button = (props: ButtonProps) => <StyledButton {...props} />
+export const Button = styled.div<ButtonProps>(baseStyles, sizeStyles, roundedBorderStyles, borderStyles, colorStyles, shadowStyles, space)

@@ -1,1 +1,1 @@
-export { default } from '@fragments/main-page'
+export { default } from '@fragments/diary'

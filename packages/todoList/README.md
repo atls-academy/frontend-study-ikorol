@@ -13,10 +13,8 @@ yarn add @ikorol/todolist
 ## Usage
 
 ```jsx
-import React from 'react'
-
 import TodoList from '@ikorol/todolist'
-
+import React from 'react'
 export const PostList = () => {
   return (
     <TodoList

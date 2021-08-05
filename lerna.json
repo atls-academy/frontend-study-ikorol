@@ -1,8 +1,5 @@
 {
-  "packages": [
-    "lessons/**/*",
-    "practice/**/*"
-  ],
+  "packages": ["lessons/**/*", "practice/**/*"],
   "npmClient": "yarn",
   "useWorkspaces": true,
   "version": "independent",
