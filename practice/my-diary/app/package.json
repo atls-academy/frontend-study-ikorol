@@ -2,6 +2,7 @@
   "name": "@my-diary/app",
   "version": "0.0.0",
   "license": "MIT",
+  "main": "src/index.ts",
   "scripts": {
     "build": "yarn app renderer build --export",
     "dev": "yarn app renderer dev",
@@ -10,10 +11,12 @@
   "devDependencies": {
     "@atls/next-config-with-pnp-workspaces": "^0.0.1",
     "@monstrs/oathkeeper-auth": "^0.1.1",
+    "@types/events": "^3",
     "@types/express": "^4",
     "@types/node": "^16.4.10",
     "@types/react": "^17.0.2",
     "@types/react-dom": "^17.0.1",
+    "@types/react-intl": "^3.0.0",
     "express": "^4.17.1",
     "next": "10.0.5",
     "next-compose-plugins": "^2.2.1",
@@ -21,12 +24,14 @@
   },
   "dependencies": {
     "@emotion/react": "^11.1.5",
+    "@emotion/styled": "^11.3.0",
     "@fragments/diary": "0.0.0",
     "@store/filter": "0.0.0",
     "@store/notes": "0.0.0",
     "@store/search-value": "0.0.0",
     "@store/show-drawer": "0.0.0",
     "@ui/theme": "0.0.0",
+    "events": "^3.3.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-intl": "^5.18.1"

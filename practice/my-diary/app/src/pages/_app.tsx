@@ -7,7 +7,7 @@ import { ShowDrawerProvider }                from '@store/show-drawer'
 import { ThemeProvider, injectGlobalStyles } from '@ui/theme'
 import { IntlProvider }                      from 'react-intl'
 
-function MyApp({ Component, pageProps }) {
+const App = ({ Component, pageProps }) => {
   const [notes, setNotes] = useState([])
   const [searchValue, setSearchValue] = useState('')
   const [filter, setFilter] = useState('all')
@@ -31,4 +31,4 @@ function MyApp({ Component, pageProps }) {
   )
 }
 
-export default MyApp
+export default App

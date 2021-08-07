@@ -7,6 +7,7 @@
     "@types/styled-system": "^5.1.10"
   },
   "dependencies": {
+    "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.1.5",
     "@store/notes": "0.0.0",
     "@ui/button": "^0.0.0",

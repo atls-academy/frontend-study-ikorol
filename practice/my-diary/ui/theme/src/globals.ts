@@ -7,7 +7,7 @@ export const injectGlobalStyles = () => {
       margin: 0,
       height: '100%',
     },
-    '#root': {
+    '#__next': {
       height: '100%',
     },
   })
